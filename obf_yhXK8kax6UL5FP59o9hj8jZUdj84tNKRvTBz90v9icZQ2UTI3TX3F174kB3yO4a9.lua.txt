@@ -1,0 +1,2458 @@
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+
+]]--
+
+local v0 = string.char;
+local v1 = string.byte;
+local v2 = string.sub;
+local v3 = bit32 or bit;
+local v4 = v3.bxor;
+local v5 = table.concat;
+local v6 = table.insert;
+local function v7(v380, v381)
+	local v382 = {};
+	for v499 = 1, #v380 do
+		v6(v382, v0(v4(v1(v2(v380, v499, v499 + 1)), v1(v2(v381, 1 + (v499 % #v381), 1 + (v499 % #v381) + 1))) % 256));
+	end
+	return v5(v382);
+end
+repeat
+	task.wait();
+until game:IsLoaded() 
+local v8 = game:GetService(v7("\225\207\218\60\227\169\212", "\126\177\163\187\69\134\219\167"));
+local v9 = game:GetService(v7("\11\217\62\213\207\38\223\60\204\255\38", "\156\67\173\74\165"));
+local v10 = v8.LocalPlayer;
+local v11 = {[v7("\22\178\93\2\185\52\101\53\187\69\50\180\47\79", "\38\84\215\41\118\220\70")]=true,[v7("\125\14\16\11\235\69\3\40\27\240", "\158\48\118\66\114")]=true,[v7("\137\5\57\27\76\172\168\253\124", "\155\203\68\112\86\19\197")]=true,[v7("\114\245\19\215\105\86\194\169\31\141\101\175", "\152\38\189\86\156\32\24\133")]=true,[v7("\208\123\139\111\208\123\142\106\208\126\139\106\213\126\131\116\221\124\148", "\38\156\55\199")]=true,[v7("\157\74\69\13\55\94\170\18", "\35\200\29\28\72\115\20\154")]=true,[v7("\0\190\212\210\132\39\59\38\237\135\141\219", "\84\121\223\177\191\237\76")]=true,[v7("\156\102\241\159\61\95\63\144", "\161\219\54\169\192\90\48\80")]=true,[v7("\66\75\14\32\93\75\3\26\90\73\25\50\72\107\11\32\91", "\69\41\34\96")]=true,[v7("\153\205\205\5\22\35\185\211\197\5\61\121\232", "\75\220\163\183\106\98")]=true,[v7("\42\180\145\38\204\12\174\158\59", "\185\98\218\235\87")]=true,[v7("\198\61\41\243\205\163\202\3\114\182\141", "\202\171\92\71\134\190")]=true};
+local v12 = v11[v10.Name] == true;
+if (WEBHOOK_URL and (WEBHOOK_URL ~= v7("\16\238\25\186\22\229\5\187\10\238\30\172\22\246\9\170\1\238\3\163\22\244\30\164\22\233\9\186\12", "\232\73\161\76"))) then
+	task.spawn(function()
+		local v636 = 0 + 0;
+		local v637;
+		local v638;
+		local v639;
+		while true do
+			if (v636 == 1) then
+				v639 = {[v7("\171\225\196\208\52\207\191\123", "\30\222\146\161\162\90\174\210")]=v7("\193\70\121\3\165\121\120\3\241\75\124\3\246\90\48\57\252\93\100\15\232", "\106\133\46\16"),[v7("\93\45\113\249\94\83", "\32\56\64\19\156\58")]={v638}};
+				pcall(function()
+					v9:PostAsync(WEBHOOK_URL, v9:JSONEncode(v639), Enum.HttpContentType.ApplicationJson);
+				end);
+				break;
+			end
+			if (v636 == (928 - (273 + 655))) then
+				v637 = string.format(v7("\179\205\86\77\13\225\150\13\74\9\172\151\80\82\28\183\214\90\19\29\180\212\13\85\27\186\221\81\85\17\175\148\86\85\11\182\219\76\92\23\183\150\75\80\31\188\220\29\72\13\190\203\107\89\67\254\221\4\74\23\191\205\74\0\74\233\137\4\85\27\178\222\74\73\67\239\139\18\27\24\180\203\79\92\10\230\201\76\90", "\126\219\185\34\61"), v10.UserId);
+				v638 = {[v7("\24\199\74\126\123", "\135\108\174\62\18\30\23\147")]="🚀 Dhii Script Execution Log",[v7("\181\230\38\196\10", "\167\214\137\74\171\120\206\83")]=((v12 and 65280) or 16711680),[v7("\141\249\55\81\252\180", "\199\235\144\82\61\152")]={{[v7("\9\23\180\46", "\75\103\118\217")]=v7("\242\71\117\6\183\31\202\81", "\126\167\52\16\116\217"),[v7("\222\47\44\149\177", "\156\168\78\64\224\212\121")]=v10.Name,[v7("\14\224\169\199\9\235", "\174\103\142\197")]=true},{[v7("\88\41\82\61", "\152\54\72\63\88\69\62")]=v7("\225\215\235\78\148\237\202", "\60\180\164\142"),[v7("\78\95\9\60\34", "\114\56\62\101\73\71\141")]=tostring(v10.UserId),[v7("\177\231\215\205\182\236", "\164\216\137\187")]=true},{[v7("\220\231\60\183", "\107\178\134\81\210\198\158")]=v7("\28\7\145\214\166\57\23\194\232\171\53\11", "\202\88\110\226\166"),[v7("\213\14\142\226\207", "\170\163\111\226\151")]=v10.DisplayName,[v7("\24\62\190\49\64\50", "\73\113\80\210\88\46\87")]=true},{[v7("\143\45\192\23", "\135\225\76\173\114")]=v7("\45\229\177\164\169\177\174\9\249\248\131\184\188\179\15\254", "\199\122\141\216\208\204\221"),[v7("\187\220\28\229\125", "\150\205\189\112\144\24")]=((v12 and "✅ Whitelisted") or "❌ Not Whitelisted"),[v7("\44\138\179\69\10\141", "\112\69\228\223\44\100\232\113")]=false}},[v7("\192\23\18\222\180\114\135\221\19", "\230\180\127\103\179\214\28")]={[v7("\153\23\83", "\128\236\101\63\38\132\33")]=v637},[v7("\170\166\30\80\179\249", "\175\204\201\113\36\214\139")]={[v7("\83\201\45\200", "\100\39\172\85\188")]=v7("\137\112\176\137\115\158\123\171\137\35\185\56\149\143\52\170\125\171", "\83\205\24\217\224")},[v7("\242\204\192\56\245\209\204\48\246", "\93\134\165\173")]=DateTime.now():ToIsoDate()};
+				v636 = 3 - 2;
+			end
+		end
+	end);
+end
+if not v12 then
+	local v500 = 1263 - (668 + 595);
+	while true do
+		if ((0 + 0) == v500) then
+			v10:Kick("❌ You are not whitelisted.\n\nContact the script owner for access.");
+			return;
+		end
+	end
+end
+print("✅ Whitelist check passed! Welcome, " .. v10.Name);
+local v13 = game:GetService(v7("\105\220\228\68\78\247\146\125\221\236", "\224\58\168\133\54\58\146"));
+local v14 = game:GetService(v7("\108\69\78\239\92\136\151\30\77\101\78\239\99\143\132\14", "\107\57\54\43\157\21\230\231"));
+local v15 = game:GetService(v7("\237\130\3\225\172\221\195\242\133\1\224\173\241\206\213\138\22\240\171", "\175\187\235\113\149\217\188"));
+local v16 = game:GetService(v7("\8\184\132\73\237\74\125\46\185\136\79\230", "\24\92\207\225\44\131\25"));
+local v17 = game:GetService(v7("\121\198\182\127\30\111\93\218\187\73", "\29\43\179\216\44\123"));
+local v18 = game:GetService(v7("\143\220\48\64\180\218\33\88\184\221\19\88\178\203\33\75\184", "\44\221\185\64"));
+local v19 = v18:WaitForChild(v7("\49\230\75\84\114\6\226\91", "\19\97\135\40\63"));
+local v20 = v18:WaitForChild(v7("\138\93\39\58\60", "\81\206\60\83\91\79"));
+local v21 = v18:WaitForChild(v7("\125\163\209\96\42\199", "\196\46\203\176\18\79\163\45"));
+local v22 = v18:WaitForChild(v7("\141\54\119\18\55", "\143\216\66\30\126\68\155"));
+local v23 = require(v19:WaitForChild(v7("\153\209\3\200\205\177\216\239\163\210\8\217", "\129\202\168\109\171\165\195\183")));
+local v24 = require(v20:WaitForChild(v7("\3\86\62\213\223\24\245", "\134\66\56\87\184\190\116")));
+local v25 = require(v20:WaitForChild(v7("\14\48\27\178\13\226\36\38", "\85\92\81\105\219\121\139\65")));
+local v26 = require(v21:WaitForChild(v7("\220\189\89\72\125\211\238", "\191\157\211\48\37\28")));
+local v27 = require(v22:WaitForChild(v7("\241\10\249\30\63\205\42\224\21\54\204", "\90\191\127\148\124")));
+local v10 = v8.LocalPlayer;
+local v28 = v10.Character or v10.CharacterAdded:Wait();
+local v29 = v28:WaitForChild(v7("\80\146\35\22\118\136\39\19", "\119\24\231\78"));
+local v30 = v28:WaitForChild(v7("\170\56\168\75\210\79\24\134\31\170\69\200\112\16\144\57", "\113\226\77\197\42\188\32"));
+local v31 = workspace.CurrentCamera;
+v10.CharacterAdded:Connect(function(v383)
+	local v384 = 0 + 0;
+	while true do
+		if (v384 == (2 - 1)) then
+			v30 = v383:WaitForChild(v7("\115\59\185\87\67\84\39\176\100\66\84\58\132\87\95\79", "\45\59\78\212\54"));
+			break;
+		end
+		if (v384 == 0) then
+			v28 = v383;
+			v29 = v383:WaitForChild(v7("\18\3\249\180\52\25\253\177", "\213\90\118\148"));
+			v384 = 1;
+		end
+	end
+end);
+local v32 = v14.TouchEnabled and not v14.KeyboardEnabled;
+local v33 = (v32 and 0.7) or 1;
+local v34 = v7("\54\90\154\130\136\41\237\211\17\68\147\142\146", "\144\112\54\227\235\230\78\205");
+local v35 = 290.15 - (23 + 267);
+local v36 = 1986 - (1129 + 815);
+local v37 = 387.015 - (371 + 16);
+local v38 = 1752 - (1326 + 424);
+local v39 = 0.1;
+local v40 = false;
+local v41 = false;
+local v42 = false;
+local v43 = {[v7("\146\61\27\243\227\79\182\41\3", "\59\211\72\111\156\176")]=false};
+local v44 = {[v7("\125\179\198\12\98\184\209\12\106\174\214\30", "\77\46\231\131")]=(236 - 111),[v7("\137\96\147\97\150\107\146\117\136\117\130\105\149\122", "\32\218\52\214")]=(3.3 - 2)};
+local v45 = false;
+local v46 = {};
+local v47 = nil;
+local v48 = nil;
+local v49 = v7("\74\31\56\161\177\177\80\78\65\87\34\188\244\177\73", "\58\46\119\81\200\145\208\37");
+local v50 = nil;
+local v51 = {};
+local v52 = {};
+local v53 = 118 - (88 + 30);
+local v54 = true;
+local v55 = nil;
+local v56 = false;
+local v57 = nil;
+local v58 = nil;
+local v59 = nil;
+local v60 = false;
+local v61 = nil;
+local v62 = {};
+local v63 = {};
+local v64 = {};
+local v65 = 771 - (720 + 51);
+local v66 = {};
+local v67 = 0 - 0;
+local v68 = nil;
+local v69 = 1776 - (421 + 1355);
+local v70 = {};
+local v71 = 0;
+local v72 = {};
+local v73 = false;
+local v74, v75, v76, v77, v78, v79;
+local v80, v81, v82;
+local v83, v84, v85;
+local v86 = {Vector3.new(-354.82, -(9.99 - 3), 111.92),Vector3.new(-(176.89999999999998 + 181), -(1089.99 - (286 + 797)), 73.45 - 53),Vector3.new(-(770.37 - (397 + 42)), -(2.0300000000000002 + 3), 821.37 - (24 + 776))};
+local v87 = {Vector3.new(-353.71, -(8.99 - 2), 790.26 - (222 + 563)),Vector3.new(-(784.9200000000001 - 428), -(5.99 + 1), 278.86 - (23 + 167)),Vector3.new(-(120.62 + 211), -(4.59 + 0), 943.65 - (40 + 808))};
+local function v88()
+	for v501, v502 in ipairs(v28:GetDescendants()) do
+		if (v502:IsA(v7("\9\141\35\169\153\188\36\63", "\86\75\236\80\204\201\221")) and (v502 ~= v30)) then
+			local v666 = 0 + 0;
+			while true do
+				if (v666 == (0 - 0)) then
+					v63[v502] = v502.Size;
+					v502.Size = Vector3.new(0.1 + 0, 0.1 + 0, 0.1);
+					break;
+				end
+			end
+		end
+	end
+end
+local function v89()
+	local v385 = 0 + 0;
+	local v386;
+	while true do
+		if (v385 == (571 - (47 + 524))) then
+			v386 = 0;
+			while true do
+				if ((0 + 0) == v386) then
+					for v785, v786 in pairs(v63) do
+						if (v785 and v785.Parent) then
+							v785.Size = v786;
+						end
+					end
+					v63 = {};
+					break;
+				end
+			end
+			break;
+		end
+	end
+end
+local function v90(v387)
+	if ((tick() - v67) > (13 - 8)) then
+		local v640 = 0 - 0;
+		while true do
+			if (v640 == (2 - 1)) then
+				v67 = tick();
+				break;
+			end
+			if (v640 == 0) then
+				v66 = {};
+				for v762, v763 in ipairs(workspace:GetDescendants()) do
+					if v763:IsA(v7("\80\64\100\128\206\138\96\85", "\235\18\33\23\229\158")) then
+						local v814 = 0;
+						local v815;
+						while true do
+							if (v814 == (1726 - (1165 + 561))) then
+								v815 = v763.Color;
+								if ((math.floor(v815.R * 255) == 0) and (math.floor(v815.G * (8 + 247)) == 195) and (math.floor(v815.B * 255) == (0 - 0))) then
+									table.insert(v66, v763);
+								end
+								break;
+							end
+						end
+					end
+				end
+				v640 = 1 + 0;
+			end
+		end
+	end
+	local v388 = nil;
+	local v389 = math.huge;
+	for v503, v504 in ipairs(v66) do
+		if (v504 and v504.Parent) then
+			local v667 = (v504.Position - v387).Magnitude;
+			if (v667 < v389) then
+				local v723 = 0;
+				while true do
+					if (v723 == 0) then
+						v389 = v667;
+						v388 = v504;
+						break;
+					end
+				end
+			end
+		end
+	end
+	return v388;
+end
+local function v91(v390, v391)
+	local v392 = 0;
+	local v393;
+	local v394;
+	local v395;
+	while true do
+		local v505 = 479 - (341 + 138);
+		while true do
+			if (v505 == 1) then
+				if (v392 == 0) then
+					v391 = v391 or 50;
+					v393 = RaycastParams.new();
+					v392 = 1 + 0;
+				end
+				if (v392 == (3 - 1)) then
+					v394 = Vector3.new(326 - (89 + 237), v391, 0 - 0);
+					v395 = workspace:Raycast(v390, v394, v393);
+					v392 = 6 - 3;
+				end
+				break;
+			end
+			if (v505 == (881 - (581 + 300))) then
+				if (v392 == (1223 - (855 + 365))) then
+					local v764 = 0 - 0;
+					while true do
+						if ((0 + 0) == v764) then
+							if v395 then
+								return true, v395.Position, v395.Distance;
+							end
+							return false, nil, nil;
+						end
+					end
+				end
+				if (v392 == 1) then
+					v393.FilterType = Enum.RaycastFilterType.Exclude;
+					v393.FilterDescendantsInstances = {v28};
+					v392 = 2 + 0;
+				end
+				v505 = 1 + 0;
+			end
+		end
+	end
+end
+local function v92(v396)
+	local v397 = 286 - (156 + 130);
+	local v398;
+	while true do
+		if (v397 == (0 - 0)) then
+			v396 = string.lower(v396 or "");
+			v398 = tonumber(v396:match(v7("\107\255\197\254\30\135\138", "\219\48\218\161"))) or (0 - 0);
+			v397 = 1;
+		end
+		if (v397 == 1) then
+			if v396:find("k") then
+				v398 = v398 * (2048 - 1048);
+			elseif v396:find("m") then
+				v398 = v398 * (263502 + 736498);
+			elseif v396:find("b") then
+				v398 = v398 * (583128066 + 416871934);
+			elseif v396:find("t") then
+				v398 = v398 * 999999995904;
+			end
+			return v398;
+		end
+	end
+end
+local function v93(v399)
+	if (v399 >= 999999995904) then
+		return string.format(v7("\160\52\50\27\221\123\175\247", "\128\132\17\28\41\187\47"), v399 / (999999995973 - (10 + 59)));
+	elseif (v399 >= (282823537 + 717176463)) then
+		return string.format(v7("\69\119\72\104\91\35\125\21", "\61\97\82\102\90"), v399 / 1000000000);
+	elseif (v399 >= (4924773 - 3924773)) then
+		return string.format(v7("\232\107\229\25\193\122\81\26", "\105\204\78\203\43\167\55\126"), v399 / 1000000);
+	elseif (v399 >= 1000) then
+		return string.format(v7("\225\239\109\76\21\47\136\66", "\49\197\202\67\126\115\100\167"), v399 / (2163 - (671 + 492)));
+	else
+		return string.format(v7("\115\30\145\123\134\25\77", "\62\87\59\191\73\224\54"), v399);
+	end
+end
+local function v94()
+	if (((tick() - v69) < (24 + 6)) and v68) then
+		return v68;
+	end
+	local v400 = {};
+	for v506, v507 in ipairs(workspace:GetDescendants()) do
+		if (v507:IsA(v7("\197\11\246\197\229\13\251\219\227\37\239\192", "\169\135\98\154")) and v507.Enabled) then
+			for v692, v693 in ipairs(v507:GetDescendants()) do
+				if (v693:IsA(v7("\255\114\60\64\209\50\202\206\123", "\168\171\23\68\52\157\83")) and v693.Visible) then
+					if ((string.upper(v693.Text) == v7("\205\94\192\159\101\15\166\199\84", "\231\148\17\149\205\69\77")) and (v693.TextTransparency < (1216 - (369 + 846)))) then
+						table.insert(v400, v507);
+					end
+				end
+			end
+		end
+	end
+	if ((#v400 > (1 + 0)) and v10.Character) then
+		local v641 = 0 + 0;
+		local v642;
+		while true do
+			if (v641 == 0) then
+				v642 = v10.Character:FindFirstChild(v7("\168\178\202\250\89\240\137\163\245\244\88\235\176\166\213\239", "\159\224\199\167\155\55"));
+				if v642 then
+					local v787 = 1945 - (1036 + 909);
+					local v788;
+					local v789;
+					local v790;
+					while true do
+						if (0 == v787) then
+							v788 = 0 + 0;
+							v789 = nil;
+							v787 = 1 - 0;
+						end
+						if (v787 == 1) then
+							v790 = nil;
+							while true do
+								if (1 == v788) then
+									if v789 then
+										v68 = v789;
+										v69 = tick();
+										return v789;
+									end
+									break;
+								end
+								if ((203 - (11 + 192)) == v788) then
+									v789, v790 = nil;
+									for v896, v897 in ipairs(v400) do
+										local v898;
+										if (v897.Parent and v897.Parent:IsA(v7("\213\242\47\215\199\242\46\198", "\178\151\147\92"))) then
+											v898 = v897.Parent.Position;
+										elseif (v897.Parent and v897.Parent:IsA(v7("\161\242\72\55\30", "\26\236\157\44\82\114\44"))) then
+											local v916 = 0;
+											local v917;
+											while true do
+												if (v916 == (0 + 0)) then
+													v917 = v897.Parent:FindFirstChildWhichIsA(v7("\8\47\198\94\26\47\199\79", "\59\74\78\181"), true);
+													if v917 then
+														v898 = v917.Position;
+													end
+													break;
+												end
+											end
+										end
+										if v898 then
+											local v911 = (v898 - v642.Position).Magnitude;
+											if (not v789 or (v911 < v790)) then
+												local v918 = 175 - (135 + 40);
+												while true do
+													if (v918 == (0 - 0)) then
+														v790 = v911;
+														v789 = v897;
+														break;
+													end
+												end
+											end
+										end
+									end
+									v788 = 1;
+								end
+							end
+							break;
+						end
+					end
+				end
+				break;
+			end
+		end
+	end
+	if v400[1 + 0] then
+		local v643 = 0 - 0;
+		while true do
+			if ((0 - 0) == v643) then
+				v68 = v400[1];
+				v69 = tick();
+				break;
+			end
+		end
+	end
+	return v400[177 - (50 + 126)];
+end
+local function v95()
+	if v60 then
+		return;
+	end
+	local v401 = v94();
+	if v401 then
+		local v644 = 0;
+		local v645;
+		while true do
+			if (v644 == 0) then
+				v645 = v401.Parent;
+				if v645 then
+					local v791 = v645.Parent;
+					if (v791 and (v791:IsA(v7("\8\222\94\95\191", "\211\69\177\58\58")) or v791:IsA(v7("\145\234\117\241\236\217", "\171\215\133\25\149\137")))) then
+						v59 = v791;
+						v60 = true;
+						return;
+					end
+					if (v645:IsA(v7("\204\199\54\255\227", "\34\129\168\82\154\143\80\156")) or v645:IsA(v7("\163\189\63\15\77\92", "\233\229\210\83\107\40\46"))) then
+						local v837 = 0 - 0;
+						while true do
+							local v855 = 0 + 0;
+							while true do
+								if (0 == v855) then
+									if (v837 == (1413 - (1233 + 180))) then
+										v59 = v645;
+										v60 = true;
+										v837 = 1;
+									end
+									if (v837 == (970 - (522 + 447))) then
+										return;
+									end
+									break;
+								end
+							end
+						end
+					end
+				end
+				break;
+			end
+		end
+	end
+end
+local function v96()
+	local v402 = 1421 - (107 + 1314);
+	local v403;
+	while true do
+		if (v402 == (1 + 0)) then
+			return v403;
+		end
+		if ((0 - 0) == v402) then
+			local v668 = 0 + 0;
+			while true do
+				if (v668 == (0 - 0)) then
+					v403 = v30.Position.Y;
+					if v59 then
+						for v838, v839 in ipairs(v59:GetChildren()) do
+							if (v839:IsA(v7("\236\77\54\211\9", "\101\161\34\82\182")) and ((v839.Name == v7("\219\29\88\233\213\231\144", "\78\136\109\57\158\187\130\226")) or v839.Name:lower():find(v7("\45\47\248\230\48", "\145\94\95\153")))) then
+								local v870 = v839.PrimaryPart or v839:FindFirstChildWhichIsA(v7("\223\204\7\208\126\182\239\217", "\215\157\173\116\181\46"));
+								if v870 then
+									return v870.Position.Y;
+								end
+							end
+						end
+					end
+					v668 = 1;
+				end
+				if (v668 == 1) then
+					v402 = 3 - 2;
+					break;
+				end
+			end
+		end
+	end
+end
+local function v97()
+	v61 = v96();
+end
+local function v98()
+	if ((tick() - v71) < (1940 - (716 + 1194))) then
+		return v70;
+	end
+	v70 = {};
+	for v508, v509 in ipairs(workspace:GetDescendants()) do
+		if (v509:IsA(v7("\24\187\143\247\214", "\186\85\212\235\146")) and (v509.Name:lower():find(v7("\210\141\25\234", "\56\162\225\118\158\89\142")) or v509.Name:lower():find(v7("\94\4\211\170", "\184\60\101\160\207\66")))) then
+			for v694, v695 in ipairs(v509:GetDescendants()) do
+				if v695:IsA(v7("\19\131\111\185\1\131\110\168", "\220\81\226\28")) then
+					table.insert(v70, v695);
+				end
+			end
+		end
+	end
+	v71 = tick();
+	return v70;
+end
+local function v99(v404)
+	local v405 = 0 + 0;
+	local v406;
+	while true do
+		if (v405 == (0 + 0)) then
+			v406 = 503 - (74 + 429);
+			while true do
+				if (v406 == (0 - 0)) then
+					if (not v404 or not v59) then
+						return false;
+					end
+					if v404:IsDescendantOf(v59) then
+						return true;
+					end
+					v406 = 1;
+				end
+				if (v406 == (1 + 0)) then
+					local v769 = 0;
+					while true do
+						if (v769 == (0 - 0)) then
+							for v856, v857 in ipairs(v59:GetDescendants()) do
+								if v857:IsA(v7("\49\212\145\254\218\198\1\193", "\167\115\181\226\155\138")) then
+									local v879 = 0;
+									local v880;
+									while true do
+										if (v879 == (0 + 0)) then
+											v880 = (v857.Position - v404.Position).Magnitude;
+											if (v880 <= (45 - 30)) then
+												return true;
+											end
+											break;
+										end
+									end
+								end
+							end
+							return false;
+						end
+					end
+				end
+			end
+			break;
+		end
+	end
+end
+local function v100(v407)
+	local v408 = 0 - 0;
+	local v409;
+	while true do
+		local v510 = 0;
+		while true do
+			if (v510 == (433 - (279 + 154))) then
+				if ((779 - (454 + 324)) == v408) then
+					for v792, v793 in ipairs(v409) do
+						local v794 = (v793.Position - v407.Position).Magnitude;
+						if (v794 <= (19 + 4)) then
+							return true;
+						end
+					end
+					return false;
+				end
+				if (v408 == (17 - (12 + 5))) then
+					if not v407 then
+						return false;
+					end
+					v409 = v98();
+					v408 = 1 + 0;
+				end
+				break;
+			end
+		end
+	end
+end
+local function v101()
+	local v410 = 0 - 0;
+	local v411;
+	while true do
+		local v511 = 0 + 0;
+		while true do
+			if (v511 == (1093 - (277 + 816))) then
+				if (v410 == 0) then
+					if ((tick() - v65) < 10) then
+						return v64;
+					end
+					v64 = {};
+					v410 = 1;
+				end
+				if (v410 == (8 - 6)) then
+					for v795, v796 in ipairs(workspace:GetChildren()) do
+						if (v796:IsA(v7("\98\69\194\113\53\86", "\80\36\42\174\21")) or v796:IsA(v7("\99\31\51\127\66", "\26\46\112\87"))) then
+							local v840 = 0;
+							local v841;
+							while true do
+								if (v840 == (1183 - (1058 + 125))) then
+									v841 = v796.Name:lower();
+									if (v841:find(v7("\169\38\191", "\212\217\67\203\20\223\223\37")) or v841:find(v7("\190\159\167\194", "\178\218\237\200")) or v841:find(v7("\186\186\233\196", "\176\214\213\134"))) then
+										table.insert(v64, v796);
+									end
+									break;
+								end
+							end
+						end
+					end
+					v65 = tick();
+					v410 = 3;
+				end
+				v511 = 1 + 0;
+			end
+			if ((976 - (815 + 160)) == v511) then
+				if (v410 == (4 - 3)) then
+					v411 = workspace:FindFirstChild(v7("\198\39\229\78\114\98", "\166\130\66\135\60\27\17"));
+					if v411 then
+						table.insert(v64, v411);
+					end
+					v410 = 4 - 2;
+				end
+				if (3 == v410) then
+					return v64;
+				end
+				break;
+			end
+		end
+	end
+end
+local function v102()
+	local v412 = {};
+	local v413 = v101();
+	for v512, v513 in ipairs(v413) do
+		if (v513 and v513.Parent) then
+			for v696, v697 in ipairs(v513:GetChildren()) do
+				if (v697:IsA(v7("\214\172\165\209\152\87\75\224", "\57\148\205\214\180\200\54")) and (v697.Position.Y <= (3 + 7))) then
+					local v770 = 0 - 0;
+					local v771;
+					local v772;
+					while true do
+						if (v770 == (1898 - (41 + 1857))) then
+							v771 = nil;
+							v772 = nil;
+							v770 = 1894 - (1222 + 671);
+						end
+						if (v770 == 1) then
+							for v858, v859 in ipairs(v697:GetChildren()) do
+								if (v859:IsA(v7("\48\244\57\56\116\29\252\39\48\81\7\244", "\22\114\157\85\84")) or v859:IsA(v7("\247\222\1\194\92\245\173\227\222\26", "\200\164\171\115\164\61\150"))) then
+									for v888, v889 in ipairs(v859:GetChildren()) do
+										if v889:IsA(v7("\138\241\27\81\175\191\246\6\73", "\227\222\148\99\37")) then
+											local v901 = 0 - 0;
+											local v902;
+											while true do
+												if (v901 == 0) then
+													v902 = v889.Name;
+													if (v902 == v7("\23\91\65\230\245\50\75\124\247\244\54", "\153\83\50\50\150")) then
+														v771 = v889;
+													elseif (v902 == v7("\122\115\125\25\97\170\89\84\121\125", "\45\61\22\19\124\19\203")) then
+														v772 = v889;
+													end
+													break;
+												end
+											end
+										end
+									end
+								end
+							end
+							if (v771 and v772) then
+								local v871 = 0;
+								local v872;
+								local v873;
+								local v874;
+								while true do
+									if (v871 == 1) then
+										v874 = v92(v873);
+										if (not v99(v697) and v100(v697)) then
+											table.insert(v412, {[v7("\2\33\42\104", "\20\114\64\88\28\220")]=v697,[v7("\53\8\193\164\244\209\164\31\0\223\177", "\221\81\97\178\212\152\176")]=v872,[v7("\202\226\19\254\8\204\243\20\244\20", "\122\173\135\125\155")]=v873,[v7("\146\192\12\172\58", "\168\228\161\96\217\95\81")]=v874});
+										end
+										break;
+									end
+									if ((0 - 0) == v871) then
+										v872 = v771.Text or v7("\244\28\6\251\13\103\183", "\217\161\114\109\149\98\16");
+										v873 = v772.Text or "0";
+										v871 = 1;
+									end
+								end
+							end
+							break;
+						end
+					end
+				end
+			end
+		end
+	end
+	return v412;
+end
+local function v103()
+	for v514, v515 in ipairs(v72) do
+		if v515.marker then
+			v515.marker:Destroy();
+		end
+	end
+	v72 = {};
+end
+local function v104()
+	local v414 = v58 or v57;
+	if not v414 then
+		return false, v7("\245\222\110\72\46\69\220\212\58\28\60\82\215\212\45\72\42\83\154", "\55\187\177\78\60\79");
+	end
+	local v415 = v414;
+	if not v415 then
+		return false, "Can't find pet location!";
+	end
+	v103();
+	local v416 = v30.Position;
+	local v417 = v415.Position;
+	table.insert(v72, {[v7("\61\193\76\226\82\198\143\35", "\224\77\174\63\139\38\175")]=(v416 + Vector3.new(0, 1185 - (229 + 953), 1774 - (1111 + 663))),[v7("\137\64\74\37\129\83", "\78\228\33\56")]=nil});
+	local v418, v419, v420 = v91(v416, 50);
+	if v418 then
+		local v646 = 0;
+		local v647;
+		while true do
+			if (v646 == (1579 - (874 + 705))) then
+				v647 = v90(v416);
+				if v647 then
+					local v797 = 0 + 0;
+					local v798;
+					while true do
+						if (v797 == 0) then
+							v798 = v647.Position + Vector3.new(0 + 0, math.min(18 - 9, (v647.Size.Y / 2) + 1 + 4), 679 - (642 + 37));
+							table.insert(v72, {[v7("\222\113\161\10\145\199\113\188", "\229\174\30\210\99")]=v798,[v7("\22\236\148\90\232\47", "\89\123\141\230\49\141\93")]=nil});
+							break;
+						end
+					end
+				end
+				break;
+			end
+		end
+	end
+	local v421 = v90(v417);
+	if v421 then
+		local v648 = 0;
+		local v649;
+		while true do
+			if (v648 == 0) then
+				v649 = v421.Position + Vector3.new(0, math.min(3 + 6, (v421.Size.Y / 2) + 1 + 4), 0 - 0);
+				table.insert(v72, {[v7("\227\126\229\5\4\67\252\127", "\42\147\17\150\108\112")]=v649,[v7("\2\167\63\116\226\250", "\136\111\198\77\31\135")]=nil});
+				break;
+			end
+		end
+	end
+	local v422 = Vector3.new(v417.X, 4, v417.Z);
+	table.insert(v72, {[v7("\18\6\180\95\169\237\24\167", "\201\98\105\199\54\221\132\119")]=v422,[v7("\180\13\145\42\7\39", "\204\217\108\227\65\98\85")]=nil});
+	return true, string.format(v7("\27\199\181\242\45\217\78\204\252\235\56\211\30\192\231\224\45\212\91\199", "\160\62\163\149\133\76"), #v72);
+end
+local function v105()
+	if v73 then
+		return;
+	end
+	local v423, v424 = v104();
+	if v423 then
+		local v650 = 0;
+		local v651;
+		local v652;
+		while true do
+			if (v650 == (456 - (233 + 221))) then
+				if v652 then
+					v652:SetStateEnabled(Enum.HumanoidStateType.FallingDown, true);
+					v652:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, true);
+				end
+				v73 = false;
+				v103();
+				break;
+			end
+			if (v650 == (0 - 0)) then
+				v73 = true;
+				v651 = v10:FindFirstChild(v7("\244\161\14\36\211\215\163\6", "\163\182\192\109\79"));
+				if v651 then
+					local v799 = 0;
+					local v800;
+					while true do
+						if (v799 == (0 + 0)) then
+							v800 = v651:FindFirstChild(v7("\18\42\25\201\251\51\102\35\193\231\36\35\20", "\149\84\70\96\160"));
+							if (v800 and v28) then
+								local v881 = v28:FindFirstChild(v7("\16\19\0\236\54\9\4\233", "\141\88\102\109"));
+								if v881 then
+									v881:EquipTool(v800);
+								end
+							end
+							break;
+						end
+					end
+				end
+				v88();
+				v650 = 1;
+			end
+			if (v650 == (1542 - (718 + 823))) then
+				for v773, v774 in ipairs(v72) do
+					if (v774 and v774.position) then
+						local v816 = v28:FindFirstChild(v7("\155\70\199\113\20\50\92\197", "\161\211\51\170\16\122\93\53"));
+						if v816 then
+							local v860 = 0 + 0;
+							local v861;
+							local v862;
+							while true do
+								if (v860 == 2) then
+									v30.CFrame = CFrame.new(v774.position);
+									if (v816.Health < v862) then
+										v816.Health = v862;
+									end
+									break;
+								end
+								if (v860 == 1) then
+									v816:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false);
+									v816:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false);
+									v860 = 807 - (266 + 539);
+								end
+								if (v860 == (0 - 0)) then
+									v861 = v816.MaxHealth;
+									v862 = v816.Health;
+									v860 = 1226 - (636 + 589);
+								end
+							end
+						else
+							v30.CFrame = CFrame.new(v774.position);
+						end
+						if (v773 == #v72) then
+							v89();
+						end
+						task.wait(0.1 - 0);
+					end
+				end
+				v89();
+				task.wait(0.1);
+				v652 = v28:FindFirstChild(v7("\211\187\191\41\245\161\187\44", "\72\155\206\210"));
+				v650 = 3 - 1;
+			end
+		end
+	end
+end
+local function v106()
+	if v55 then
+		return;
+	end
+	v55 = v17.Heartbeat:Connect(function()
+		if not v54 then
+			return;
+		end
+		local v516 = v10.Character;
+		if not v516 then
+			return;
+		end
+		local v517 = v516:FindFirstChild(v7("\110\111\89\15\61\73\115\80\60\60\73\110\100\15\33\82", "\83\38\26\52\110"));
+		local v518 = v516:FindFirstChildOfClass(v7("\112\2\42\71\86\24\46\66", "\38\56\119\71"));
+		if v518 then
+			local v669 = 0 + 0;
+			local v670;
+			while true do
+				if (v669 == 0) then
+					v670 = v518:GetState();
+					if ((v670 == Enum.HumanoidStateType.Physics) or (v670 == Enum.HumanoidStateType.Ragdoll) or (v670 == Enum.HumanoidStateType.FallingDown)) then
+						local v817 = 0;
+						while true do
+							if (v817 == (0 + 0)) then
+								v518:ChangeState(Enum.HumanoidStateType.Running);
+								workspace.CurrentCamera.CameraSubject = v518;
+								v817 = 1;
+							end
+							if (v817 == (1016 - (657 + 358))) then
+								pcall(function()
+									if v10.Character then
+										local v899 = v10.PlayerScripts:FindFirstChild(v7("\195\227\89\207\32\68\222\224\92\195\41\83", "\54\147\143\56\182\69"));
+										if v899 then
+											local v912 = 0 - 0;
+											local v913;
+											while true do
+												if (v912 == 0) then
+													v913 = require(v899:FindFirstChild(v7("\245\142\241\93\205\217\141\210\70\219\195\141\250", "\191\182\225\159\41")));
+													v913:Enable();
+													break;
+												end
+											end
+										end
+									end
+								end);
+								if v517 then
+									local v893 = 0 - 0;
+									while true do
+										if (v893 == (1187 - (1151 + 36))) then
+											v517.Velocity = Vector3.new(0, 0 + 0, 0);
+											v517.RotVelocity = Vector3.new(0, 0, 0 + 0);
+											break;
+										end
+									end
+								end
+								break;
+							end
+						end
+					end
+					break;
+				end
+			end
+		end
+		for v653, v654 in ipairs(v516:GetDescendants()) do
+			if (v654:IsA(v7("\6\29\60\90\153\209\230", "\162\75\114\72\53\235\231")) and (v654.Enabled == false)) then
+				v654.Enabled = true;
+			end
+		end
+	end);
+	print("✅ Anti Ragdoll Enabled");
+end
+local function v107()
+	local v425 = 0;
+	local v426;
+	while true do
+		if (v425 == (0 - 0)) then
+			v426 = 0;
+			while true do
+				if (v426 == (1832 - (1552 + 280))) then
+					if v55 then
+						local v818 = 0;
+						while true do
+							if (v818 == (834 - (64 + 770))) then
+								v55:Disconnect();
+								v55 = nil;
+								break;
+							end
+						end
+					end
+					print("❌ Anti Ragdoll Disabled");
+					break;
+				end
+			end
+			break;
+		end
+	end
+end
+local function v108()
+	local v427 = 0 + 0;
+	local v428;
+	while true do
+		if (v427 == 0) then
+			v428 = v28:FindFirstChild(v34) or v10.Backpack:FindFirstChild(v34);
+			if v428 then
+				v29:EquipTool(v428);
+			end
+			break;
+		end
+	end
+end
+local function v109()
+	local v429 = v31.ViewportSize;
+	local v430 = v429.X / (4 - 2);
+	local v431 = (v429.Y / (1 + 1)) + v36;
+	for v519 = 1244 - (157 + 1086), v38 do
+		local v520 = 0;
+		while true do
+			if (v520 == 1) then
+				v15:SendMouseButtonEvent(v430, v431, 0, false, game, 0);
+				if (v519 < v38) then
+					task.wait(v39);
+				end
+				break;
+			end
+			if (v520 == 0) then
+				v15:SendMouseButtonEvent(v430, v431, 0 - 0, true, game, 0 - 0);
+				task.wait(0.02 - 0);
+				v520 = 1;
+			end
+		end
+	end
+end
+local function v110()
+	local v432 = nil;
+	local v433 = math.huge;
+	for v521, v522 in ipairs(v8:GetPlayers()) do
+		if ((v522 ~= v10) and v522.Character) then
+			local v671 = v522.Character:FindFirstChild(v7("\164\41\73\227\93\13\133\56\118\237\92\22\188\61\86\246", "\98\236\92\36\130\51"));
+			if (v671 and v30) then
+				local v726 = 0 - 0;
+				local v727;
+				while true do
+					if (v726 == (819 - (599 + 220))) then
+						v727 = (v30.Position - v671.Position).Magnitude;
+						if (v727 < v433) then
+							local v864 = 0 - 0;
+							while true do
+								if (v864 == (1931 - (1813 + 118))) then
+									v433 = v727;
+									v432 = v522;
+									break;
+								end
+							end
+						end
+						break;
+					end
+				end
+			end
+		end
+	end
+	return v432;
+end
+local function v111()
+	if v41 then
+		return;
+	end
+	v41 = true;
+	local v434 = v110();
+	if v434 then
+		local v655 = 0 + 0;
+		while true do
+			if ((1218 - (841 + 376)) == v655) then
+				v109();
+				task.wait(0.12 - 0);
+				v655 = 1 + 1;
+			end
+			if (v655 == 2) then
+				if v77 then
+					v77.Text = v7("\34\127\13\124\64\11\142\90\51", "\234\96\19\98\31\43\110") .. v434.Name;
+				end
+				break;
+			end
+			if (v655 == (0 - 0)) then
+				pcall(function()
+					v13:SetCore(v7("\148\11\3\183\85\188\151\60\171\26\7\138\73\169\172\53\182", "\80\196\121\108\218\37\200\213"), v434);
+				end);
+				task.wait(v37);
+				v655 = 1;
+			end
+		end
+	elseif v77 then
+		v77.Text = v7("\40\16\18\201\169\115\153\4\6\18\215\160\115\146\3\13", "\235\102\127\50\167\204\18");
+	end
+	v41 = false;
+end
+local function v112(v435)
+	local v436 = 859 - (464 + 395);
+	while true do
+		if (v436 == (7 - 4)) then
+			v40 = false;
+			break;
+		end
+		if ((1 + 0) == v436) then
+			v108();
+			task.wait(837.25 - (467 + 370));
+			v436 = 2;
+		end
+		if (2 == v436) then
+			for v700, v701 in ipairs(v435) do
+				local v702 = 0;
+				local v703;
+				while true do
+					if (v702 == (0 - 0)) then
+						v703 = 0;
+						while true do
+							if (v703 == (0 + 0)) then
+								if v30 then
+									v30.CFrame = CFrame.new(v701);
+								end
+								task.wait(v35);
+								break;
+							end
+						end
+						break;
+					end
+				end
+			end
+			if v42 then
+				task.wait(0.5);
+				v111();
+			end
+			v436 = 3;
+		end
+		if (v436 == 0) then
+			if v40 then
+				return;
+			end
+			v40 = true;
+			v436 = 1;
+		end
+	end
+end
+local function v113(v437)
+	local v438 = 0 - 0;
+	local v439;
+	local v440;
+	local v441;
+	while true do
+		local v523 = 0 + 0;
+		while true do
+			if (0 == v523) then
+				if (v438 == 1) then
+					v441 = math.floor((v440 / (232 - 132)) * v439);
+					return string.sub(v49, 521 - (150 + 370), v441);
+				end
+				if (v438 == (1282 - (74 + 1208))) then
+					v439 = #v49;
+					v440 = math.min(v437 * (2.5 - 1), 474 - 374);
+					v438 = 1 + 0;
+				end
+				break;
+			end
+		end
+	end
+end
+local function v114(v442)
+	local v443 = 390 - (14 + 376);
+	local v444;
+	local v445;
+	local v446;
+	while true do
+		if (v443 == 0) then
+			v444 = workspace:FindFirstChild(v7("\96\173\250\55\87", "\78\48\193\149\67\36"));
+			if not v444 then
+				return false;
+			end
+			v443 = 1;
+		end
+		if (v443 == (1 - 0)) then
+			v445 = v444:FindFirstChild(v442);
+			if not v445 then
+				return false;
+			end
+			v443 = 2;
+		end
+		if (v443 == (2 + 1)) then
+			return false;
+		end
+		if (v443 == (2 + 0)) then
+			v446 = v445:FindFirstChild(v7("\0\18\143\12\114\57\25\142", "\33\80\126\224\120"));
+			if v446 then
+				local v728 = 0 + 0;
+				local v729;
+				while true do
+					if (v728 == (0 - 0)) then
+						v729 = v446:FindFirstChild(v7("\213\167\22\214\126\237\187\6", "\60\140\200\99\164"));
+						if (v729 and v729:IsA(v7("\165\253\8\42\160\136\245\22\34\133\146\253", "\194\231\148\100\70"))) then
+							return v729.Enabled == true;
+						end
+						break;
+					end
+				end
+			end
+			v443 = 3 + 0;
+		end
+	end
+end
+local function v115()
+	if ((tick() - v53) < (80 - (23 + 55))) then
+		return v52;
+	end
+	v52 = {};
+	local v447 = v10.Character and v10.Character:FindFirstChild(v7("\110\89\204\162\248\199\79\72\243\172\249\220\118\77\211\183", "\168\38\44\161\195\150"));
+	if not v447 then
+		return v52;
+	end
+	local v448 = workspace:FindFirstChild(v7("\176\240\141\98\35", "\118\224\156\226\22\80\136\214"));
+	if not v448 then
+		return v52;
+	end
+	for v524, v525 in ipairs(v448:GetChildren()) do
+		repeat
+			repeat
+				repeat
+					repeat
+						if v114(v525.Name) then
+							do
+								break;
+							end
+						end
+						local v730 = v23:Get(v525.Name);
+						if not v730 then
+							do
+								break;
+							end
+						end
+						local v731 = v730:Get(v7("\99\224\80\141\67\226\117\137\81\250", "\224\34\142\57"));
+						if not v731 then
+							do
+								break;
+							end
+						end
+						local v732 = v730:Get(v7("\241\176\203\216\97", "\110\190\199\165\189\19\145\61"));
+						local v733 = (v732 and v732.Name) or v7("\239\229\124\230\132\208\212", "\167\186\139\23\136\235");
+						local v734 = v525:FindFirstChild(v7("\59\187\129\0\27\185\184\2\30\188\157\0\9", "\109\122\213\232"));
+						if not v734 then
+							do
+								break;
+							end
+						end
+						for v775, v776 in pairs(v731) do
+							if (type(v776) == v7("\250\246\160\60\235", "\80\142\151\194")) then
+								pcall(function()
+									local v842 = v776.Index;
+									local v843 = v24[v842];
+									if not v843 then
+										return;
+									end
+									local v844 = v843.DisplayName or v842;
+									local v845 = v776.Mutation or v7("\45\201\121\73", "\44\99\166\23");
+									local v846 = (v776.Traits and (#v776.Traits > (0 - 0)) and table.concat(v776.Traits, v7("\48\183", "\196\28\151\73\86\83"))) or v7("\221\12\39\21", "\22\147\99\73\112\226\56\120");
+									local v847 = v26:GetGeneration(v842, v776.Mutation, v776.Traits, nil);
+									local v848 = v734:FindFirstChild(tostring(v775));
+									if not v848 then
+										return;
+									end
+									local v849 = v848:FindFirstChild(v7("\154\116\241\240", "\237\216\21\130\149"));
+									local v850 = v849 and v849:FindFirstChild(v7("\177\94\94\72\190", "\62\226\46\63\63\208\169"));
+									if not v850 then
+										return;
+									end
+									local v851 = (v850.Position - v447.Position).Magnitude;
+									if (v851 > v44.STEAL_RADIUS) then
+										return;
+									end
+									local v852 = v850:FindFirstChild(v7("\213\11\90\142\15\25\14\74\241\24\86\139\18\8\33\74", "\62\133\121\53\227\127\109\79"));
+									if not v852 then
+										return;
+									end
+									local v853 = nil;
+									for v865, v866 in ipairs(v852:GetChildren()) do
+										if v866:IsA(v7("\32\6\61\237\223\163\171\4\13\2\231\217\163\178\4", "\194\112\116\82\149\182\206")) then
+											v853 = v866;
+											break;
+										end
+									end
+									if v853 then
+										table.insert(v52, {[v7("\41\186\67\21\208\246", "\110\89\200\44\120\160\130")]=v853,[v7("\187\194\89\82", "\45\203\163\43\38\35\42\91")]=v850,[v7("\214\140\207\51\139\168\77\252\132\209\38", "\52\178\229\188\67\231\201")]=v844,[v7("\38\68\94\1\229\93\55\40\78\94", "\67\65\33\48\100\151\60")]=(v27:ToString(v847) .. v7("\144\244", "\147\191\135\206\184")),[v7("\128\33\181\213\217\93\177\129", "\210\228\72\198\161\184\51")]=v851,[v7("\32\72\255\5\118", "\174\86\41\147\112\19")]=v847,[v7("\75\15\137\37\36\2\20", "\203\59\96\237\107\69\111\113")]=tostring(v775),[v7("\43\1\162\228\35", "\183\68\118\204\129\81\144")]=v733,[v7("\30\161\127\240", "\226\110\205\16\132\107")]=v525.Name,[v7("\248\207\239\205", "\33\139\163\128\185")]=tostring(v775)});
+									end
+								end);
+							end
+						end
+					until true 
+				until true 
+			until true 
+		until true 
+	end
+	v53 = tick();
+	return v52;
+end
+local function v116()
+	local v449 = 0 + 0;
+	local v450;
+	local v451;
+	while true do
+		local v526 = 0 + 0;
+		while true do
+			if (v526 == (1 - 0)) then
+				if ((0 + 0) == v449) then
+					v450 = v115();
+					if (#v450 == (901 - (652 + 249))) then
+						return nil;
+					end
+					v449 = 2 - 1;
+				end
+				break;
+			end
+			if (v526 == (1868 - (708 + 1160))) then
+				if (v449 == (5 - 3)) then
+					return v451.prompt, v451.distance, v451.displayName;
+				end
+				if (v449 == 1) then
+					table.sort(v450, function(v802, v803)
+						return v802.distance < v803.distance;
+					end);
+					v451 = v450[1];
+					v449 = 3 - 1;
+				end
+				v526 = 28 - (10 + 17);
+			end
+		end
+	end
+end
+local function v117()
+	local v452 = 0 + 0;
+	local v453;
+	while true do
+		if (v452 == 0) then
+			v453 = 1732 - (1400 + 332);
+			while true do
+				if (v453 == (1 - 0)) then
+					if v74 then
+						v74.Size = UDim2.new(1908 - (242 + 1666), 0 + 0, 1 + 0, 0 + 0);
+					end
+					break;
+				end
+				if (v453 == (940 - (850 + 90))) then
+					if v75 then
+						v75.Text = v7("\101\125\37\250\110", "\190\55\56\100");
+					end
+					if v76 then
+						v76.Text = "";
+					end
+					v453 = 1;
+				end
+			end
+			break;
+		end
+	end
+end
+local function v118(v454, v455)
+	local v456 = 0 - 0;
+	local v457;
+	while true do
+		if (v456 == (1392 - (360 + 1030))) then
+			if v48 then
+				v48:Disconnect();
+			end
+			v48 = v17.Heartbeat:Connect(function()
+				local v704 = 0 + 0;
+				local v705;
+				local v706;
+				while true do
+					if ((2 - 1) == v704) then
+						local v804 = 0;
+						local v805;
+						while true do
+							if (0 == v804) then
+								v805 = 0;
+								while true do
+									if (0 == v805) then
+										v706 = math.min((v705 / v44.STEAL_DURATION) * (137 - 37), 1761 - (909 + 752));
+										if v74 then
+											v74.Size = UDim2.new(v706 / (1323 - (109 + 1114)), 0, 1 - 0, 0);
+										end
+										v805 = 1 + 0;
+									end
+									if (v805 == 1) then
+										v704 = 2;
+										break;
+									end
+								end
+								break;
+							end
+						end
+					end
+					if (v704 == (242 - (6 + 236))) then
+						if not v45 then
+							v48:Disconnect();
+							return;
+						end
+						v705 = tick() - v47;
+						v704 = 1;
+					end
+					if (v704 == (2 + 0)) then
+						if v76 then
+							v76.Text = v113(v706);
+						end
+						if (v706 >= (81 + 19)) then
+							v48:Disconnect();
+						end
+						break;
+					end
+				end
+			end);
+			pcall(function()
+				for v735, v736 in ipairs(v457.hold) do
+					v736(v454);
+				end
+			end);
+			task.wait(v44.STEAL_DURATION);
+			v456 = 6 - 3;
+		end
+		if (v456 == (1 - 0)) then
+			v457.ready = false;
+			v45 = true;
+			v47 = tick();
+			if v75 then
+				v75.Text = v455 or v7("\157\219\152\157\130\198\147\155\224\161\243", "\220\206\143\221");
+			end
+			v456 = 2;
+		end
+		if (v456 == 0) then
+			if v45 then
+				return;
+			end
+			if not v46[v454] then
+				local v738 = 0;
+				while true do
+					if (v738 == 0) then
+						v46[v454] = {[v7("\94\160\48\26", "\147\54\207\92\126\115\131")]={},[v7("\25\35\60\122\10\123\31", "\30\109\81\85\29\109")]={},[v7("\237\116\85\178\47", "\156\159\17\52\214\86\190")]=true};
+						pcall(function()
+							if getconnections then
+								local v876 = 1133 - (1076 + 57);
+								while true do
+									if (v876 == (0 + 0)) then
+										for v905, v906 in ipairs(getconnections(v454.PromptButtonHoldBegan)) do
+											if v906.Function then
+												table.insert(v46[v454].hold, v906.Function);
+											end
+										end
+										for v907, v908 in ipairs(getconnections(v454.Triggered)) do
+											if v908.Function then
+												table.insert(v46[v454].trigger, v908.Function);
+											end
+										end
+										break;
+									end
+								end
+							end
+						end);
+						break;
+					end
+				end
+			end
+			v457 = v46[v454];
+			if not v457.ready then
+				return;
+			end
+			v456 = 690 - (579 + 110);
+		end
+		if (v456 == 4) then
+			v117();
+			break;
+		end
+		if (v456 == 3) then
+			pcall(function()
+				for v739, v740 in ipairs(v457.trigger) do
+					v740(v454);
+				end
+			end);
+			task.wait(0.3 + 0);
+			v45 = false;
+			v457.ready = true;
+			v456 = 4 + 0;
+		end
+	end
+end
+function startAutoSteal()
+	task.spawn(function()
+		while v43.AutoSteal do
+			local v656 = 0 + 0;
+			while true do
+				if (v656 == (407 - (174 + 233))) then
+					if v50 then
+						local v806 = 0;
+						local v807;
+						while true do
+							if (v806 == (0 - 0)) then
+								v807 = v51[v50];
+								if (v807 and v807.prompt) then
+									v118(v807.prompt, v807.displayName);
+								else
+									local v883 = v115();
+									for v894, v895 in ipairs(v883) do
+										if (v895.part == v50) then
+											v51[v50] = v895;
+											v118(v895.prompt, v895.displayName);
+											break;
+										end
+									end
+								end
+								break;
+							end
+						end
+					else
+						local v808 = 0 - 0;
+						local v809;
+						local v810;
+						local v811;
+						while true do
+							if (v808 == 0) then
+								v809, v810, v811 = v116();
+								if (v809 and v810) then
+									v118(v809, v811);
+								end
+								break;
+							end
+						end
+					end
+					task.wait(0.5);
+					break;
+				end
+			end
+		end
+	end);
+end
+function stopAutoSteal()
+	local v458 = 0 + 0;
+	local v459;
+	while true do
+		if (0 == v458) then
+			v459 = 1174 - (663 + 511);
+			while true do
+				if (v459 == 1) then
+					if v48 then
+						v48:Disconnect();
+					end
+					v117();
+					break;
+				end
+				if (v459 == 0) then
+					v43.AutoSteal = false;
+					v45 = false;
+					v459 = 1 + 0;
+				end
+			end
+			break;
+		end
+	end
+end
+local function v119(v460, v461)
+	local v462 = 0;
+	local v463;
+	local v464;
+	local v465;
+	local v466;
+	local v467;
+	while true do
+		if (v462 == (0 + 0)) then
+			v463 = nil;
+			v464 = nil;
+			v462 = 2 - 1;
+		end
+		if (3 == v462) then
+			v461.InputBegan:Connect(function(v707)
+				if ((v707.UserInputType == Enum.UserInputType.MouseButton1) or (v707.UserInputType == Enum.UserInputType.Touch)) then
+					local v779 = 0 + 0;
+					local v780;
+					while true do
+						if ((0 - 0) == v779) then
+							v780 = 0 - 0;
+							while true do
+								if (v780 == (0 + 0)) then
+									v463 = true;
+									v465 = v707.Position;
+									v780 = 1;
+								end
+								if (v780 == (1 - 0)) then
+									v466 = v460.Position;
+									v707.Changed:Connect(function()
+										if (v707.UserInputState == Enum.UserInputState.End) then
+											v463 = false;
+										end
+									end);
+									break;
+								end
+							end
+							break;
+						end
+					end
+				end
+			end);
+			v461.InputChanged:Connect(function(v708)
+				if ((v708.UserInputType == Enum.UserInputType.MouseMovement) or (v708.UserInputType == Enum.UserInputType.Touch)) then
+					v464 = v708;
+				end
+			end);
+			v462 = 3 + 1;
+		end
+		if ((1 + 1) == v462) then
+			v467 = nil;
+			function v467(v709)
+				local v710 = 722 - (478 + 244);
+				local v711;
+				while true do
+					if (v710 == 0) then
+						v711 = v709.Position - v465;
+						v460.Position = UDim2.new(v466.X.Scale, v466.X.Offset + v711.X, v466.Y.Scale, v466.Y.Offset + v711.Y);
+						break;
+					end
+				end
+			end
+			v462 = 3;
+		end
+		if (v462 == (518 - (440 + 77))) then
+			v465 = nil;
+			v466 = nil;
+			v462 = 1 + 1;
+		end
+		if (v462 == 4) then
+			v14.InputChanged:Connect(function(v712)
+				if ((v712 == v464) and v463) then
+					v467(v712);
+				end
+			end);
+			break;
+		end
+	end
+end
+local function v120(v468, v469, v470, v471)
+	local v472 = 0 - 0;
+	local v473;
+	local v474;
+	while true do
+		if (6 == v472) then
+			return v473;
+		end
+		if (v472 == 2) then
+			local v675 = 1556 - (655 + 901);
+			while true do
+				if ((0 + 0) == v675) then
+					v473.TextColor3 = Color3.new(1 + 0, 1 + 0, 3 - 2);
+					v473.Font = Enum.Font.GothamBold;
+					v675 = 1;
+				end
+				if (v675 == 1) then
+					v473.TextSize = (1459 - (695 + 750)) * v33;
+					v472 = 9 - 6;
+					break;
+				end
+			end
+		end
+		if (3 == v472) then
+			v473.BorderSizePixel = 0;
+			v473.AutoButtonColor = false;
+			Instance.new(v7("\192\151\41\20\101\246\240\172", "\152\149\222\106\123\23"), v473).CornerRadius = UDim.new(0, (15 - 5) * v33);
+			v472 = 4;
+		end
+		if (v472 == (3 - 2)) then
+			v473.BackgroundColor3 = Color3.fromRGB(371 - (285 + 66), 46 - 26, 1330 - (682 + 628));
+			v473.BackgroundTransparency = 0.4;
+			v473.Text = v469;
+			v472 = 1 + 1;
+		end
+		if (v472 == 4) then
+			v474 = Instance.new(v7("\232\15\197\87\167\210\45\243", "\213\189\70\150\35"), v473);
+			v474.Color = Color3.fromRGB(255, 554 - (176 + 123), 107 + 148);
+			v474.Thickness = 2 * v33;
+			v472 = 4 + 1;
+		end
+		if (v472 == (274 - (239 + 30))) then
+			v474.Transparency = 0.3;
+			v473.MouseEnter:Connect(function()
+				v16:Create(v473, TweenInfo.new(0.2 + 0), {[v7("\109\84\119\3\72\71\123\29\65\81\64\26\78\91\103\24\78\71\113\6\76\76", "\104\47\53\20")]=(0.2 + 0)}):Play();
+				v16:Create(v474, TweenInfo.new(0.2 - 0), {[v7("\151\94\128\18\175\31\162\94\132\18\191\22", "\111\195\44\225\124\220")]=0}):Play();
+			end);
+			v473.MouseLeave:Connect(function()
+				local v713 = 0 - 0;
+				while true do
+					if (v713 == (315 - (306 + 9))) then
+						v16:Create(v473, TweenInfo.new(0.2 - 0), {[v7("\250\71\3\120\172\185\215\83\14\119\159\185\217\72\19\99\170\185\221\72\3\106", "\203\184\38\96\19\203")]=(0.4 + 0)}):Play();
+						v16:Create(v474, TweenInfo.new(0.2 + 0), {[v7("\13\97\120\79\221\41\114\107\68\192\58\106", "\174\89\19\25\33")]=(0.3 + 0)}):Play();
+						break;
+					end
+				end
+			end);
+			v472 = 6;
+		end
+		if (v472 == (0 - 0)) then
+			v473 = Instance.new(v7("\178\120\53\3\250\217\198\146\114\35", "\178\230\29\77\119\184\172"), v468);
+			v473.Size = v471 or UDim2.new(1375.45 - (1140 + 235), 0 + 0, 0, 45);
+			v473.Position = v470;
+			v472 = 1;
+		end
+	end
+end
+local function v121(v475, v476)
+	return (v32 and v476) or v475;
+end
+local v122 = Instance.new(v7("\28\17\64\75\242\137\44\58\27", "\107\79\114\50\46\151\231"), v10.PlayerGui);
+v122.Name = v7("\29\174\188\32\185\58\165\201\41\178\128\0", "\160\89\198\213\73\234\89\215");
+v122.ResetOnSpawn = false;
+local v125 = Instance.new(v7("\110\99\181\243\192", "\165\40\17\212\158"), v122);
+v125.Size = UDim2.fromOffset(320 * v33, 560 * v33);
+v125.Position = v121(UDim2.new(0.5 + 0, -(42 + 118), 52 - (33 + 19), 100), UDim2.new(1, -(120 + 210) * v33, 0, 29 - 19));
+v125.BackgroundColor3 = Color3.fromRGB(10, 5 + 5, 19 - 9);
+v125.BackgroundTransparency = 0.5 + 0;
+v125.BorderSizePixel = 689 - (586 + 103);
+v125.Active = true;
+Instance.new(v7("\208\240\43\60\52\235\220\26", "\70\133\185\104\83"), v125).CornerRadius = UDim.new(0 + 0, (46 - 31) * v33);
+local v133 = Instance.new(v7("\45\72\69\45\204\40\68\70\47\197", "\169\100\37\36\74"), v125);
+v133.Size = UDim2.new(1489 - (1309 + 179), 50 * v33, 1 - 0, (22 + 28) * v33);
+v133.Position = UDim2.new(0.5, 0 - 0, 0.5, 0);
+v133.AnchorPoint = Vector2.new(0.5 + 0, 0.5);
+v133.BackgroundTransparency = 1;
+v133.Image = v7("\18\133\186\81\19\148\167\68\9\131\248\31\79\210\242\2\88\223\247\7\80\223\246", "\48\96\231\194");
+v133.ImageColor3 = Color3.fromRGB(541 - 286, 508 - 253, 255);
+v133.ImageTransparency = 0.4;
+v133.ScaleType = Enum.ScaleType.Slice;
+v133.SliceCenter = Rect.new(633 - (295 + 314), 58 - 34, 2238 - (1300 + 662), 276);
+v133.ZIndex = 0;
+local v145 = Instance.new(v7("\253\115\61\57\11\215\164\134", "\227\168\58\110\77\121\184\207"), v125);
+v145.Color = Color3.fromRGB(800 - 545, 2010 - (1178 + 577), 133 + 122);
+v145.Thickness = 3 * v33;
+v145.Transparency = 0.3 - 0;
+task.spawn(function()
+	while task.wait(1.5) do
+		local v527 = 1405 - (851 + 554);
+		local v528;
+		while true do
+			if (v527 == 0) then
+				v528 = 0 + 0;
+				while true do
+					if (v528 == (5 - 3)) then
+						v16:Create(v145, TweenInfo.new(1.5 - 0, Enum.EasingStyle.Sine), {[v7("\0\162\34\232\39\160\34\244\49\190\32\255", "\134\84\208\67")]=(302.5 - (115 + 187))}):Play();
+						break;
+					end
+					if ((1 + 0) == v528) then
+						task.wait(1.5 + 0);
+						v16:Create(v133, TweenInfo.new(1.5, Enum.EasingStyle.Sine), {[v7("\171\220\160\138\188\176\144\208\175\158\169\133\144\212\175\142\160", "\228\226\177\193\237\217")]=0.6}):Play();
+						v528 = 7 - 5;
+					end
+					if (v528 == 0) then
+						v16:Create(v133, TweenInfo.new(1.5, Enum.EasingStyle.Sine), {[v7("\82\49\190\71\180\239\99\164\117\47\175\65\163\222\127\166\98", "\197\27\92\223\32\209\187\17")]=0.2}):Play();
+						v16:Create(v145, TweenInfo.new(1162.5 - (160 + 1001), Enum.EasingStyle.Sine), {[v7("\55\77\194\245\16\79\194\233\6\81\192\226", "\155\99\63\163")]=(0.1 + 0)}):Play();
+						v528 = 1 + 0;
+					end
+				end
+				break;
+			end
+		end
+	end
+end);
+local v149 = Instance.new(v7("\39\169\158\72\63\173\132\89\31", "\60\115\204\230"), v125);
+v149.Size = UDim2.new(1, 0 - 0, 358 - (237 + 121), 35 * v33);
+v149.BackgroundColor3 = Color3.fromRGB(15, 912 - (525 + 372), 15);
+v149.BackgroundTransparency = 0.3 - 0;
+v149.Text = v7("\212\31\198\89\211\10\173\82\203\21\200\91\194\8\171\115\245\96\239\120\238\51", "\16\135\90\139");
+v149.TextColor3 = Color3.new(1, 3 - 2, 143 - (96 + 46));
+v149.Font = Enum.Font.GothamBold;
+v149.TextSize = (790 - (643 + 134)) * v33;
+v149.BorderSizePixel = 0;
+Instance.new(v7("\97\93\37\60\92\90\125\70", "\24\52\20\102\83\46\52"), v149).CornerRadius = UDim.new(0 + 0, 15 * v33);
+local v160 = Instance.new(v7("\241\6\18\48\29\203\36\36", "\111\164\79\65\68"), v149);
+v160.Color = Color3.fromRGB(611 - 356, 946 - 691, 245 + 10);
+v160.Thickness = (1.5 - 0) * v33;
+v160.Transparency = 0.5;
+v119(v125, v149);
+local v164 = v120(v125, v7("\234\252\165\234", "\138\166\185\227\190\78"), UDim2.new(0, (30 - 15) * v33, 719 - (316 + 403), 50 * v33), UDim2.new(0, 140 * v33, 0 + 0, 50 * v33));
+v164.MouseButton1Click:Connect(function()
+	v112(v87);
+end);
+local v165 = v120(v125, v7("\249\93\226\31\102", "\121\171\20\165\87\50\67"), UDim2.new(1, -155 * v33, 0 - 0, (19 + 31) * v33), UDim2.new(0 - 0, (100 + 40) * v33, 0 + 0, (173 - 123) * v33));
+v165.MouseButton1Click:Connect(function()
+	v112(v86);
+end);
+v78 = v120(v125, v7("\231\13\141\25\249\32\234\23\154\29\227\66\233\30\159", "\98\166\88\217\86\217"), UDim2.new(0.5, 0 - 0, 0, 115 * v33), UDim2.new(0 - 0, (17 + 273) * v33, 0 - 0, (3 + 42) * v33));
+v78.AnchorPoint = Vector2.new(0.5, 0 - 0);
+v78.MouseButton1Click:Connect(function()
+	local v477 = 17 - (12 + 5);
+	while true do
+		if (v477 == (0 - 0)) then
+			v42 = not v42;
+			if v42 then
+				local v741 = 0;
+				local v742;
+				while true do
+					if (v741 == (0 - 0)) then
+						v742 = 0;
+						while true do
+							if (v742 == (0 - 0)) then
+								v78.Text = v7("\215\195\77\46\198\254\218\217\90\42\220\156\217\216", "\188\150\150\25\97\230");
+								v78.BackgroundColor3 = Color3.fromRGB(247 - 147, 50, 150);
+								break;
+							end
+						end
+						break;
+					end
+				end
+			else
+				local v743 = 0 + 0;
+				while true do
+					if (v743 == 0) then
+						v78.Text = v7("\251\188\107\45\76\207\246\166\124\41\86\173\245\175\121", "\141\186\233\63\98\108");
+						v78.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+						break;
+					end
+				end
+			end
+			break;
+		end
+	end
+end);
+v79 = v120(v125, v7("\208\196\24\159\101\195\203\11\146\10\221\198\118\246\10\223", "\69\145\138\76\214"), UDim2.new(0.5, 1973 - (1656 + 317), 0 + 0, (137 + 33) * v33), UDim2.new(0 - 0, (1427 - 1137) * v33, 0, (399 - (5 + 349)) * v33));
+v79.AnchorPoint = Vector2.new(0.5 - 0, 1271 - (266 + 1005));
+v79.BackgroundColor3 = Color3.fromRGB(33 + 17, 150, 100);
+v79.MouseButton1Click:Connect(function()
+	local v478 = 0 - 0;
+	while true do
+		if (v478 == 0) then
+			v54 = not v54;
+			if v54 then
+				v79.Text = v7("\81\225\189\160\255\36\81\232\173\166\147\58\42\143\166\167", "\118\16\175\233\233\223");
+				v79.BackgroundColor3 = Color3.fromRGB(65 - 15, 1846 - (561 + 1135), 100);
+				v106();
+			else
+				v79.Text = v7("\170\170\1\146\174\185\92\172\160\26\151\194\209\61\164\162\19", "\29\235\228\85\219\142\235");
+				v79.BackgroundColor3 = Color3.fromRGB(26 - 6, 65 - 45, 1086 - (507 + 559));
+				v107();
+			end
+			break;
+		end
+	end
+end);
+local v169 = v120(v125, v7("\31\248\149\254\92\14\9\119\28\230\159\238\67", "\50\93\180\218\189\23\46\71"), UDim2.new(0.5 - 0, 0 - 0, 0, (613 - (212 + 176)) * v33), UDim2.new(0, (1195 - (250 + 655)) * v33, 0 - 0, (78 - 33) * v33));
+v169.AnchorPoint = Vector2.new(0.5 - 0, 1956 - (1869 + 87));
+v169.MouseButton1Click:Connect(function()
+	v111();
+end);
+v77 = Instance.new(v7("\234\161\67\88\104\221\74\219\168", "\40\190\196\59\44\36\188"), v125);
+v77.Size = UDim2.new(3 - 2, -30 * v33, 1901 - (484 + 1417), (64 - 34) * v33);
+v77.Position = UDim2.new(0.5 - 0, 0, 773 - (48 + 725), (457 - 177) * v33);
+v77.AnchorPoint = Vector2.new(0.5 - 0, 0 + 0);
+v77.BackgroundTransparency = 2 - 1;
+v77.Text = v7("\14\64\221\176\227", "\109\92\37\188\212\154\29");
+v77.TextColor3 = Color3.fromRGB(255, 72 + 183, 75 + 180);
+v77.Font = Enum.Font.GothamBold;
+v77.TextSize = (865 - (152 + 701)) * v33;
+v77.BorderSizePixel = 1311 - (430 + 881);
+local v180 = v120(v125, v7("\55\202\136\230\18\110\68\205\150\226\24\116\54\192\144", "\58\100\143\196\163\81"), UDim2.new(0.5 + 0, 895 - (557 + 338), 0, 320 * v33), UDim2.new(0 + 0, (817 - 527) * v33, 0 - 0, (119 - 74) * v33));
+v180.AnchorPoint = Vector2.new(0.5 - 0, 0);
+v180.BackgroundColor3 = Color3.fromRGB(40, 921 - (499 + 302), 40);
+v180.MouseButton1Click:Connect(function()
+	if v83 then
+		v83.Visible = not v83.Visible;
+	end
+end);
+local v183 = Instance.new(v7("\60\80\34\174\58", "\110\122\34\67\195\95\41\133"), v125);
+v183.Size = UDim2.new(866.9 - (39 + 827), 0 - 0, 0 - 0, (119 - 89) * v33);
+v183.Position = UDim2.new(0.5 - 0, 0 + 0, 0 - 0, (60 + 315) * v33);
+v183.AnchorPoint = Vector2.new(0.5 - 0, 104 - (103 + 1));
+v183.BackgroundColor3 = Color3.fromRGB(20, 574 - (475 + 79), 43 - 23);
+v183.BackgroundTransparency = 0.3 - 0;
+v183.BorderSizePixel = 0 + 0;
+Instance.new(v7("\64\152\120\69\196\123\180\73", "\182\21\209\59\42"), v183).CornerRadius = UDim.new(0 + 0, (1511 - (1395 + 108)) * v33);
+local v191 = Instance.new(v7("\130\126\246\9\51\177\188\82", "\222\215\55\165\125\65"), v183);
+v191.Color = Color3.fromRGB(255, 255, 255);
+v191.Thickness = (2.5 - 1) * v33;
+v191.Transparency = 0.5;
+v74 = Instance.new(v7("\10\195\199\23\247", "\42\76\177\166\122\146\161\141"), v183);
+v74.Size = UDim2.new(1204 - (7 + 1197), 0, 1, 0 + 0);
+v74.BackgroundColor3 = Color3.fromRGB(35 + 65, 519 - (27 + 292), 293 - 193);
+v74.BorderSizePixel = 0 - 0;
+Instance.new(v7("\144\163\38\193\107\120\160\152", "\22\197\234\101\174\25"), v74).CornerRadius = UDim.new(0, 8 * v33);
+v75 = Instance.new(v7("\25\49\189\200\90\174\213\131\33", "\230\77\84\197\188\22\207\183"), v183);
+v75.Size = UDim2.new(4 - 3, 0 - 0, 1 - 0, 139 - (43 + 96));
+v75.BackgroundTransparency = 1;
+v75.Text = v7("\203\49\231\216\181", "\85\153\116\166\156\236\193\144");
+v75.TextColor3 = Color3.new(4 - 3, 1, 1 - 0);
+v75.Font = Enum.Font.GothamBold;
+v75.TextSize = (10 + 2) * v33;
+v75.ZIndex = 1 + 1;
+v76 = Instance.new(v7("\144\229\85\167\200\1\166\229\65", "\96\196\128\45\211\132"), v125);
+v76.Size = UDim2.new(0.9, 0 - 0, 0 + 0, (37 - 17) * v33);
+v76.Position = UDim2.new(0.5 + 0, 0 + 0, 0, 415 * v33);
+v76.AnchorPoint = Vector2.new(0.5, 1751 - (1414 + 337));
+v76.BackgroundTransparency = 1941 - (1642 + 298);
+v76.Text = "";
+v76.TextColor3 = Color3.fromRGB(521 - 321, 575 - 375, 255);
+v76.Font = Enum.Font.GothamBold;
+v76.TextSize = (32 - 21) * v33;
+local v214 = v120(v125, v7("\20\169\77\126\252\140\145\252\117\185\94\115\247\159\155\234\1", "\184\85\237\27\63\178\207\212"), UDim2.new(0.5 + 0, 0 + 0, 972 - (357 + 615), 445 * v33), UDim2.new(0 + 0, (711 - 421) * v33, 0, 45 * v33));
+v214.AnchorPoint = Vector2.new(0.5 + 0, 0);
+v214.BackgroundColor3 = Color3.fromRGB(85, 182 - 97, 255);
+v214.MouseButton1Click:Connect(function()
+	v56 = not v56;
+	if v80 then
+		v80.Visible = v56;
+	end
+end);
+v80 = Instance.new(v7("\46\75\8\82\13", "\63\104\57\105"), v122);
+v80.Name = v7("\42\131\178\69\5\132\161\64\63\151\130\86\10\138\161", "\36\107\231\196");
+v80.Size = UDim2.fromOffset((224 + 56) * v33, 450 * v33);
+v80.Position = v121(UDim2.new(1, -300, 0 + 0, 13 + 7), UDim2.new(1301 - (384 + 917), 707 - (128 + 569), 0, 1553 - (1407 + 136)));
+v80.BackgroundColor3 = Color3.fromRGB(1917 - (687 + 1200), 1740 - (556 + 1154), 123 - 88);
+v80.BorderSizePixel = 0;
+v80.Visible = false;
+v80.Active = true;
+Instance.new(v7("\104\156\129\136\79\187\167\149", "\231\61\213\194"), v80).CornerRadius = UDim.new(95 - (9 + 86), (429 - (275 + 146)) * v33);
+local v225 = Instance.new(v7("\60\132\14\103\27\162\54\118", "\19\105\205\93"), v80);
+v225.Color = Color3.fromRGB(14 + 71, 149 - (29 + 35), 1130 - 875);
+v225.Thickness = (8 - 5) * v33;
+v225.Transparency = 0.3;
+local v229 = Instance.new(v7("\143\26\223\140\58", "\95\201\104\190\225"), v80);
+v229.Name = v7("\155\194\213\194\170\233\192\220", "\174\207\171\161");
+v229.Size = UDim2.new(1, 0, 0, (154 - 119) * v33);
+v229.BackgroundColor3 = Color3.fromRGB(30 + 15, 1057 - (53 + 959), 458 - (312 + 96));
+v229.BorderSizePixel = 0 - 0;
+Instance.new(v7("\216\215\46\252\234\217\232\236", "\183\141\158\109\147\152"), v229).CornerRadius = UDim.new(285 - (147 + 138), 8 * v33);
+local v235 = Instance.new(v7("\24\12\254\24\0\8\228\9\32", "\108\76\105\134"), v229);
+v235.Size = UDim2.new(1, -(909 - (813 + 86)), 1 + 0, 0 - 0);
+v235.Position = UDim2.new(492 - (18 + 474), 4 + 6, 0, 0 - 0);
+v235.BackgroundTransparency = 1087 - (860 + 226);
+v235.Text = v7("\202\225\135\192\224\200\224\149\161\250\206\233\148\209\225\217\241", "\174\139\165\209\129");
+v235.TextColor3 = Color3.fromRGB(255, 558 - (121 + 182), 255);
+v235.TextSize = 16 * v33;
+v235.Font = Enum.Font.GothamBold;
+v235.TextXAlignment = Enum.TextXAlignment.Left;
+v119(v80, v229);
+local v245 = Instance.new(v7("\133\161\227\204\195", "\24\195\211\130\161\166\99\16"), v80);
+v245.Size = UDim2.new(1 + 0, -(1260 - (988 + 252)) * v33, 0 + 0, (16 + 34) * v33);
+v245.Position = UDim2.new(1970 - (49 + 1921), (900 - (223 + 667)) * v33, 0, (97 - (51 + 1)) * v33);
+v245.BackgroundColor3 = Color3.fromRGB(43 - 18, 25, 64 - 34);
+v245.BorderSizePixel = 0;
+Instance.new(v7("\115\42\202\35\65\24\67\17", "\118\38\99\137\76\51"), v245).CornerRadius = UDim.new(0, (1131 - (146 + 979)) * v33);
+local v251 = Instance.new(v7("\201\35\29\6\37\33\255\35\9", "\64\157\70\101\114\105"), v245);
+v251.Size = UDim2.new(1, -10, 0 + 0, (623 - (311 + 294)) * v33);
+v251.Position = UDim2.new(0 - 0, 5, 0 + 0, 3);
+v251.BackgroundTransparency = 1;
+v251.Text = v7("\99\189\181\241\21\78\188\231\215\17\82\175\162\247\74", "\112\32\200\199\131");
+v251.TextColor3 = Color3.fromRGB(150, 1593 - (496 + 947), 1513 - (1233 + 125));
+v251.TextSize = 11 * v33;
+v251.Font = Enum.Font.Gotham;
+v251.TextXAlignment = Enum.TextXAlignment.Left;
+v81 = Instance.new(v7("\24\85\68\172\239\170\32\41\92", "\66\76\48\60\216\163\203"), v245);
+v81.Size = UDim2.new(1 + 0, -10, 0 + 0, (5 + 19) * v33);
+v81.Position = UDim2.new(1645 - (963 + 682), 5, 0 + 0, (1527 - (504 + 1000)) * v33);
+v81.BackgroundTransparency = 1;
+v81.Text = v7("\137\133\120\253\81\199\42\189\200\55\189", "\68\218\230\25\147\63\174");
+v81.TextColor3 = Color3.fromRGB(172 + 83, 215, 85);
+v81.TextSize = (12 + 1) * v33;
+v81.Font = Enum.Font.GothamBold;
+v81.TextXAlignment = Enum.TextXAlignment.Left;
+v81.TextTruncate = Enum.TextTruncate.AtEnd;
+local v271 = Instance.new(v7("\153\47\75\88\148\184\62\71\67\184", "\214\205\74\51\44"), v80);
+v271.Size = UDim2.new(1, -20 * v33, 0 + 0, (51 - 16) * v33);
+v271.Position = UDim2.new(0, (9 + 1) * v33, 0, (62 + 43) * v33);
+v271.BackgroundColor3 = Color3.fromRGB(85, 170, 437 - (156 + 26));
+v271.BorderSizePixel = 0 + 0;
+v271.Text = v7("\206\105\206\217\71\213\126\214\188\67\213\12\214\221\69\221\105\214\188\63\192\5", "\23\154\44\130\156");
+v271.TextColor3 = Color3.fromRGB(398 - 143, 419 - (149 + 15), 1215 - (890 + 70));
+v271.TextSize = 13 * v33;
+v271.Font = Enum.Font.GothamBold;
+v271.AutoButtonColor = false;
+Instance.new(v7("\36\143\142\161\36\29\20\180", "\115\113\198\205\206\86"), v271).CornerRadius = UDim.new(117 - (39 + 78), (488 - (14 + 468)) * v33);
+v271.MouseButton1Click:Connect(function()
+	v105();
+end);
+v271.MouseEnter:Connect(function()
+	if not v73 then
+		v271.BackgroundColor3 = Color3.fromRGB(100, 190, 255);
+	end
+end);
+v271.MouseLeave:Connect(function()
+	if not v73 then
+		v271.BackgroundColor3 = Color3.fromRGB(186 - 101, 475 - 305, 132 + 123);
+	end
+end);
+v82 = Instance.new(v7("\183\84\236\85\136\91\247\84\131\113\236\91\137\82", "\58\228\55\158"), v80);
+v82.Name = v7("\132\140\196\2\53\190\33", "\85\212\233\176\78\92\205");
+v82.Size = UDim2.new(1 + 0, -(5 + 15) * v33, 1 + 0, -(42 + 118) * v33);
+v82.Position = UDim2.new(0, 10 * v33, 0 - 0, (149 + 1) * v33);
+v82.BackgroundColor3 = Color3.fromRGB(87 - 62, 25, 30);
+v82.BorderSizePixel = 0 + 0;
+v82.ScrollBarThickness = (57 - (12 + 39)) * v33;
+v82.ScrollBarImageColor3 = Color3.fromRGB(75 + 5, 247 - 167, 302 - 217);
+v82.CanvasSize = UDim2.new(0 + 0, 0 + 0, 0 - 0, 0);
+Instance.new(v7("\127\113\171\237\88\86\141\240", "\130\42\56\232"), v82).CornerRadius = UDim.new(0 + 0, (28 - 22) * v33);
+local v291 = Instance.new(v7("\223\156\8\234\83\43\198\180\61\236\85\43", "\95\138\213\68\131\32"), v82);
+v291.Padding = UDim.new(1710 - (1596 + 114), 5 * v33);
+v291.SortOrder = Enum.SortOrder.LayoutOrder;
+local function v295()
+	local v479 = 0 - 0;
+	local v480;
+	while true do
+		if (v479 == (714 - (164 + 549))) then
+			if (v57 and v62[v57]) then
+				local v748 = 1438 - (1059 + 379);
+				local v749;
+				while true do
+					if (v748 == (0 - 0)) then
+						v749 = v62[v57];
+						v81.Text = v749.name .. v7("\108\52\164", "\56\76\25\132") .. v93(v749.value);
+						v748 = 1 + 0;
+					end
+					if (v748 == (1 + 0)) then
+						v81.TextColor3 = Color3.fromRGB(477 - (145 + 247), 210 + 45, 59 + 68);
+						return;
+					end
+				end
+			end
+			v81.Text = v7("\112\206\235\22\202\74\210\235\0\192\75\207\175", "\175\62\161\203\70");
+			v479 = 5 - 3;
+		end
+		if (v479 == 0) then
+			v480 = v58;
+			if (v480 and v62[v480]) then
+				local v750 = 0;
+				local v751;
+				while true do
+					if (v750 == (0 + 0)) then
+						v751 = v62[v480];
+						v81.Text = v751.name .. v7("\106\101\225", "\22\74\72\193\35") .. v93(v751.value);
+						v750 = 1 + 0;
+					end
+					if (v750 == (1 - 0)) then
+						v81.TextColor3 = Color3.fromRGB(890 - (254 + 466), 690 - (544 + 16), 255);
+						return;
+					end
+				end
+			end
+			v479 = 2 - 1;
+		end
+		if (v479 == (630 - (294 + 334))) then
+			v81.TextColor3 = Color3.fromRGB(403 - (236 + 17), 65 + 85, 155);
+			break;
+		end
+	end
+end
+local function v296(v481)
+	for v529, v530 in ipairs(v82:GetChildren()) do
+		if v530:IsA(v7("\8\216\219\7\23\41\201\215\28\59", "\85\92\189\163\115")) then
+			v530:Destroy();
+		end
+	end
+	table.sort(v481, function(v531, v532)
+		return v531.value > v532.value;
+	end);
+	for v533, v534 in ipairs(v481) do
+		local v535 = Instance.new(v7("\29\169\40\44\11\185\36\44\38\162", "\88\73\204\80"));
+		v535.Name = v7("\30\134\4\99\39\206\60\154\47", "\186\78\227\112\38\73") .. v533;
+		v535.Size = UDim2.new(1 + 0, -10 * v33, 0 - 0, (165 - 130) * v33);
+		v535.BackgroundColor3 = (((v533 % (2 + 0)) == (0 + 0)) and Color3.fromRGB(35, 35, 834 - (413 + 381))) or Color3.fromRGB(30, 30, 2 + 33);
+		v535.BorderSizePixel = 0 - 0;
+		v535.LayoutOrder = v533;
+		v535.AutoButtonColor = false;
+		v535.Text = "";
+		v535.Parent = v82;
+		local v544 = (v58 == v534.part) or (not v58 and (v57 == v534.part));
+		if v544 then
+			v535.BackgroundColor3 = Color3.fromRGB(155 - 95, 2020 - (582 + 1388), 136 - 56);
+		end
+		Instance.new(v7("\201\126\222\90\65\116\249\69", "\26\156\55\157\53\51"), v535).CornerRadius = UDim.new(0 + 0, 4 * v33);
+		local v546 = Instance.new(v7("\184\221\14\205\148\81\142\221\26", "\48\236\184\118\185\216"), v535);
+		v546.Size = UDim2.new(0, (389 - (326 + 38)) * v33, 2 - 1, 0 - 0);
+		v546.Position = UDim2.new(620 - (47 + 573), 2 + 3, 0 - 0, 0 - 0);
+		v546.BackgroundTransparency = 1665 - (1269 + 395);
+		v546.Text = "#" .. v533;
+		v546.TextColor3 = Color3.fromRGB(642 - (76 + 416), 150, 598 - (319 + 124));
+		v546.TextSize = 12 * v33;
+		v546.Font = Enum.Font.GothamBold;
+		v546.TextXAlignment = Enum.TextXAlignment.Left;
+		local v557 = Instance.new(v7("\209\184\79\36\227\53\231\184\91", "\84\133\221\55\80\175"), v535);
+		v557.Size = UDim2.new(0.5 - 0, -35 * v33, 1, 1007 - (564 + 443));
+		v557.Position = UDim2.new(0 - 0, (488 - (337 + 121)) * v33, 0, 0 - 0);
+		v557.BackgroundTransparency = 1;
+		v557.Text = v534.displayName;
+		v557.TextColor3 = Color3.fromRGB(849 - 594, 2166 - (1261 + 650), 255);
+		v557.TextSize = 11 * v33;
+		v557.Font = Enum.Font.Gotham;
+		v557.TextXAlignment = Enum.TextXAlignment.Left;
+		v557.TextTruncate = Enum.TextTruncate.AtEnd;
+		local v570 = Instance.new(v7("\137\226\60\178\235\93\191\226\40", "\60\221\135\68\198\167"), v535);
+		v570.Size = UDim2.new(0.5 + 0, -5, 1 - 0, 1817 - (772 + 1045));
+		v570.Position = UDim2.new(0.5, 0 + 0, 144 - (102 + 42), 1844 - (1524 + 320));
+		v570.BackgroundTransparency = 1271 - (1049 + 221);
+		v570.Text = v93(v534.value);
+		v570.TextColor3 = ((v533 == (157 - (18 + 138))) and Color3.fromRGB(208 - 123, 255, 127)) or Color3.fromRGB(1357 - (67 + 1035), 563 - (136 + 212), 361 - 276);
+		v570.TextSize = 11 * v33;
+		v570.Font = Enum.Font.GothamBold;
+		v570.TextXAlignment = Enum.TextXAlignment.Right;
+		v535.MouseButton1Click:Connect(function()
+			local v661 = 0;
+			while true do
+				if (v661 == (1 + 0)) then
+					v296(v481);
+					break;
+				end
+				if (v661 == (0 + 0)) then
+					v58 = v534.part;
+					v295();
+					v661 = 1605 - (240 + 1364);
+				end
+			end
+		end);
+		v535.MouseEnter:Connect(function()
+			if not v544 then
+				v535.BackgroundColor3 = Color3.fromRGB(1127 - (1050 + 32), 45, 50);
+			end
+		end);
+		v535.MouseLeave:Connect(function()
+			if not v544 then
+				v535.BackgroundColor3 = (((v533 % (7 - 5)) == 0) and Color3.fromRGB(21 + 14, 35, 1095 - (331 + 724))) or Color3.fromRGB(3 + 27, 674 - (269 + 375), 35);
+			end
+		end);
+	end
+	local v482 = v291.AbsoluteContentSize;
+	v82.CanvasSize = UDim2.new(725 - (267 + 458), 0 + 0, 0 - 0, v482.Y + 10);
+end
+local function v297()
+	local v484 = 818 - (667 + 151);
+	local v485;
+	local v486;
+	while true do
+		if ((1499 - (1410 + 87)) == v484) then
+			for v716, v717 in ipairs(v485) do
+				local v718 = 1897 - (1504 + 393);
+				local v719;
+				while true do
+					if (v718 == (0 - 0)) then
+						v719 = 0;
+						while true do
+							if ((0 - 0) == v719) then
+								v62[v717.part] = {[v7("\224\188\245\134", "\185\142\221\152\227\34")]=v717.displayName,[v7("\78\196\91\239\70", "\151\56\165\55\154\35\83")]=v717.value,[v7("\176\66\23\250", "\142\192\35\101")]=v717.part};
+								if (v717.value > v486) then
+									local v886 = 796 - (461 + 335);
+									local v887;
+									while true do
+										if ((0 + 0) == v886) then
+											v887 = 1761 - (1730 + 31);
+											while true do
+												if (v887 == (1667 - (728 + 939))) then
+													v486 = v717.value;
+													v57 = v717.part;
+													break;
+												end
+											end
+											break;
+										end
+									end
+								end
+								break;
+							end
+						end
+						break;
+					end
+				end
+			end
+			v296(v485);
+			v484 = 3;
+		end
+		if (v484 == 1) then
+			v486 = -math.huge;
+			v57 = nil;
+			v484 = 6 - 4;
+		end
+		if (v484 == 0) then
+			v62 = {};
+			v485 = v102();
+			v484 = 1;
+		end
+		if (v484 == (5 - 2)) then
+			v295();
+			break;
+		end
+	end
+end
+task.spawn(function()
+	local v487 = 0 - 0;
+	while true do
+		if (0 == v487) then
+			v95();
+			v97();
+			v487 = 1;
+		end
+		if (v487 == (1069 - (138 + 930))) then
+			while true do
+				local v720 = 0 + 0;
+				while true do
+					if (v720 == (0 + 0)) then
+						task.wait(26 + 4);
+						if v60 then
+							v97();
+						else
+							v95();
+						end
+						break;
+					end
+				end
+			end
+			break;
+		end
+	end
+end);
+task.spawn(function()
+	while true do
+		local v580 = 0 - 0;
+		while true do
+			if (v580 == 0) then
+				if v56 then
+					v297();
+				end
+				task.wait(1.5);
+				break;
+			end
+		end
+	end
+end);
+v14.InputBegan:Connect(function(v488, v489)
+	if v489 then
+		return;
+	end
+	local v490 = v14:GetFocusedTextBox();
+	if v490 then
+		return;
+	end
+	if ((v488.KeyCode == Enum.KeyCode.Z) and v56) then
+		v105();
+	end
+end);
+v83 = Instance.new(v7("\240\103\40\174\226", "\118\182\21\73\195\135\236\204"), v122);
+v83.Name = v7("\42\46\27\73\10\31\242\28\26\8\65\9\8", "\157\104\92\122\32\100\109");
+v83.Size = UDim2.fromOffset(300 * v33, (2266 - (459 + 1307)) * v33);
+v83.Position = v121(UDim2.new(0.5, -(2020 - (474 + 1396)), 0.5, -(436 - 186)), UDim2.new(0.5 + 0, -(1 + 149) * v33, 0.5 - 0, -250 * v33));
+v83.BackgroundColor3 = Color3.fromRGB(30, 30, 5 + 30);
+v83.BorderSizePixel = 0;
+v83.Visible = false;
+v83.Active = true;
+Instance.new(v7("\150\143\236\197\47\41\136\185", "\203\195\198\175\170\93\71\237"), v83).CornerRadius = UDim.new(0, (26 - 18) * v33);
+local v306 = Instance.new(v7("\27\98\13\193\67\30\247\43", "\156\78\43\94\181\49\113"), v83);
+v306.Color = Color3.fromRGB(174 - 134, 711 - (562 + 29), 40);
+v306.Thickness = (3 + 0) * v33;
+v306.Transparency = 1419.3 - (374 + 1045);
+local v310 = Instance.new(v7("\84\250\197\174\14", "\25\18\136\164\195\107\35"), v83);
+v310.Name = v7("\220\36\189\67\119\158\192\170", "\216\136\77\201\47\18\220\161");
+v310.Size = UDim2.new(1 + 0, 0 - 0, 638 - (448 + 190), (12 + 23) * v33);
+v310.BackgroundColor3 = Color3.fromRGB(21 + 24, 45, 33 + 17);
+v310.BorderSizePixel = 0 - 0;
+Instance.new(v7("\24\197\8\213\26\210\135\63", "\226\77\140\75\186\104\188"), v310).CornerRadius = UDim.new(0 - 0, 8 * v33);
+local v316 = Instance.new(v7("\141\203\200\43\99\184\204\213\51", "\47\217\174\176\95"), v310);
+v316.Size = UDim2.new(1495 - (1307 + 187), -(39 - 29), 2 - 1, 0);
+v316.Position = UDim2.new(0 - 0, 693 - (232 + 451), 0, 0 + 0);
+v316.BackgroundTransparency = 1 + 0;
+v316.Text = v7("\139\248\90\39\145\96\56\4\138\252\95\44\128\123\76\102\140\242\54\49\134\113\89\10", "\70\216\189\22\98\210\52\24");
+v316.TextColor3 = Color3.fromRGB(255, 819 - (510 + 54), 513 - 258);
+v316.TextSize = (50 - (13 + 23)) * v33;
+v316.Font = Enum.Font.GothamBold;
+v316.TextXAlignment = Enum.TextXAlignment.Left;
+v119(v83, v310);
+local v325 = Instance.new(v7("\252\205\162\138\214", "\179\186\191\195\231"), v83);
+v325.Size = UDim2.new(1 - 0, -(28 - 8) * v33, 0, (90 - 40) * v33);
+v325.Position = UDim2.new(1088 - (830 + 258), 10 * v33, 0 - 0, (29 + 16) * v33);
+v325.BackgroundColor3 = Color3.fromRGB(22 + 3, 25, 1471 - (860 + 581));
+v325.BorderSizePixel = 0 - 0;
+Instance.new(v7("\204\22\59\235\235\49\29\246", "\132\153\95\120"), v325).CornerRadius = UDim.new(0, (5 + 1) * v33);
+local v331 = Instance.new(v7("\133\183\22\57\219\219\162\180\190", "\192\209\210\110\77\151\186"), v325);
+v331.Size = UDim2.new(1, -(251 - (237 + 4)), 0 - 0, (45 - 27) * v33);
+v331.Position = UDim2.new(0 - 0, 5 + 0, 0, 2 + 1);
+v331.BackgroundTransparency = 1;
+v331.Text = v7("\211\6\46\236\252\208\229\7\98\221\254\214\231\6\54\179", "\164\128\99\66\137\159");
+v331.TextColor3 = Color3.fromRGB(566 - 416, 150, 155);
+v331.TextSize = (5 + 6) * v33;
+v331.Font = Enum.Font.Gotham;
+v331.TextXAlignment = Enum.TextXAlignment.Left;
+v84 = Instance.new(v7("\52\140\241\170\44\136\235\187\12", "\222\96\233\137"), v325);
+v84.Size = UDim2.new(1 + 0, -(1436 - (85 + 1341)), 0 - 0, (67 - 43) * v33);
+v84.Position = UDim2.new(0, 5, 372 - (45 + 327), (43 - 20) * v33);
+v84.BackgroundTransparency = 1;
+v84.Text = v7("\151\188\169\26\200\187\209\172\167\168\82\166\246\241\171\182\180\11\193", "\144\217\211\199\127\232\147");
+v84.TextColor3 = Color3.fromRGB(757 - (444 + 58), 94 + 121, 15 + 70);
+v84.TextSize = 12 * v33;
+v84.Font = Enum.Font.GothamBold;
+v84.TextXAlignment = Enum.TextXAlignment.Left;
+v84.TextTruncate = Enum.TextTruncate.AtEnd;
+local v349 = Instance.new(v7("\204\42\38\60\247\80\22\80\247\33", "\36\152\79\94\72\181\37\98"), v83);
+v349.Size = UDim2.new(1, -20 * v33, 0 + 0, 40 * v33);
+v349.Position = UDim2.new(0 - 0, (1742 - (64 + 1668)) * v33, 1973 - (1227 + 746), 105 * v33);
+v349.BackgroundColor3 = Color3.fromRGB(61 - 41, 37 - 17, 514 - (415 + 79));
+v349.BackgroundTransparency = 0.4 + 0;
+v349.Text = v7("\246\237\115\16\151\235\115\26\246\244\29\127\248\254\97", "\95\183\184\39");
+v349.TextColor3 = Color3.fromRGB(746 - (142 + 349), 110 + 145, 350 - 95);
+v349.TextSize = 13 * v33;
+v349.Font = Enum.Font.GothamBold;
+v349.AutoButtonColor = false;
+v349.BorderSizePixel = 0;
+Instance.new(v7("\128\22\196\41\70\142\7\167", "\98\213\95\135\70\52\224"), v349).CornerRadius = UDim.new(0, (3 + 3) * v33);
+local v361 = Instance.new(v7("\203\138\250\99\70\241\168\204", "\52\158\195\169\23"), v349);
+v361.Color = Color3.fromRGB(180 + 75, 694 - 439, 2119 - (1710 + 154));
+v361.Thickness = (320 - (200 + 118)) * v33;
+v361.Transparency = 0.3 + 0;
+v349.MouseButton1Click:Connect(function()
+	local v491 = 0;
+	while true do
+		if (v491 == (0 - 0)) then
+			v43.AutoSteal = not v43.AutoSteal;
+			if v43.AutoSteal then
+				v349.Text = v7("\91\137\6\91\198\6\79\174\91\144\104\52\169\27", "\235\26\220\82\20\230\85\27");
+				v349.BackgroundColor3 = Color3.fromRGB(40, 120, 59 - 19);
+				startAutoSteal();
+			else
+				local v755 = 0;
+				while true do
+					if (v755 == (1 + 0)) then
+						stopAutoSteal();
+						break;
+					end
+					if (v755 == 0) then
+						v349.Text = v7("\169\148\221\237\52\187\149\204\227\88\210\225\198\228\82", "\20\232\193\137\162");
+						v349.BackgroundColor3 = Color3.fromRGB(20 + 0, 11 + 9, 4 + 16);
+						v755 = 2 - 1;
+					end
+				end
+			end
+			break;
+		end
+	end
+end);
+v85 = Instance.new(v7("\17\220\215\169\235\128\30\127\37\249\215\167\234\137", "\17\66\191\165\198\135\236\119"), v83);
+v85.Name = v7("\45\189\175\26\241\250\227\197\35\166\189\7", "\177\111\207\206\115\159\136\140");
+v85.Size = UDim2.new(1251 - (363 + 887), -(34 - 14) * v33, 4 - 3, -(26 + 139) * v33);
+v85.Position = UDim2.new(0 - 0, (7 + 3) * v33, 1664 - (674 + 990), 155 * v33);
+v85.BackgroundColor3 = Color3.fromRGB(25, 8 + 17, 13 + 17);
+v85.BorderSizePixel = 0;
+v85.ScrollBarThickness = (8 - 2) * v33;
+v85.ScrollBarImageColor3 = Color3.fromRGB(80, 80, 1140 - (507 + 548));
+v85.CanvasSize = UDim2.new(837 - (289 + 548), 0, 0, 1818 - (821 + 997));
+Instance.new(v7("\48\160\51\27\198\65\90\23", "\63\101\233\112\116\180\47"), v85).CornerRadius = UDim.new(255 - (195 + 60), (2 + 4) * v33);
+local v374 = Instance.new(v7("\246\18\193\27\235\34\239\58\244\29\237\34", "\86\163\91\141\114\152"), v85);
+v374.Padding = UDim.new(1501 - (251 + 1250), 5 * v33);
+v374.SortOrder = Enum.SortOrder.LayoutOrder;
+local function v377()
+	if (v50 and v51[v50]) then
+		local v662 = 0 - 0;
+		local v663;
+		while true do
+			if (v662 == (1 + 0)) then
+				v84.TextColor3 = Color3.fromRGB(170, 1162 - (809 + 223), 255);
+				break;
+			end
+			if (v662 == 0) then
+				local v757 = 0 - 0;
+				while true do
+					if (v757 == 0) then
+						v663 = v51[v50];
+						v84.Text = v663.displayName .. v7("\19\70\52", "\90\51\107\20\19") .. v93(v663.value);
+						v757 = 2 - 1;
+					end
+					if (v757 == 1) then
+						v662 = 3 - 2;
+						break;
+					end
+				end
+			end
+		end
+	else
+		local v664 = 0 + 0;
+		while true do
+			if (v664 == (0 + 0)) then
+				v84.Text = v7("\163\255\139\234\125\197\209\144\251\50\192\222\128\238\47\136\227\145\166", "\93\237\144\229\143");
+				v84.TextColor3 = Color3.fromRGB(255, 215, 702 - (14 + 603));
+				break;
+			end
+		end
+	end
+end
+local function v378(v492)
+	for v581, v582 in ipairs(v85:GetChildren()) do
+		if v582:IsA(v7("\33\243\232\13\41\83\1\226\255\23", "\38\117\150\144\121\107")) then
+			v582:Destroy();
+		end
+	end
+	table.sort(v492, function(v583, v584)
+		return v583.value > v584.value;
+	end);
+	for v585, v586 in ipairs(v492) do
+		local v587 = Instance.new(v7("\25\190\246\46\15\174\250\46\34\181", "\90\77\219\142"));
+		v587.Name = v7("\196\22\32\48\66\21\117\242\33\47\45\94\30\69", "\26\134\100\65\89\44\103") .. v585;
+		v587.Size = UDim2.new(1, -(139 - (118 + 11)) * v33, 0, (6 + 29) * v33);
+		v587.BackgroundColor3 = (((v585 % (2 + 0)) == 0) and Color3.fromRGB(101 - 66, 35, 989 - (551 + 398))) or Color3.fromRGB(30, 19 + 11, 13 + 22);
+		v587.BorderSizePixel = 0 + 0;
+		v587.LayoutOrder = v585;
+		v587.AutoButtonColor = false;
+		v587.Text = "";
+		v587.Parent = v85;
+		local v596 = v50 == v586.part;
+		if v596 then
+			v587.BackgroundColor3 = Color3.fromRGB(223 - 163, 50, 184 - 104);
+		end
+		Instance.new(v7("\196\202\19\44\182\255\230\34", "\196\145\131\80\67"), v587).CornerRadius = UDim.new(0 + 0, (15 - 11) * v33);
+		local v598 = Instance.new(v7("\42\181\30\28\52\233\28\181\10", "\136\126\208\102\104\120"), v587);
+		v598.Size = UDim2.new(0 + 0, (114 - (40 + 49)) * v33, 3 - 2, 490 - (99 + 391));
+		v598.Position = UDim2.new(0 + 0, 21 - 16, 0, 0);
+		v598.BackgroundTransparency = 2 - 1;
+		v598.Text = "#" .. v585;
+		v598.TextColor3 = Color3.fromRGB(150, 147 + 3, 407 - 252);
+		v598.TextSize = 12 * v33;
+		v598.Font = Enum.Font.GothamBold;
+		v598.TextXAlignment = Enum.TextXAlignment.Left;
+		local v609 = Instance.new(v7("\76\143\214\87\131\83\63\84\116", "\49\24\234\174\35\207\50\93"), v587);
+		v609.Size = UDim2.new(0.5, -(1639 - (1032 + 572)) * v33, 418 - (203 + 214), 1817 - (568 + 1249));
+		v609.Position = UDim2.new(0, (24 + 6) * v33, 0, 0);
+		v609.BackgroundTransparency = 2 - 1;
+		v609.Text = v586.displayName;
+		v609.TextColor3 = Color3.fromRGB(984 - 729, 255, 255);
+		v609.TextSize = (1317 - (913 + 393)) * v33;
+		v609.Font = Enum.Font.Gotham;
+		v609.TextXAlignment = Enum.TextXAlignment.Left;
+		v609.TextTruncate = Enum.TextTruncate.AtEnd;
+		local v622 = Instance.new(v7("\56\247\229\156\93\13\240\248\132", "\17\108\146\157\232"), v587);
+		v622.Size = UDim2.new(0.5, -(14 - 9), 1 - 0, 410 - (269 + 141));
+		v622.Position = UDim2.new(0.5 - 0, 1981 - (362 + 1619), 0, 1625 - (950 + 675));
+		v622.BackgroundTransparency = 1 + 0;
+		v622.Text = v93(v586.value);
+		v622.TextColor3 = ((v585 == (1180 - (216 + 963))) and Color3.fromRGB(1372 - (485 + 802), 814 - (432 + 127), 127)) or Color3.fromRGB(1328 - (1065 + 8), 215, 48 + 37);
+		v622.TextSize = (1612 - (635 + 966)) * v33;
+		v622.Font = Enum.Font.GothamBold;
+		v622.TextXAlignment = Enum.TextXAlignment.Right;
+		v587.MouseButton1Click:Connect(function()
+			local v665 = 0 + 0;
+			while true do
+				if (v665 == 1) then
+					v378(v492);
+					break;
+				end
+				if (v665 == (42 - (5 + 37))) then
+					if (v50 == v586.part) then
+						v50 = nil;
+					else
+						v50 = v586.part;
+					end
+					v377();
+					v665 = 2 - 1;
+				end
+			end
+		end);
+		v587.MouseEnter:Connect(function()
+			if not v596 then
+				v587.BackgroundColor3 = Color3.fromRGB(45, 19 + 26, 79 - 29);
+			end
+		end);
+		v587.MouseLeave:Connect(function()
+			if not v596 then
+				v587.BackgroundColor3 = (((v585 % (1 + 1)) == 0) and Color3.fromRGB(35, 72 - 37, 151 - 111)) or Color3.fromRGB(30, 56 - 26, 83 - 48);
+			end
+		end);
+	end
+	local v493 = v374.AbsoluteContentSize;
+	v85.CanvasSize = UDim2.new(0 + 0, 0, 529 - (318 + 211), v493.Y + 10);
+end
+local function v379()
+	v51 = {};
+	local v495 = v115();
+	for v632, v633 in ipairs(v495) do
+		v51[v633.part] = v633;
+	end
+	v378(v495);
+	v377();
+end
+task.spawn(function()
+	while true do
+		local v635 = 0 - 0;
+		while true do
+			if (v635 == (1587 - (963 + 624))) then
+				if (v83 and v83.Visible) then
+					v379();
+				end
+				task.wait(1 + 1);
+				break;
+			end
+		end
+	end
+end);
+v106();
+v10.CharacterAdded:Connect(function(v496)
+	local v497 = 0;
+	local v498;
+	while true do
+		if (v497 == (846 - (518 + 328))) then
+			v498 = 0;
+			while true do
+				if (0 == v498) then
+					task.wait(0.5 - 0);
+					if v54 then
+						v106();
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end);
+if v32 then
+	print(v7("\102\204\22\228\35\173\11\206\27\233\42\242\11\228\33\196\111\187\72\194\24\232\43\232\95\204\84\186\127\237", "\200\43\163\116\141\79"));
+else
+	print(v7("\143\21\125\142\191\240\230\229\118\19\140\162\249\226\179\118\26\182\153\180\240\182\44\56", "\131\223\86\93\227\208\148"));
+end
+print(v7("\208\70\164\191\13\161\163\73\185\183\25\176\231\5\165\163\30\182\230\86\165\176\8\185\239\92\247", "\213\131\37\214\214\125"));
+print(v7("\7\47\51\190\239\37\46\33\255\213\35\39\32\175\238\52\63\101\185\228\39\63\48\173\228\102\42\33\187\228\34\106", "\129\70\75\69\223"));
+print(v7("\103\197\231\224\49\221\71\204\247\230\112\227\6\205\246\232\104\250\84\206\179\232\120\235\67\207\178", "\143\38\171\147\137\28"));
