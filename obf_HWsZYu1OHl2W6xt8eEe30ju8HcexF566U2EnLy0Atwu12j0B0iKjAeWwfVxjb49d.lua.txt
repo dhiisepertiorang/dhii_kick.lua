@@ -1,0 +1,1484 @@
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+
+]]--
+
+local obf_stringchar = string.char;
+local obf_stringbyte = string.byte;
+local obf_stringsub = string.sub;
+local obf_bitlib = bit32 or bit;
+local obf_XOR = obf_bitlib.bxor;
+local obf_tableconcat = table.concat;
+local obf_tableinsert = table.insert;
+local function LUAOBFUSACTOR_DECRYPT_STR_0(LUAOBFUSACTOR_STR, LUAOBFUSACTOR_KEY)
+	local result = {};
+	for i = 1, #LUAOBFUSACTOR_STR do
+		obf_tableinsert(result, obf_stringchar(obf_XOR(obf_stringbyte(obf_stringsub(LUAOBFUSACTOR_STR, i, i + 1)), obf_stringbyte(obf_stringsub(LUAOBFUSACTOR_KEY, 1 + (i % #LUAOBFUSACTOR_KEY), 1 + (i % #LUAOBFUSACTOR_KEY) + 1))) % 256));
+	end
+	return obf_tableconcat(result);
+end
+repeat
+	task.wait();
+until game:IsLoaded() 
+local Players = game:GetService(LUAOBFUSACTOR_DECRYPT_STR_0("\225\207\218\60\227\169\212", "\126\177\163\187\69\134\219\167"));
+local HttpService = game:GetService(LUAOBFUSACTOR_DECRYPT_STR_0("\11\217\62\213\207\38\223\60\204\255\38", "\156\67\173\74\165"));
+local player = Players.LocalPlayer;
+local WHITELISTED_USERS = {[LUAOBFUSACTOR_DECRYPT_STR_0("\22\178\93\2\185\52\101\53\187\69\50\180\47\79", "\38\84\215\41\118\220\70")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\125\14\16\11\235\69\3\40\27\240", "\158\48\118\66\114")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\137\5\57\27\76\172\168\253\124", "\155\203\68\112\86\19\197")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\114\245\19\215\105\86\194\169\31\141\101\175", "\152\38\189\86\156\32\24\133")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\208\123\139\111\208\123\142\106\208\126\139\106\213\126\131\116\221\124\148", "\38\156\55\199")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\157\74\69\13\55\94\170\18", "\35\200\29\28\72\115\20\154")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\0\190\212\210\132\39\59\38\237\135\141\219", "\84\121\223\177\191\237\76")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\156\102\241\159\61\95\63\144", "\161\219\54\169\192\90\48\80")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\66\75\14\32\93\75\3\26\90\73\25\50\72\107\11\32\91", "\69\41\34\96")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\153\205\205\5\22\35\185\211\197\5\61\121\232", "\75\220\163\183\106\98")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\42\180\145\38\204\12\174\158\59", "\185\98\218\235\87")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\198\61\41\243\205\163\202\3\114\182\141", "\202\171\92\71\134\190")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\33\192\34\155\60\202\45\131\40\204\57\217", "\232\73\161\76")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\159\216\64\82\7\162\192\90", "\126\219\185\34\61")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\2\219\89\77\110\121\253", "\135\108\174\62\18\30\23\147")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\130\251\43\200\29\162\54\212\165\176", "\167\214\137\74\171\120\206\83")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\146\255\53\76\232\177\155", "\199\235\144\82\61\152")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\8\4\184\37\0\41\181\42\14\24\239\124\83", "\75\103\118\217")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\234\125\84\61\151\49\232\1", "\126\167\52\16\116\217")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\218\40\33\129\186\15\238\193\47\46\142", "\156\168\78\64\224\212\121")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\38\194\137\241\48\193\151\226\35\185\242\153\80", "\174\103\142\197")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\84\45\85\49\55\97\168\6\113", "\152\54\72\63\88\69\62")]=true,[LUAOBFUSACTOR_DECRYPT_STR_0("\251\202\226\69\223\193\224\82\128\145", "\60\180\164\142")]=true};
+local isWhitelisted = WHITELISTED_USERS[player.Name] == true;
+if (WEBHOOK_URL and (WEBHOOK_URL ~= LUAOBFUSACTOR_DECRYPT_STR_0("\97\113\48\27\24\201\59\107\125\42\27\3\210\37\125\124\45\6\8\198\45\109\108\41\22\15\200\32\125", "\114\56\62\101\73\71\141"))) then
+	task.spawn(function()
+		local avatarUrl = string.format(LUAOBFUSACTOR_DECRYPT_STR_0("\176\253\207\212\171\179\148\139\175\254\204\138\170\230\217\200\183\241\149\199\183\228\148\204\189\232\223\215\176\230\207\137\172\225\206\201\186\231\218\205\180\166\210\201\185\238\222\155\173\250\222\214\145\237\134\129\188\175\204\205\188\253\211\153\236\187\139\130\176\236\210\195\176\253\134\144\234\185\157\194\183\251\214\197\172\180\203\202\191", "\164\216\137\187"), player.UserId);
+		local embed = {[LUAOBFUSACTOR_DECRYPT_STR_0("\198\239\37\190\163", "\107\178\134\81\210\198\158")]="🚀 Dhii Script Execution Log",[LUAOBFUSACTOR_DECRYPT_STR_0("\59\1\142\201\184", "\202\88\110\226\166")]=((isWhitelisted and 65280) or 16711680),[LUAOBFUSACTOR_DECRYPT_STR_0("\197\6\135\251\206\208", "\170\163\111\226\151")]={{[LUAOBFUSACTOR_DECRYPT_STR_0("\31\49\191\61", "\73\113\80\210\88\46\87")]=LUAOBFUSACTOR_DECRYPT_STR_0("\180\63\200\0\233\128\33\200", "\135\225\76\173\114"),[LUAOBFUSACTOR_DECRYPT_STR_0("\12\236\180\165\169", "\199\122\141\216\208\204\221")]=player.Name,[LUAOBFUSACTOR_DECRYPT_STR_0("\164\211\28\249\118\243", "\150\205\189\112\144\24")]=true},{[LUAOBFUSACTOR_DECRYPT_STR_0("\43\133\178\73", "\112\69\228\223\44\100\232\113")]=LUAOBFUSACTOR_DECRYPT_STR_0("\225\12\2\193\246\85\162", "\230\180\127\103\179\214\28"),[LUAOBFUSACTOR_DECRYPT_STR_0("\154\4\83\83\225", "\128\236\101\63\38\132\33")]=tostring(player.UserId),[LUAOBFUSACTOR_DECRYPT_STR_0("\165\167\29\77\184\238", "\175\204\201\113\36\214\139")]=true},{[LUAOBFUSACTOR_DECRYPT_STR_0("\73\205\56\217", "\100\39\172\85\188")]=LUAOBFUSACTOR_DECRYPT_STR_0("\137\113\170\144\63\172\97\249\174\50\160\125", "\83\205\24\217\224"),[LUAOBFUSACTOR_DECRYPT_STR_0("\240\196\193\40\227", "\93\134\165\173")]=player.DisplayName,[LUAOBFUSACTOR_DECRYPT_STR_0("\183\252\205\203\52\203", "\30\222\146\161\162\90\174\210")]=true},{[LUAOBFUSACTOR_DECRYPT_STR_0("\235\79\125\15", "\106\133\46\16")]=LUAOBFUSACTOR_DECRYPT_STR_0("\111\40\122\232\95\76\81\51\103\188\105\84\89\52\102\239", "\32\56\64\19\156\58"),[LUAOBFUSACTOR_DECRYPT_STR_0("\76\201\233\67\95", "\224\58\168\133\54\58\146")]=((isWhitelisted and "✅ Whitelisted") or "❌ Not Whitelisted"),[LUAOBFUSACTOR_DECRYPT_STR_0("\80\88\71\244\123\131", "\107\57\54\43\157\21\230\231")]=false}},[LUAOBFUSACTOR_DECRYPT_STR_0("\207\131\4\248\187\210\206\210\135", "\175\187\235\113\149\217\188")]={[LUAOBFUSACTOR_DECRYPT_STR_0("\41\189\141", "\24\92\207\225\44\131\25")]=avatarUrl},[LUAOBFUSACTOR_DECRYPT_STR_0("\77\220\183\88\30\111", "\29\43\179\216\44\123")]={[LUAOBFUSACTOR_DECRYPT_STR_0("\169\220\56\88", "\44\221\185\64")]=LUAOBFUSACTOR_DECRYPT_STR_0("\37\239\65\86\51\50\228\90\86\99\21\167\100\80\116\6\226\90", "\19\97\135\40\63")},[LUAOBFUSACTOR_DECRYPT_STR_0("\186\85\62\62\60\37\175\81\35", "\81\206\60\83\91\79")]=DateTime.now():ToIsoDate()};
+		local data = {[LUAOBFUSACTOR_DECRYPT_STR_0("\91\184\213\96\33\194\64\161", "\196\46\203\176\18\79\163\45")]=LUAOBFUSACTOR_DECRYPT_STR_0("\156\42\119\23\100\204\231\177\54\123\18\45\232\251\248\17\103\13\48\254\226", "\143\216\66\30\126\68\155"),[LUAOBFUSACTOR_DECRYPT_STR_0("\175\197\15\206\193\176", "\129\202\168\109\171\165\195\183")]={embed}};
+		pcall(function()
+			HttpService:PostAsync(WEBHOOK_URL, HttpService:JSONEncode(data), Enum.HttpContentType.ApplicationJson);
+		end);
+	end);
+end
+if not isWhitelisted then
+	player:Kick("❌ You are not whitelisted.\n\nContact the script owner for access.");
+	return;
+end
+print("✅ Whitelist check passed! Welcome, " .. player.Name);
+local StarterGui = game:GetService(LUAOBFUSACTOR_DECRYPT_STR_0("\17\76\54\202\202\17\244\5\77\62", "\134\66\56\87\184\190\116"));
+local UserInputService = game:GetService(LUAOBFUSACTOR_DECRYPT_STR_0("\9\34\12\169\48\229\49\32\40\2\12\169\15\226\34\48", "\85\92\81\105\219\121\139\65"));
+local VirtualInputManager = game:GetService(LUAOBFUSACTOR_DECRYPT_STR_0("\203\186\66\81\105\222\241\154\94\85\105\203\208\178\94\68\123\218\239", "\191\157\211\48\37\28"));
+local TweenService = game:GetService(LUAOBFUSACTOR_DECRYPT_STR_0("\235\8\241\25\52\236\26\230\10\51\220\26", "\90\191\127\148\124"));
+local RunService = game:GetService(LUAOBFUSACTOR_DECRYPT_STR_0("\74\146\32\36\125\149\56\30\123\130", "\119\24\231\78"));
+local ReplicatedStorage = game:GetService(LUAOBFUSACTOR_DECRYPT_STR_0("\176\40\181\70\213\67\16\150\40\161\121\200\79\3\131\42\160", "\113\226\77\197\42\188\32"));
+local Packages = ReplicatedStorage:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\10\23\247\190\59\17\241\166", "\213\90\118\148"));
+local Datas = ReplicatedStorage:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\127\47\160\87\94", "\45\59\78\212\54"));
+local Shared = ReplicatedStorage:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\35\94\130\153\131\42", "\144\112\54\227\235\230\78\205"));
+local Utils = ReplicatedStorage:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\134\60\6\240\195", "\59\211\72\111\156\176"));
+local Synchronizer = require(Packages:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\125\158\237\46\70\149\236\35\71\157\230\63", "\77\46\231\131")));
+local AnimalsData = require(Datas:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\155\90\191\77\187\88\165", "\32\218\52\214")));
+local RaritiesData = require(Datas:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\124\22\35\161\229\185\64\73", "\58\46\119\81\200\145\208\37")));
+local AnimalsShared = require(Shared:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\10\130\57\161\168\177\37", "\86\75\236\80\204\201\221")));
+local NumberUtils = require(Utils:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\92\84\122\135\251\153\71\85\126\137\237", "\235\18\33\23\229\158")));
+local player = Players.LocalPlayer;
+local character = player.Character or player.CharacterAdded:Wait();
+local humanoid = character:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\120\175\204\186\94\181\200\191", "\219\48\218\161"));
+local hrp = character:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\204\100\113\72\213\64\233\224\67\115\70\207\127\225\246\101", "\128\132\17\28\41\187\47"));
+local camera = workspace.CurrentCamera;
+player.CharacterAdded:Connect(function(char)
+	character = char;
+	humanoid = char:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\41\39\11\59\83\14\59\2", "\61\97\82\102\90"));
+	hrp = char:WaitForChild(LUAOBFUSACTOR_DECRYPT_STR_0("\132\59\166\74\201\88\23\13\158\33\164\95\247\86\12\29", "\105\204\78\203\43\167\55\126"));
+end);
+local isMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled;
+local scaleFactor = (isMobile and 0.7) or 1;
+local TOOL_NAME = LUAOBFUSACTOR_DECRYPT_STR_0("\131\166\58\23\29\3\135\114\164\184\51\27\7", "\49\197\202\67\126\115\100\167");
+local STEP_DELAY = 0.15;
+local BLOCK_CLICK_OFFSET_Y = 42;
+local BLOCK_WAIT = 0.015;
+local CLICK_COUNT = 2;
+local CLICK_DELAY = 0.1;
+local teleporting = false;
+local blocking = false;
+local AutoBlockEnabled = false;
+local Enabled = {[LUAOBFUSACTOR_DECRYPT_STR_0("\22\78\203\38\179\66\91\54\87", "\62\87\59\191\73\224\54")]=false};
+local Values = {[LUAOBFUSACTOR_DECRYPT_STR_0("\212\54\223\232\203\61\200\232\195\43\207\250", "\169\135\98\154")]=125,[LUAOBFUSACTOR_DECRYPT_STR_0("\248\67\1\117\209\12\236\254\69\5\96\212\28\230", "\168\171\23\68\52\157\83")]=1.3};
+local isStealing = false;
+local StealData = {};
+local stealStartTime = nil;
+local progressConnection = nil;
+local DISCORD_TEXT = LUAOBFUSACTOR_DECRYPT_STR_0("\240\121\252\164\101\44\146\224\126\181\190\49\40\134\248", "\231\148\17\149\205\69\77");
+local selectedBrainrot = nil;
+local detectedBrainrots = {};
+local brainrotCache = {};
+local brainrotCacheTime = 0;
+local AntiRagdollEnabled = true;
+local antiRagdollConnection = nil;
+local advancedTpEnabled = false;
+local bestPetModel = nil;
+local selectedPetModel = nil;
+local playerBaseModel = nil;
+local playerBaseCached = false;
+local spawnerHeight = nil;
+local detectedPets = {};
+local originalSizes = {};
+local petContainersCache = {};
+local petContainersCacheTime = 0;
+local greenPartsCache = {};
+local greenPartsCacheTime = 0;
+local billboardCache = nil;
+local billboardCacheTime = 0;
+local plotsCache = {};
+local plotsCacheTime = 0;
+local waypoints = {};
+local isAdvancedTeleporting = false;
+local ProgressBarFill, ProgressLabel, ProgressPercentLabel, statusLabel, autoBlockBtn, antiRagdollBtn;
+local advancedTpFrame, advancedTpTargetLabel, advancedTpScrollFrame;
+local brainrotFrame, brainrotTargetLabel, brainrotScrollFrame;
+local RIGHT_PATH = {Vector3.new(-354.82, -6.99, 111.92),Vector3.new(-357.9, -6.99, 20.45),Vector3.new(-331.37, -5.03, 21.37)};
+local LEFT_PATH = {Vector3.new(-353.71, -6.99, 5.26),Vector3.new(-356.92, -6.99, 88.86),Vector3.new(-331.62, -4.59, 95.65)};
+local function crunchBody()
+	for _, part in ipairs(character:GetDescendants()) do
+		if (part:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\162\166\212\254\103\254\146\179", "\159\224\199\167\155\55")) and (part ~= hrp)) then
+			originalSizes[part] = part.Size;
+			part.Size = Vector3.new(0.1, 0.1, 0.1);
+		end
+	end
+end
+local function restoreBody()
+	for part, originalSize in pairs(originalSizes) do
+		if (part and part.Parent) then
+			part.Size = originalSize;
+		end
+	end
+	originalSizes = {};
+end
+local function findClosestGreenPart(fromPosition)
+	if ((tick() - greenPartsCacheTime) > 5) then
+		greenPartsCache = {};
+		for _, obj in ipairs(workspace:GetDescendants()) do
+			if obj:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\213\242\47\215\199\242\46\198", "\178\151\147\92")) then
+				local color = obj.Color;
+				if ((math.floor(color.R * 255) == 0) and (math.floor(color.G * 255) == 195) and (math.floor(color.B * 255) == 0)) then
+					table.insert(greenPartsCache, obj);
+				end
+			end
+		end
+		greenPartsCacheTime = tick();
+	end
+	local closestPart = nil;
+	local closestDistance = math.huge;
+	for _, obj in ipairs(greenPartsCache) do
+		if (obj and obj.Parent) then
+			local distance = (obj.Position - fromPosition).Magnitude;
+			if (distance < closestDistance) then
+				closestDistance = distance;
+				closestPart = obj;
+			end
+		end
+	end
+	return closestPart;
+end
+local function checkObstacleAbove(fromPosition, maxDistance)
+	maxDistance = maxDistance or 50;
+	local raycastParams = RaycastParams.new();
+	raycastParams.FilterType = Enum.RaycastFilterType.Exclude;
+	raycastParams.FilterDescendantsInstances = {character};
+	local rayDirection = Vector3.new(0, maxDistance, 0);
+	local raycastResult = workspace:Raycast(fromPosition, rayDirection, raycastParams);
+	if raycastResult then
+		return true, raycastResult.Position, raycastResult.Distance;
+	end
+	return false, nil, nil;
+end
+local function parseMoney(text)
+	text = string.lower(text or "");
+	local num = tonumber(text:match(LUAOBFUSACTOR_DECRYPT_STR_0("\183\184\72\119\92\113\49", "\26\236\157\44\82\114\44"))) or 0;
+	if text:find("k") then
+		num *= 1000
+	elseif text:find("m") then
+		num *= 1000000
+	elseif text:find("b") then
+		num *= 1000000000
+	elseif text:find("t") then
+		num *= 1000000000000
+	end
+	return num;
+end
+local function formatMoney(value)
+	if (value >= 1000000000000) then
+		return string.format(LUAOBFUSACTOR_DECRYPT_STR_0("\110\107\155\9\44\26\154\72", "\59\74\78\181"), value / 1000000000000);
+	elseif (value >= 1000000000) then
+		return string.format(LUAOBFUSACTOR_DECRYPT_STR_0("\97\148\20\8\181\7\158\73", "\211\69\177\58\58"), value / 1000000000);
+	elseif (value >= 1000000) then
+		return string.format(LUAOBFUSACTOR_DECRYPT_STR_0("\243\160\55\167\239\230\248\246", "\171\215\133\25\149\137"), value / 1000000);
+	elseif (value >= 1000) then
+		return string.format(LUAOBFUSACTOR_DECRYPT_STR_0("\165\141\124\168\233\27\179\81", "\34\129\168\82\154\143\80\156"), value / 1000);
+	else
+		return string.format(LUAOBFUSACTOR_DECRYPT_STR_0("\193\247\125\89\78\1\154", "\233\229\210\83\107\40\46"), value);
+	end
+end
+local function findBaseBillboard()
+	if (((tick() - billboardCacheTime) < 30) and billboardCache) then
+		return billboardCache;
+	end
+	local visibleBillboards = {};
+	for _, obj in ipairs(workspace:GetDescendants()) do
+		if (obj:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\227\75\62\218\7\206\67\32\210\34\212\75", "\101\161\34\82\182")) and obj.Enabled) then
+			for _, child in ipairs(obj:GetDescendants()) do
+				if (child:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\220\8\65\234\247\227\128\43\228", "\78\136\109\57\158\187\130\226")) and child.Visible) then
+					if ((string.upper(child.Text) == LUAOBFUSACTOR_DECRYPT_STR_0("\7\16\204\195\126\29\216\194\27", "\145\94\95\153")) and (child.TextTransparency < 1)) then
+						table.insert(visibleBillboards, obj);
+					end
+				end
+			end
+		end
+	end
+	if ((#visibleBillboards > 1) and player.Character) then
+		local root = player.Character:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\213\216\25\212\64\184\244\201\38\218\65\163\205\204\6\193", "\215\157\173\116\181\46"));
+		if root then
+			local closest, closestDist;
+			for _, billboard in ipairs(visibleBillboards) do
+				local pos;
+				if (billboard.Parent and billboard.Parent:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\23\181\152\247\234\52\166\159", "\186\85\212\235\146"))) then
+					pos = billboard.Parent.Position;
+				elseif (billboard.Parent and billboard.Parent:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\239\142\18\251\53", "\56\162\225\118\158\89\142"))) then
+					local part = billboard.Parent:FindFirstChildWhichIsA(LUAOBFUSACTOR_DECRYPT_STR_0("\126\4\211\170\18\217\78\17", "\184\60\101\160\207\66"), true);
+					if part then
+						pos = part.Position;
+					end
+				end
+				if pos then
+					local dist = (pos - root.Position).Magnitude;
+					if (not closest or (dist < closestDist)) then
+						closestDist = dist;
+						closest = billboard;
+					end
+				end
+			end
+			if closest then
+				billboardCache = closest;
+				billboardCacheTime = tick();
+				return closest;
+			end
+		end
+	end
+	if visibleBillboards[1] then
+		billboardCache = visibleBillboards[1];
+		billboardCacheTime = tick();
+	end
+	return visibleBillboards[1];
+end
+local function findPlayerBase()
+	if playerBaseCached then
+		return;
+	end
+	local billboard = findBaseBillboard();
+	if billboard then
+		local baseModel = billboard.Parent;
+		if baseModel then
+			local parentModel = baseModel.Parent;
+			if (parentModel and (parentModel:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\28\141\120\185\61", "\220\81\226\28")) or parentModel:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\53\218\142\255\239\213", "\167\115\181\226\155\138")))) then
+				playerBaseModel = parentModel;
+				playerBaseCached = true;
+				return;
+			end
+			if (baseModel:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\207\45\227\89\119", "\166\130\66\135\60\27\17")) or baseModel:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\98\69\194\113\53\86", "\80\36\42\174\21"))) then
+				playerBaseModel = baseModel;
+				playerBaseCached = true;
+				return;
+			end
+		end
+	end
+end
+local function findPlayerSpawner()
+	local fallbackHeight = hrp.Position.Y;
+	if playerBaseModel then
+		for _, obj in ipairs(playerBaseModel:GetChildren()) do
+			if (obj:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\99\31\51\127\66", "\26\46\112\87")) and ((obj.Name == LUAOBFUSACTOR_DECRYPT_STR_0("\138\51\170\99\177\186\87", "\212\217\67\203\20\223\223\37")) or obj.Name:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\169\157\169\197\180", "\178\218\237\200")))) then
+				local spawnerPart = obj.PrimaryPart or obj:FindFirstChildWhichIsA(LUAOBFUSACTOR_DECRYPT_STR_0("\148\180\245\213\134\180\244\196", "\176\214\213\134"));
+				if spawnerPart then
+					return spawnerPart.Position.Y;
+				end
+			end
+		end
+	end
+	return fallbackHeight;
+end
+local function updateSpawnerHeight()
+	spawnerHeight = findPlayerSpawner();
+end
+local function findAllPlots()
+	if ((tick() - plotsCacheTime) < 30) then
+		return plotsCache;
+	end
+	plotsCache = {};
+	for _, obj in ipairs(workspace:GetDescendants()) do
+		if (obj:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\217\162\178\209\164", "\57\148\205\214\180\200\54")) and (obj.Name:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\2\241\58\32", "\22\114\157\85\84")) or obj.Name:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\198\202\0\193", "\200\164\171\115\164\61\150")))) then
+			for _, part in ipairs(obj:GetDescendants()) do
+				if part:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\156\245\16\64\179\191\230\23", "\227\222\148\99\37")) then
+					table.insert(plotsCache, part);
+				end
+			end
+		end
+	end
+	plotsCacheTime = tick();
+	return plotsCache;
+end
+local function isPetNearPlayerBase(petPart)
+	if (not petPart or not playerBaseModel) then
+		return false;
+	end
+	if petPart:IsDescendantOf(playerBaseModel) then
+		return true;
+	end
+	for _, basePart in ipairs(playerBaseModel:GetDescendants()) do
+		if basePart:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\17\83\65\243\201\50\64\70", "\153\83\50\50\150")) then
+			local distance = (basePart.Position - petPart.Position).Magnitude;
+			if (distance <= 15) then
+				return true;
+			end
+		end
+	end
+	return false;
+end
+local function isPetNearAnyPlot(petPart)
+	if not petPart then
+		return false;
+	end
+	local allPlots = findAllPlots();
+	for _, plotPart in ipairs(allPlots) do
+		local distance = (plotPart.Position - petPart.Position).Magnitude;
+		if (distance <= 23) then
+			return true;
+		end
+	end
+	return false;
+end
+local function buildPetContainerCache()
+	if ((tick() - petContainersCacheTime) < 10) then
+		return petContainersCache;
+	end
+	petContainersCache = {};
+	local debrisFolder = workspace:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\121\115\113\14\122\184", "\45\61\22\19\124\19\203"));
+	if debrisFolder then
+		table.insert(petContainersCache, debrisFolder);
+	end
+	for _, child in ipairs(workspace:GetChildren()) do
+		if (child:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\231\29\1\241\7\98", "\217\161\114\109\149\98\16")) or child:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\63\47\60\121\176", "\20\114\64\88\28\220"))) then
+			local lowerName = child.Name:lower();
+			if (lowerName:find(LUAOBFUSACTOR_DECRYPT_STR_0("\33\4\198", "\221\81\97\178\212\152\176")) or lowerName:find(LUAOBFUSACTOR_DECRYPT_STR_0("\201\245\18\235", "\122\173\135\125\155")) or lowerName:find(LUAOBFUSACTOR_DECRYPT_STR_0("\136\206\15\173", "\168\228\161\96\217\95\81"))) then
+				table.insert(petContainersCache, child);
+			end
+		end
+	end
+	petContainersCacheTime = tick();
+	return petContainersCache;
+end
+local function findAllPetsOptimized()
+	local results = {};
+	local containers = buildPetContainerCache();
+	for _, container in ipairs(containers) do
+		if (container and container.Parent) then
+			for _, obj in ipairs(container:GetChildren()) do
+				if (obj:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\249\208\61\89\31\86\201\197", "\55\187\177\78\60\79")) and (obj.Position.Y <= 10)) then
+					local displayNameLabel = nil;
+					local generationLabel = nil;
+					for _, child in ipairs(obj:GetChildren()) do
+						if (child:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\15\199\83\231\68\192\129\63\202\120\254\79", "\224\77\174\63\139\38\175")) or child:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\183\84\74\40\133\66\93\9\145\72", "\78\228\33\56"))) then
+							for _, label in ipairs(child:GetChildren()) do
+								if label:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\250\123\170\23\169\207\124\183\15", "\229\174\30\210\99")) then
+									local labelName = label.Name;
+									if (labelName == LUAOBFUSACTOR_DECRYPT_STR_0("\63\228\149\65\225\60\32\53\236\139\84", "\89\123\141\230\49\141\93")) then
+										displayNameLabel = label;
+									elseif (labelName == LUAOBFUSACTOR_DECRYPT_STR_0("\212\116\248\9\2\75\231\120\249\2", "\42\147\17\150\108\112")) then
+										generationLabel = label;
+									end
+								end
+							end
+						end
+					end
+					if (displayNameLabel and generationLabel) then
+						local displayName = displayNameLabel.Text or LUAOBFUSACTOR_DECRYPT_STR_0("\58\168\38\113\232\255\1", "\136\111\198\77\31\135");
+						local generation = generationLabel.Text or "0";
+						local value = parseMoney(generation);
+						if (not isPetNearPlayerBase(obj) and isPetNearAnyPlot(obj)) then
+							table.insert(results, {[LUAOBFUSACTOR_DECRYPT_STR_0("\18\8\181\66", "\201\98\105\199\54\221\132\119")]=obj,[LUAOBFUSACTOR_DECRYPT_STR_0("\189\5\144\49\14\52\181\151\13\142\36", "\204\217\108\227\65\98\85")]=displayName,[LUAOBFUSACTOR_DECRYPT_STR_0("\89\198\251\224\62\193\74\202\250\235", "\160\62\163\149\133\76")]=generation,[LUAOBFUSACTOR_DECRYPT_STR_0("\192\161\1\58\198", "\163\182\192\109\79")]=value});
+						end
+					end
+				end
+			end
+		end
+	end
+	return results;
+end
+local function clearWaypoints()
+	for _, waypoint in ipairs(waypoints) do
+		if waypoint.marker then
+			waypoint.marker:Destroy();
+		end
+	end
+	waypoints = {};
+end
+local function createPathToPet()
+	local targetPet = selectedPetModel or bestPetModel;
+	if not targetPet then
+		return false, LUAOBFUSACTOR_DECRYPT_STR_0("\26\41\64\212\244\38\33\5\212\181\39\35\12\197\246\32\35\4\129", "\149\84\70\96\160");
+	end
+	local targetPart = targetPet;
+	if not targetPart then
+		return false, "Can't find pet location!";
+	end
+	clearWaypoints();
+	local startPos = hrp.Position;
+	local endPos = targetPart.Position;
+	table.insert(waypoints, {[LUAOBFUSACTOR_DECRYPT_STR_0("\40\9\30\228\44\15\2\227", "\141\88\102\109")]=(startPos + Vector3.new(0, 3, 0)),[LUAOBFUSACTOR_DECRYPT_STR_0("\190\82\216\123\31\47", "\161\211\51\170\16\122\93\53")]=nil});
+	local hasObstacle, obstaclePos, obstacleDistance = checkObstacleAbove(startPos, 50);
+	if hasObstacle then
+		local greenPart1 = findClosestGreenPart(startPos);
+		if greenPart1 then
+			local elevatedPos = greenPart1.Position + Vector3.new(0, math.min(9, (greenPart1.Size.Y / 2) + 5), 0);
+			table.insert(waypoints, {[LUAOBFUSACTOR_DECRYPT_STR_0("\235\161\161\33\239\167\189\38", "\72\155\206\210")]=elevatedPos,[LUAOBFUSACTOR_DECRYPT_STR_0("\75\123\70\5\54\84", "\83\38\26\52\110")]=nil});
+		end
+	end
+	local greenPart2 = findClosestGreenPart(endPos);
+	if greenPart2 then
+		local elevatedPos = greenPart2.Position + Vector3.new(0, math.min(9, (greenPart2.Size.Y / 2) + 5), 0);
+		table.insert(waypoints, {[LUAOBFUSACTOR_DECRYPT_STR_0("\72\24\52\79\76\30\40\72", "\38\56\119\71")]=elevatedPos,[LUAOBFUSACTOR_DECRYPT_STR_0("\254\238\74\221\32\68", "\54\147\143\56\182\69")]=nil});
+	end
+	local finalPos = Vector3.new(endPos.X, 4, endPos.Z);
+	table.insert(waypoints, {[LUAOBFUSACTOR_DECRYPT_STR_0("\198\142\236\64\203\223\142\241", "\191\182\225\159\41")]=finalPos,[LUAOBFUSACTOR_DECRYPT_STR_0("\38\19\58\94\142\149", "\162\75\114\72\53\235\231")]=nil});
+	return true, string.format(LUAOBFUSACTOR_DECRYPT_STR_0("\201\56\4\245\82\27\156\51\77\236\71\17\204\63\86\231\82\22\137\56", "\98\236\92\36\130\51"), #waypoints);
+end
+local function doAdvancedTeleport()
+	if isAdvancedTeleporting then
+		return;
+	end
+	local success, message = createPathToPet();
+	if success then
+		isAdvancedTeleporting = true;
+		local backpack = player:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\134\24\15\177\85\169\182\59", "\80\196\121\108\218\37\200\213"));
+		if backpack then
+			local carpet = backpack:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\38\127\27\118\69\9\202\35\114\16\111\78\26", "\234\96\19\98\31\43\110"));
+			if (carpet and character) then
+				local hum = character:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\46\10\95\198\162\125\130\2", "\235\102\127\50\167\204\18"));
+				if hum then
+					hum:EquipTool(carpet);
+				end
+			end
+		end
+		crunchBody();
+		for i, waypoint in ipairs(waypoints) do
+			if (waypoint and waypoint.position) then
+				local hum = character:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\120\180\248\34\74\33\89\165", "\78\48\193\149\67\36"));
+				if hum then
+					local maxHealth = hum.MaxHealth;
+					local currentHealth = hum.Health;
+					hum:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false);
+					hum:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false);
+					hrp.CFrame = CFrame.new(waypoint.position);
+					if (hum.Health < currentHealth) then
+						hum.Health = currentHealth;
+					end
+				else
+					hrp.CFrame = CFrame.new(waypoint.position);
+				end
+				if (i == #waypoints) then
+					restoreBody();
+				end
+				task.wait(0.1);
+			end
+		end
+		restoreBody();
+		task.wait(0.1);
+		local hum = character:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\24\11\141\25\79\63\23\132", "\33\80\126\224\120"));
+		if hum then
+			hum:SetStateEnabled(Enum.HumanoidStateType.FallingDown, true);
+			hum:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, true);
+		end
+		isAdvancedTeleporting = false;
+		clearWaypoints();
+	end
+end
+local function startAntiRagdoll()
+	if antiRagdollConnection then
+		return;
+	end
+	antiRagdollConnection = RunService.Heartbeat:Connect(function()
+		if not AntiRagdollEnabled then
+			return;
+		end
+		local char = player.Character;
+		if not char then
+			return;
+		end
+		local root = char:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\196\189\14\197\82\227\161\7\246\83\227\188\51\197\78\248", "\60\140\200\99\164"));
+		local hum = char:FindFirstChildOfClass(LUAOBFUSACTOR_DECRYPT_STR_0("\175\225\9\39\172\136\253\0", "\194\231\148\100\70"));
+		if hum then
+			local humState = hum:GetState();
+			if ((humState == Enum.HumanoidStateType.Physics) or (humState == Enum.HumanoidStateType.Ragdoll) or (humState == Enum.HumanoidStateType.FallingDown)) then
+				hum:ChangeState(Enum.HumanoidStateType.Running);
+				workspace.CurrentCamera.CameraSubject = hum;
+				pcall(function()
+					if player.Character then
+						local PlayerModule = player.PlayerScripts:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\118\64\192\186\243\218\107\67\197\182\250\205", "\168\38\44\161\195\150"));
+						if PlayerModule then
+							local Controls = require(PlayerModule:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\163\243\140\98\34\231\186\59\143\248\151\122\53", "\118\224\156\226\22\80\136\214")));
+							Controls:Enable();
+						end
+					end
+				end);
+				if root then
+					root.Velocity = Vector3.new(0, 0, 0);
+					root.RotVelocity = Vector3.new(0, 0, 0);
+				end
+			end
+		end
+		for _, obj in ipairs(char:GetDescendants()) do
+			if (obj:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\111\225\77\143\80\184\125", "\224\34\142\57")) and (obj.Enabled == false)) then
+				obj.Enabled = true;
+			end
+		end
+	end);
+	print("✅ Anti Ragdoll Enabled");
+end
+local function stopAntiRagdoll()
+	if antiRagdollConnection then
+		antiRagdollConnection:Disconnect();
+		antiRagdollConnection = nil;
+	end
+	print("❌ Anti Ragdoll Disabled");
+end
+local function equipCarpet()
+	local tool = character:FindFirstChild(TOOL_NAME) or player.Backpack:FindFirstChild(TOOL_NAME);
+	if tool then
+		humanoid:EquipTool(tool);
+	end
+end
+local function clickBlock()
+	local size = camera.ViewportSize;
+	local x = size.X / 2;
+	local y = (size.Y / 2) + BLOCK_CLICK_OFFSET_Y;
+	for i = 1, CLICK_COUNT do
+		VirtualInputManager:SendMouseButtonEvent(x, y, 0, true, game, 0);
+		task.wait(0.02);
+		VirtualInputManager:SendMouseButtonEvent(x, y, 0, false, game, 0);
+		if (i < CLICK_COUNT) then
+			task.wait(CLICK_DELAY);
+		end
+	end
+end
+local function getNearestPlayer()
+	local nearestPlayer = nil;
+	local shortestDistance = math.huge;
+	for _, plr in ipairs(Players:GetPlayers()) do
+		if ((plr ~= player) and plr.Character) then
+			local plrHrp = plr.Character:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\246\178\200\220\125\254\84\10\236\168\202\201\67\240\79\26", "\110\190\199\165\189\19\145\61"));
+			if (plrHrp and hrp) then
+				local distance = (hrp.Position - plrHrp.Position).Magnitude;
+				if (distance < shortestDistance) then
+					shortestDistance = distance;
+					nearestPlayer = plr;
+				end
+			end
+		end
+	end
+	return nearestPlayer;
+end
+local function blockNearestPlayer()
+	if blocking then
+		return;
+	end
+	blocking = true;
+	local nearest = getNearestPlayer();
+	if nearest then
+		pcall(function()
+			StarterGui:SetCore(LUAOBFUSACTOR_DECRYPT_STR_0("\234\249\120\229\155\211\248\231\120\235\128\247\214\234\110\237\153", "\167\186\139\23\136\235"), nearest);
+		end);
+		task.wait(BLOCK_WAIT);
+		clickBlock();
+		task.wait(0.12);
+		if statusLabel then
+			statusLabel.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\56\185\135\14\17\176\140\87\90", "\109\122\213\232") .. nearest.Name;
+		end
+	elseif statusLabel then
+		statusLabel.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\192\248\226\62\235\246\176\50\247\183\178\60\239\238\167\34", "\80\142\151\194");
+	end
+	blocking = false;
+end
+local function teleportPath(path)
+	if teleporting then
+		return;
+	end
+	teleporting = true;
+	equipCarpet();
+	task.wait(0.25);
+	for i, position in ipairs(path) do
+		if hrp then
+			hrp.CFrame = CFrame.new(position);
+		end
+		task.wait(STEP_DELAY);
+	end
+	if AutoBlockEnabled then
+		task.wait(0.5);
+		blockNearestPlayer();
+	end
+	teleporting = false;
+end
+local function getDiscordProgress(percent)
+	local totalChars = #DISCORD_TEXT;
+	local adjustedPercent = math.min(percent * 1.5, 100);
+	local charsToShow = math.floor((adjustedPercent / 100) * totalChars);
+	return string.sub(DISCORD_TEXT, 1, charsToShow);
+end
+local function isMyPlotByName(pn)
+	local plots = workspace:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\51\202\120\88\16", "\44\99\166\23"));
+	if not plots then
+		return false;
+	end
+	local plot = plots:FindFirstChild(pn);
+	if not plot then
+		return false;
+	end
+	local sign = plot:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\76\251\38\34\0\173\123\249", "\196\28\151\73\86\83"));
+	if sign then
+		local yb = sign:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\202\12\60\2\160\89\11\115", "\22\147\99\73\112\226\56\120"));
+		if (yb and yb:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\154\124\238\249\143\183\116\240\241\170\173\124", "\237\216\21\130\149"))) then
+			return yb.Enabled == true;
+		end
+	end
+	return false;
+end
+local function findAllBrainrots()
+	if ((tick() - brainrotCacheTime) < 2) then
+		return brainrotCache;
+	end
+	brainrotCache = {};
+	local h = player.Character and player.Character:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\170\91\82\94\190\198\87\134\124\80\80\164\249\95\144\90", "\62\226\46\63\63\208\169"));
+	if not h then
+		return brainrotCache;
+	end
+	local plots = workspace:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\213\21\90\151\12", "\62\133\121\53\227\127\109\79"));
+	if not plots then
+		return brainrotCache;
+	end
+	for _, plot in ipairs(plots:GetChildren()) do
+		if isMyPlotByName(plot.Name) then
+			continue;
+		end
+		local channel = Synchronizer:Get(plot.Name);
+		if not channel then
+			continue;
+		end
+		local animalList = channel:Get(LUAOBFUSACTOR_DECRYPT_STR_0("\49\26\59\248\215\162\142\25\7\38", "\194\112\116\82\149\182\206"));
+		if not animalList then
+			continue;
+		end
+		local owner = channel:Get(LUAOBFUSACTOR_DECRYPT_STR_0("\22\191\66\29\210", "\110\89\200\44\120\160\130"));
+		local ownerName = (owner and owner.Name) or LUAOBFUSACTOR_DECRYPT_STR_0("\158\205\64\72\76\93\53", "\45\203\163\43\38\35\42\91");
+		local podiums = plot:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\243\139\213\46\134\165\100\221\129\213\54\138\186", "\52\178\229\188\67\231\201"));
+		if not podiums then
+			continue;
+		end
+		for slot, animalData in pairs(animalList) do
+			if (type(animalData) == LUAOBFUSACTOR_DECRYPT_STR_0("\53\64\82\8\242", "\67\65\33\48\100\151\60")) then
+				pcall(function()
+					local animalIndex = animalData.Index;
+					local animalInfo = AnimalsData[animalIndex];
+					if not animalInfo then
+						return;
+					end
+					local displayName = animalInfo.DisplayName or animalIndex;
+					local mutation = animalData.Mutation or LUAOBFUSACTOR_DECRYPT_STR_0("\241\232\160\221", "\147\191\135\206\184");
+					local traits = (animalData.Traits and (#animalData.Traits > 0) and table.concat(animalData.Traits, LUAOBFUSACTOR_DECRYPT_STR_0("\200\104", "\210\228\72\198\161\184\51"))) or LUAOBFUSACTOR_DECRYPT_STR_0("\24\70\253\21", "\174\86\41\147\112\19");
+					local genValue = AnimalsShared:GetGeneration(animalIndex, animalData.Mutation, animalData.Traits, nil);
+					local pod = podiums:FindFirstChild(tostring(slot));
+					if not pod then
+						return;
+					end
+					local base = pod:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\121\1\158\14", "\203\59\96\237\107\69\111\113"));
+					local spawn = base and base:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\23\6\173\246\63", "\183\68\118\204\129\81\144"));
+					if not spawn then
+						return;
+					end
+					local dist = (spawn.Position - h.Position).Magnitude;
+					if (dist > Values.STEAL_RADIUS) then
+						return;
+					end
+					local att = spawn:FindFirstChild(LUAOBFUSACTOR_DECRYPT_STR_0("\62\191\127\233\27\150\47\185\100\229\8\138\3\168\126\240", "\226\110\205\16\132\107"));
+					if not att then
+						return;
+					end
+					local prompt = nil;
+					for _, ch in ipairs(att:GetChildren()) do
+						if ch:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\219\209\239\193\72\230\202\244\192\113\249\204\237\201\85", "\33\139\163\128\185")) then
+							prompt = ch;
+							break;
+						end
+					end
+					if prompt then
+						table.insert(brainrotCache, {[LUAOBFUSACTOR_DECRYPT_STR_0("\71\74\11\211\71\76", "\190\55\56\100")]=prompt,[LUAOBFUSACTOR_DECRYPT_STR_0("\70\174\46\10", "\147\54\207\92\126\115\131")]=spawn,[LUAOBFUSACTOR_DECRYPT_STR_0("\9\56\38\109\1\127\20\31\52\112\8", "\30\109\81\85\29\109")]=displayName,[LUAOBFUSACTOR_DECRYPT_STR_0("\248\116\90\179\36\223\232\246\126\90", "\156\159\17\52\214\86\190")]=(NumberUtils:ToString(genValue) .. LUAOBFUSACTOR_DECRYPT_STR_0("\225\252", "\220\206\143\221")),[LUAOBFUSACTOR_DECRYPT_STR_0("\130\116\62\3\217\194\209\131", "\178\230\29\77\119\184\172")]=dist,[LUAOBFUSACTOR_DECRYPT_STR_0("\227\191\6\14\114", "\152\149\222\106\123\23")]=genValue,[LUAOBFUSACTOR_DECRYPT_STR_0("\205\41\242\109\180\208\35", "\213\189\70\150\35")]=tostring(slot),[LUAOBFUSACTOR_DECRYPT_STR_0("\64\66\122\13\93", "\104\47\53\20")]=ownerName,[LUAOBFUSACTOR_DECRYPT_STR_0("\179\64\142\8", "\111\195\44\225\124\220")]=plot.Name,[LUAOBFUSACTOR_DECRYPT_STR_0("\203\74\15\103", "\203\184\38\96\19\203")]=tostring(slot)});
+					end
+				end);
+			end
+		end
+	end
+	brainrotCacheTime = tick();
+	return brainrotCache;
+end
+local function findNearestPrompt()
+	local allBrainrots = findAllBrainrots();
+	if (#allBrainrots == 0) then
+		return nil;
+	end
+	table.sort(allBrainrots, function(a, b)
+		return a.distance < b.distance;
+	end);
+	local nearest = allBrainrots[1];
+	return nearest.prompt, nearest.distance, nearest.displayName;
+end
+local function ResetProgressBar()
+	if ProgressLabel then
+		ProgressLabel.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\11\86\88\101\247", "\174\89\19\25\33");
+	end
+	if ProgressPercentLabel then
+		ProgressPercentLabel.Text = "";
+	end
+	if ProgressBarFill then
+		ProgressBarFill.Size = UDim2.new(0, 0, 1, 0);
+	end
+end
+local function executeSteal(prompt, name)
+	if isStealing then
+		return;
+	end
+	if not StealData[prompt] then
+		StealData[prompt] = {[LUAOBFUSACTOR_DECRYPT_STR_0("\39\29\94\74", "\107\79\114\50\46\151\231")]={},[LUAOBFUSACTOR_DECRYPT_STR_0("\45\180\188\46\141\60\165", "\160\89\198\213\73\234\89\215")]={},[LUAOBFUSACTOR_DECRYPT_STR_0("\90\116\181\250\220", "\165\40\17\212\158")]=true};
+		pcall(function()
+			if getconnections then
+				for _, c in ipairs(getconnections(prompt.PromptButtonHoldBegan)) do
+					if c.Function then
+						table.insert(StealData[prompt].hold, c.Function);
+					end
+				end
+				for _, c in ipairs(getconnections(prompt.Triggered)) do
+					if c.Function then
+						table.insert(StealData[prompt].trigger, c.Function);
+					end
+				end
+			end
+		end);
+	end
+	local data = StealData[prompt];
+	if not data.ready then
+		return;
+	end
+	data.ready = false;
+	isStealing = true;
+	stealStartTime = tick();
+	if ProgressLabel then
+		ProgressLabel.Text = name or LUAOBFUSACTOR_DECRYPT_STR_0("\214\237\45\18\10\204\247\47\125\104\171", "\70\133\185\104\83");
+	end
+	if progressConnection then
+		progressConnection:Disconnect();
+	end
+	progressConnection = RunService.Heartbeat:Connect(function()
+		if not isStealing then
+			progressConnection:Disconnect();
+			return;
+		end
+		local elapsed = tick() - stealStartTime;
+		local percent = math.min((elapsed / Values.STEAL_DURATION) * 100, 100);
+		if ProgressBarFill then
+			ProgressBarFill.Size = UDim2.new(percent / 100, 0, 1, 0);
+		end
+		if ProgressPercentLabel then
+			ProgressPercentLabel.Text = getDiscordProgress(percent);
+		end
+		if (percent >= 100) then
+			progressConnection:Disconnect();
+		end
+	end);
+	pcall(function()
+		for _, fn in ipairs(data.hold) do
+			fn(prompt);
+		end
+	end);
+	task.wait(Values.STEAL_DURATION);
+	pcall(function()
+		for _, fn in ipairs(data.trigger) do
+			fn(prompt);
+		end
+	end);
+	task.wait(0.3);
+	isStealing = false;
+	data.ready = true;
+	ResetProgressBar();
+end
+function startAutoSteal()
+	task.spawn(function()
+		while Enabled.AutoSteal do
+			if selectedBrainrot then
+				local brainrotData = detectedBrainrots[selectedBrainrot];
+				if (brainrotData and brainrotData.prompt) then
+					executeSteal(brainrotData.prompt, brainrotData.displayName);
+				else
+					local allBrainrots = findAllBrainrots();
+					for _, data in ipairs(allBrainrots) do
+						if (data.part == selectedBrainrot) then
+							detectedBrainrots[selectedBrainrot] = data;
+							executeSteal(data.prompt, data.displayName);
+							break;
+						end
+					end
+				end
+			else
+				local prompt, distance, name = findNearestPrompt();
+				if (prompt and distance) then
+					executeSteal(prompt, name);
+				end
+			end
+			task.wait(0.5);
+		end
+	end);
+end
+function stopAutoSteal()
+	Enabled.AutoSteal = false;
+	isStealing = false;
+	if progressConnection then
+		progressConnection:Disconnect();
+	end
+	ResetProgressBar();
+end
+local function makeDraggable(frame, dragHandle)
+	local dragging;
+	local dragInput;
+	local dragStart;
+	local startPos;
+	local function update(input)
+		local delta = input.Position - dragStart;
+		frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y);
+	end
+	dragHandle.InputBegan:Connect(function(input)
+		if ((input.UserInputType == Enum.UserInputType.MouseButton1) or (input.UserInputType == Enum.UserInputType.Touch)) then
+			dragging = true;
+			dragStart = input.Position;
+			startPos = frame.Position;
+			input.Changed:Connect(function()
+				if (input.UserInputState == Enum.UserInputState.End) then
+					dragging = false;
+				end
+			end);
+		end
+	end);
+	dragHandle.InputChanged:Connect(function(input)
+		if ((input.UserInputType == Enum.UserInputType.MouseMovement) or (input.UserInputType == Enum.UserInputType.Touch)) then
+			dragInput = input;
+		end
+	end);
+	UserInputService.InputChanged:Connect(function(input)
+		if ((input == dragInput) and dragging) then
+			update(input);
+		end
+	end);
+end
+local function makeButton(parent, text, pos, size)
+	local btn = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\48\64\92\62\235\17\81\80\37\199", "\169\100\37\36\74"), parent);
+	btn.Size = size or UDim2.new(0.45, 0, 0, 45);
+	btn.Position = pos;
+	btn.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+	btn.BackgroundTransparency = 0.4;
+	btn.Text = text;
+	btn.TextColor3 = Color3.new(1, 1, 1);
+	btn.Font = Enum.Font.GothamBold;
+	btn.TextSize = 14 * scaleFactor;
+	btn.BorderSizePixel = 0;
+	btn.AutoButtonColor = false;
+	Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\53\174\129\95\18\137\167\66", "\48\96\231\194"), btn).CornerRadius = UDim.new(0, 10 * scaleFactor);
+	local btnStroke = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\253\115\61\57\11\215\164\134", "\227\168\58\110\77\121\184\207"), btn);
+	btnStroke.Color = Color3.fromRGB(255, 255, 255);
+	btnStroke.Thickness = 2 * scaleFactor;
+	btnStroke.Transparency = 0.3;
+	btn.MouseEnter:Connect(function()
+		TweenService:Create(btn, TweenInfo.new(0.2), {[LUAOBFUSACTOR_DECRYPT_STR_0("\89\61\188\75\182\201\126\176\117\56\139\82\176\213\98\181\122\46\186\78\178\194", "\197\27\92\223\32\209\187\17")]=0.2}):Play();
+		TweenService:Create(btnStroke, TweenInfo.new(0.2), {[LUAOBFUSACTOR_DECRYPT_STR_0("\55\77\194\245\16\79\194\233\6\81\192\226", "\155\99\63\163")]=0}):Play();
+	end);
+	btn.MouseLeave:Connect(function()
+		TweenService:Create(btn, TweenInfo.new(0.2), {[LUAOBFUSACTOR_DECRYPT_STR_0("\160\208\162\134\190\150\141\196\175\137\141\150\131\223\178\157\184\150\135\223\162\148", "\228\226\177\193\237\217")]=0.4}):Play();
+		TweenService:Create(btnStroke, TweenInfo.new(0.2), {[LUAOBFUSACTOR_DECRYPT_STR_0("\0\162\34\232\39\160\34\244\49\190\32\255", "\134\84\208\67")]=0.3}):Play();
+	end);
+	return btn;
+end
+local function getPosition(pcPos, mobilePos)
+	return (isMobile and mobilePos) or pcPos;
+end
+local gui = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\32\175\148\89\22\162\161\73\26", "\60\115\204\230"), player.PlayerGui);
+gui.Name = LUAOBFUSACTOR_DECRYPT_STR_0("\195\50\226\121\212\57\249\121\247\46\222\89", "\16\135\90\139");
+gui.ResetOnSpawn = false;
+local mainFrame = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\114\102\7\62\75", "\24\52\20\102\83\46\52"), gui);
+mainFrame.Size = UDim2.fromOffset(320 * scaleFactor, 560 * scaleFactor);
+mainFrame.Position = getPosition(UDim2.new(0.5, -160, 0, 100), UDim2.new(1, -330 * scaleFactor, 0, 10));
+mainFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10);
+mainFrame.BackgroundTransparency = 0.5;
+mainFrame.BorderSizePixel = 0;
+mainFrame.Active = true;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\241\6\2\43\29\202\42\51", "\111\164\79\65\68"), mainFrame).CornerRadius = UDim.new(0, 15 * scaleFactor);
+local mainGlow = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\239\212\130\217\43\198\199\219\134\210", "\138\166\185\227\190\78"), mainFrame);
+mainGlow.Size = UDim2.new(1, 50 * scaleFactor, 1, 50 * scaleFactor);
+mainGlow.Position = UDim2.new(0.5, 0, 0.5, 0);
+mainGlow.AnchorPoint = Vector2.new(0.5, 0.5);
+mainGlow.BackgroundTransparency = 1;
+mainGlow.Image = LUAOBFUSACTOR_DECRYPT_STR_0("\217\118\221\54\65\48\28\223\125\193\109\29\108\76\155\38\157\111\7\116\73\147\32", "\121\171\20\165\87\50\67");
+mainGlow.ImageColor3 = Color3.fromRGB(255, 255, 255);
+mainGlow.ImageTransparency = 0.4;
+mainGlow.ScaleType = Enum.ScaleType.Slice;
+mainGlow.SliceCenter = Rect.new(24, 24, 276, 276);
+mainGlow.ZIndex = 0;
+local mainStroke = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\243\17\138\34\171\13\205\61", "\98\166\88\217\86\217"), mainFrame);
+mainStroke.Color = Color3.fromRGB(255, 255, 255);
+mainStroke.Thickness = 3 * scaleFactor;
+mainStroke.Transparency = 0.3;
+task.spawn(function()
+	while task.wait(1.5) do
+		TweenService:Create(mainGlow, TweenInfo.new(1.5, Enum.EasingStyle.Sine), {[LUAOBFUSACTOR_DECRYPT_STR_0("\223\251\120\6\131\232\228\247\119\18\150\221\228\243\119\2\159", "\188\150\150\25\97\230")]=0.2}):Play();
+		TweenService:Create(mainStroke, TweenInfo.new(1.5, Enum.EasingStyle.Sine), {[LUAOBFUSACTOR_DECRYPT_STR_0("\238\155\94\12\31\253\219\155\90\12\15\244", "\141\186\233\63\98\108")]=0.1}):Play();
+		task.wait(1.5);
+		TweenService:Create(mainGlow, TweenInfo.new(1.5, Enum.EasingStyle.Sine), {[LUAOBFUSACTOR_DECRYPT_STR_0("\216\231\45\177\32\197\248\45\184\54\225\235\62\179\43\242\243", "\69\145\138\76\214")]=0.6}):Play();
+		TweenService:Create(mainStroke, TweenInfo.new(1.5, Enum.EasingStyle.Sine), {[LUAOBFUSACTOR_DECRYPT_STR_0("\68\221\136\135\172\6\113\221\140\135\188\15", "\118\16\175\233\233\223")]=0.5}):Play();
+	end
+end);
+local mainTitle = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\191\129\45\175\194\138\127\142\136", "\29\235\228\85\219\142\235"), mainFrame);
+mainTitle.Size = UDim2.new(1, 0, 0, 35 * scaleFactor);
+mainTitle.BackgroundColor3 = Color3.fromRGB(15, 15, 15);
+mainTitle.BackgroundTransparency = 0.3;
+mainTitle.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\14\241\151\244\67\126\97\112\17\251\153\246\82\124\103\81\47\142\190\213\126\71", "\50\93\180\218\189\23\46\71");
+mainTitle.TextColor3 = Color3.new(1, 1, 1);
+mainTitle.Font = Enum.Font.GothamBold;
+mainTitle.TextSize = 13 * scaleFactor;
+mainTitle.BorderSizePixel = 0;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\235\141\120\67\86\210\77\204", "\40\190\196\59\44\36\188"), mainTitle).CornerRadius = UDim.new(0, 15 * scaleFactor);
+local titleStroke = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\9\108\239\160\232\114\6\57", "\109\92\37\188\212\154\29"), mainTitle);
+titleStroke.Color = Color3.fromRGB(255, 255, 255);
+titleStroke.Thickness = 1.5 * scaleFactor;
+titleStroke.Transparency = 0.5;
+makeDraggable(mainFrame, mainTitle);
+local leftBtn = makeButton(mainFrame, LUAOBFUSACTOR_DECRYPT_STR_0("\40\202\130\247", "\58\100\143\196\163\81"), UDim2.new(0, 15 * scaleFactor, 0, 50 * scaleFactor), UDim2.new(0, 140 * scaleFactor, 0, 50 * scaleFactor));
+leftBtn.MouseButton1Click:Connect(function()
+	teleportPath(LEFT_PATH);
+end);
+local rightBtn = makeButton(mainFrame, LUAOBFUSACTOR_DECRYPT_STR_0("\40\107\4\139\11", "\110\122\34\67\195\95\41\133"), UDim2.new(1, -155 * scaleFactor, 0, 50 * scaleFactor), UDim2.new(0, 140 * scaleFactor, 0, 50 * scaleFactor));
+rightBtn.MouseButton1Click:Connect(function()
+	teleportPath(RIGHT_PATH);
+end);
+autoBlockBtn = makeButton(mainFrame, LUAOBFUSACTOR_DECRYPT_STR_0("\84\132\111\101\150\87\157\116\105\253\47\241\116\108\240", "\182\21\209\59\42"), UDim2.new(0.5, 0, 0, 115 * scaleFactor), UDim2.new(0, 290 * scaleFactor, 0, 45 * scaleFactor));
+autoBlockBtn.AnchorPoint = Vector2.new(0.5, 0);
+autoBlockBtn.MouseButton1Click:Connect(function()
+	AutoBlockEnabled = not AutoBlockEnabled;
+	if AutoBlockEnabled then
+		autoBlockBtn.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\150\98\241\50\97\156\155\120\230\54\123\254\152\121", "\222\215\55\165\125\65");
+		autoBlockBtn.BackgroundColor3 = Color3.fromRGB(100, 50, 150);
+	else
+		autoBlockBtn.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\13\228\242\53\178\227\193\101\15\250\156\90\221\231\203", "\42\76\177\166\122\146\161\141");
+		autoBlockBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+	end
+end);
+antiRagdollBtn = makeButton(mainFrame, LUAOBFUSACTOR_DECRYPT_STR_0("\132\164\49\231\57\68\132\173\33\225\85\90\255\202\42\224", "\22\197\234\101\174\25"), UDim2.new(0.5, 0, 0, 170 * scaleFactor), UDim2.new(0, 290 * scaleFactor, 0, 45 * scaleFactor));
+antiRagdollBtn.AnchorPoint = Vector2.new(0.5, 0);
+antiRagdollBtn.BackgroundColor3 = Color3.fromRGB(50, 150, 100);
+antiRagdollBtn.MouseButton1Click:Connect(function()
+	AntiRagdollEnabled = not AntiRagdollEnabled;
+	if AntiRagdollEnabled then
+		antiRagdollBtn.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\12\26\145\245\54\157\246\161\9\27\137\240\44\239\248\168", "\230\77\84\197\188\22\207\183");
+		antiRagdollBtn.BackgroundColor3 = Color3.fromRGB(50, 150, 100);
+		startAntiRagdoll();
+	else
+		antiRagdollBtn.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\216\58\242\213\204\147\209\18\221\59\234\208\214\225\223\19\223", "\85\153\116\166\156\236\193\144");
+		antiRagdollBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+		stopAntiRagdoll();
+	end
+end);
+local blockBtn = makeButton(mainFrame, LUAOBFUSACTOR_DECRYPT_STR_0("\134\204\98\144\207\64\138\197\108\129\193\51\144", "\96\196\128\45\211\132"), UDim2.new(0.5, 0, 0, 225 * scaleFactor), UDim2.new(0, 290 * scaleFactor, 0, 45 * scaleFactor));
+blockBtn.AnchorPoint = Vector2.new(0.5, 0);
+blockBtn.MouseButton1Click:Connect(function()
+	blockNearestPlayer();
+end);
+statusLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\1\136\99\75\254\174\182\221\57", "\184\85\237\27\63\178\207\212"), mainFrame);
+statusLabel.Size = UDim2.new(1, -30 * scaleFactor, 0, 30 * scaleFactor);
+statusLabel.Position = UDim2.new(0.5, 0, 0, 280 * scaleFactor);
+statusLabel.AnchorPoint = Vector2.new(0.5, 0);
+statusLabel.BackgroundTransparency = 1;
+statusLabel.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\58\92\8\91\17", "\63\104\57\105");
+statusLabel.TextColor3 = Color3.fromRGB(255, 255, 255);
+statusLabel.Font = Enum.Font.GothamBold;
+statusLabel.TextSize = 12 * scaleFactor;
+statusLabel.BorderSizePixel = 0;
+local selectBrainrotBtn = makeButton(mainFrame, LUAOBFUSACTOR_DECRYPT_STR_0("\56\162\136\97\40\179\228\102\57\166\141\106\57\168\144", "\36\107\231\196"), UDim2.new(0.5, 0, 0, 320 * scaleFactor), UDim2.new(0, 290 * scaleFactor, 0, 45 * scaleFactor));
+selectBrainrotBtn.AnchorPoint = Vector2.new(0.5, 0);
+selectBrainrotBtn.BackgroundColor3 = Color3.fromRGB(40, 120, 40);
+selectBrainrotBtn.MouseButton1Click:Connect(function()
+	if brainrotFrame then
+		brainrotFrame.Visible = not brainrotFrame.Visible;
+	end
+end);
+local ProgressBarBG = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\123\167\163\138\88", "\231\61\213\194"), mainFrame);
+ProgressBarBG.Size = UDim2.new(0.9, 0, 0, 30 * scaleFactor);
+ProgressBarBG.Position = UDim2.new(0.5, 0, 0, 375 * scaleFactor);
+ProgressBarBG.AnchorPoint = Vector2.new(0.5, 0);
+ProgressBarBG.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+ProgressBarBG.BackgroundTransparency = 0.3;
+ProgressBarBG.BorderSizePixel = 0;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\60\132\30\124\27\163\56\97", "\19\105\205\93"), ProgressBarBG).CornerRadius = UDim.new(0, 8 * scaleFactor);
+local progressStroke = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\156\33\237\149\45\166\3\219", "\95\201\104\190\225"), ProgressBarBG);
+progressStroke.Color = Color3.fromRGB(255, 255, 255);
+progressStroke.Thickness = 1.5 * scaleFactor;
+progressStroke.Transparency = 0.5;
+ProgressBarFill = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\137\217\192\195\170", "\174\207\171\161"), ProgressBarBG);
+ProgressBarFill.Size = UDim2.new(0, 0, 1, 0);
+ProgressBarFill.BackgroundColor3 = Color3.fromRGB(100, 200, 100);
+ProgressBarFill.BorderSizePixel = 0;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\216\215\46\252\234\217\232\236", "\183\141\158\109\147\152"), ProgressBarFill).CornerRadius = UDim.new(0, 8 * scaleFactor);
+ProgressLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\24\12\254\24\0\8\228\9\32", "\108\76\105\134"), ProgressBarBG);
+ProgressLabel.Size = UDim2.new(1, 0, 1, 0);
+ProgressLabel.BackgroundTransparency = 1;
+ProgressLabel.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\217\224\144\197\247", "\174\139\165\209\129");
+ProgressLabel.TextColor3 = Color3.new(1, 1, 1);
+ProgressLabel.Font = Enum.Font.GothamBold;
+ProgressLabel.TextSize = 12 * scaleFactor;
+ProgressLabel.ZIndex = 2;
+ProgressPercentLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\151\182\250\213\234\2\114\125\175", "\24\195\211\130\161\166\99\16"), mainFrame);
+ProgressPercentLabel.Size = UDim2.new(0.9, 0, 0, 20 * scaleFactor);
+ProgressPercentLabel.Position = UDim2.new(0.5, 0, 0, 415 * scaleFactor);
+ProgressPercentLabel.AnchorPoint = Vector2.new(0.5, 0);
+ProgressPercentLabel.BackgroundTransparency = 1;
+ProgressPercentLabel.Text = "";
+ProgressPercentLabel.TextColor3 = Color3.fromRGB(200, 200, 255);
+ProgressPercentLabel.Font = Enum.Font.GothamBold;
+ProgressPercentLabel.TextSize = 11 * scaleFactor;
+local advancedTpToggleBtn = makeButton(mainFrame, LUAOBFUSACTOR_DECRYPT_STR_0("\103\39\223\13\125\53\99\39\169\24\118\58\99\51\198\30\103", "\118\38\99\137\76\51"), UDim2.new(0.5, 0, 0, 445 * scaleFactor), UDim2.new(0, 290 * scaleFactor, 0, 45 * scaleFactor));
+advancedTpToggleBtn.AnchorPoint = Vector2.new(0.5, 0);
+advancedTpToggleBtn.BackgroundColor3 = Color3.fromRGB(85, 85, 255);
+advancedTpToggleBtn.MouseButton1Click:Connect(function()
+	advancedTpEnabled = not advancedTpEnabled;
+	if advancedTpFrame then
+		advancedTpFrame.Visible = advancedTpEnabled;
+	end
+end);
+advancedTpFrame = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\219\52\4\31\12", "\64\157\70\101\114\105"), gui);
+advancedTpFrame.Name = LUAOBFUSACTOR_DECRYPT_STR_0("\97\172\177\226\30\67\173\163\215\0\102\186\166\238\21", "\112\32\200\199\131");
+advancedTpFrame.Size = UDim2.fromOffset(280 * scaleFactor, 450 * scaleFactor);
+advancedTpFrame.Position = getPosition(UDim2.new(1, -300, 0, 20), UDim2.new(0, 10, 0, 10));
+advancedTpFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 35);
+advancedTpFrame.BorderSizePixel = 0;
+advancedTpFrame.Visible = false;
+advancedTpFrame.Active = true;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\25\121\127\183\209\165\39\62", "\66\76\48\60\216\163\203"), advancedTpFrame).CornerRadius = UDim.new(0, 8 * scaleFactor);
+local advancedTpStroke = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\143\175\74\231\77\193\47\191", "\68\218\230\25\147\63\174"), advancedTpFrame);
+advancedTpStroke.Color = Color3.fromRGB(85, 85, 255);
+advancedTpStroke.Thickness = 3 * scaleFactor;
+advancedTpStroke.Transparency = 0.3;
+local advancedTpTitleBar = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\139\56\82\65\179", "\214\205\74\51\44"), advancedTpFrame);
+advancedTpTitleBar.Name = LUAOBFUSACTOR_DECRYPT_STR_0("\206\69\246\240\114\216\77\240", "\23\154\44\130\156");
+advancedTpTitleBar.Size = UDim2.new(1, 0, 0, 35 * scaleFactor);
+advancedTpTitleBar.BackgroundColor3 = Color3.fromRGB(45, 45, 50);
+advancedTpTitleBar.BorderSizePixel = 0;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\36\143\142\161\36\29\20\180", "\115\113\198\205\206\86"), advancedTpTitleBar).CornerRadius = UDim.new(0, 8 * scaleFactor);
+local advancedTpTitle = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\176\82\230\78\168\86\252\95\136", "\58\228\55\158"), advancedTpTitleBar);
+advancedTpTitle.Size = UDim2.new(1, -10, 1, 0);
+advancedTpTitle.Position = UDim2.new(0, 10, 0, 0);
+advancedTpTitle.BackgroundTransparency = 1;
+advancedTpTitle.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\149\173\230\15\18\142\16\144\201\228\11\16\136\5\155\187\228", "\85\212\233\176\78\92\205");
+advancedTpTitle.TextColor3 = Color3.fromRGB(255, 255, 255);
+advancedTpTitle.TextSize = 16 * scaleFactor;
+advancedTpTitle.Font = Enum.Font.GothamBold;
+advancedTpTitle.TextXAlignment = Enum.TextXAlignment.Left;
+makeDraggable(advancedTpFrame, advancedTpTitleBar);
+local advancedTpTargetFrame = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\108\74\137\239\79", "\130\42\56\232"), advancedTpFrame);
+advancedTpTargetFrame.Size = UDim2.new(1, -20 * scaleFactor, 0, 50 * scaleFactor);
+advancedTpTargetFrame.Position = UDim2.new(0, 10 * scaleFactor, 0, 45 * scaleFactor);
+advancedTpTargetFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 30);
+advancedTpTargetFrame.BorderSizePixel = 0;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\223\156\7\236\82\49\239\167", "\95\138\213\68\131\32"), advancedTpTargetFrame).CornerRadius = UDim.new(0, 6 * scaleFactor);
+local advancedTpTargetTitle = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\30\45\185\87\90\43\42\164\79", "\22\74\72\193\35"), advancedTpTargetFrame);
+advancedTpTargetTitle.Size = UDim2.new(1, -10, 0, 18 * scaleFactor);
+advancedTpTargetTitle.Position = UDim2.new(0, 5, 0, 3);
+advancedTpTargetTitle.BackgroundTransparency = 1;
+advancedTpTargetTitle.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\15\108\246\74\41\119\240\24\24\120\246\95\41\109\190", "\56\76\25\132");
+advancedTpTargetTitle.TextColor3 = Color3.fromRGB(150, 150, 155);
+advancedTpTargetTitle.TextSize = 11 * scaleFactor;
+advancedTpTargetTitle.Font = Enum.Font.Gotham;
+advancedTpTargetTitle.TextXAlignment = Enum.TextXAlignment.Left;
+advancedTpTargetLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\106\196\179\50\227\95\195\174\42", "\175\62\161\203\70"), advancedTpTargetFrame);
+advancedTpTargetLabel.Size = UDim2.new(1, -10, 0, 24 * scaleFactor);
+advancedTpTargetLabel.Position = UDim2.new(0, 5, 0, 23 * scaleFactor);
+advancedTpTargetLabel.BackgroundTransparency = 1;
+advancedTpTargetLabel.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\15\222\194\29\59\53\211\196\93\123\114", "\85\92\189\163\115");
+advancedTpTargetLabel.TextColor3 = Color3.fromRGB(255, 215, 85);
+advancedTpTargetLabel.TextSize = 13 * scaleFactor;
+advancedTpTargetLabel.Font = Enum.Font.GothamBold;
+advancedTpTargetLabel.TextXAlignment = Enum.TextXAlignment.Left;
+advancedTpTargetLabel.TextTruncate = Enum.TextTruncate.AtEnd;
+local advancedTpButton = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\29\169\40\44\11\185\36\44\38\162", "\88\73\204\80"), advancedTpFrame);
+advancedTpButton.Size = UDim2.new(1, -20 * scaleFactor, 0, 35 * scaleFactor);
+advancedTpButton.Position = UDim2.new(0, 10 * scaleFactor, 0, 105 * scaleFactor);
+advancedTpButton.BackgroundColor3 = Color3.fromRGB(85, 170, 255);
+advancedTpButton.BorderSizePixel = 0;
+advancedTpButton.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\26\166\60\99\25\245\28\183\80\114\6\154\26\162\34\97\12\238\110\203\42\15", "\186\78\227\112\38\73");
+advancedTpButton.TextColor3 = Color3.fromRGB(255, 255, 255);
+advancedTpButton.TextSize = 13 * scaleFactor;
+advancedTpButton.Font = Enum.Font.GothamBold;
+advancedTpButton.AutoButtonColor = false;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\201\126\222\90\65\116\249\69", "\26\156\55\157\53\51"), advancedTpButton).CornerRadius = UDim.new(0, 6 * scaleFactor);
+advancedTpButton.MouseButton1Click:Connect(function()
+	doAdvancedTeleport();
+end);
+advancedTpButton.MouseEnter:Connect(function()
+	if not isAdvancedTeleporting then
+		advancedTpButton.BackgroundColor3 = Color3.fromRGB(100, 190, 255);
+	end
+end);
+advancedTpButton.MouseLeave:Connect(function()
+	if not isAdvancedTeleporting then
+		advancedTpButton.BackgroundColor3 = Color3.fromRGB(85, 170, 255);
+	end
+end);
+advancedTpScrollFrame = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\191\219\4\214\180\92\133\214\17\255\170\81\129\221", "\48\236\184\118\185\216"), advancedTpFrame);
+advancedTpScrollFrame.Name = LUAOBFUSACTOR_DECRYPT_STR_0("\213\184\67\28\198\39\241", "\84\133\221\55\80\175");
+advancedTpScrollFrame.Size = UDim2.new(1, -20 * scaleFactor, 1, -160 * scaleFactor);
+advancedTpScrollFrame.Position = UDim2.new(0, 10 * scaleFactor, 0, 150 * scaleFactor);
+advancedTpScrollFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 30);
+advancedTpScrollFrame.BorderSizePixel = 0;
+advancedTpScrollFrame.ScrollBarThickness = 6 * scaleFactor;
+advancedTpScrollFrame.ScrollBarImageColor3 = Color3.fromRGB(80, 80, 85);
+advancedTpScrollFrame.CanvasSize = UDim2.new(0, 0, 0, 0);
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\136\206\7\169\213\82\184\245", "\60\221\135\68\198\167"), advancedTpScrollFrame).CornerRadius = UDim.new(0, 6 * scaleFactor);
+local listLayout = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\219\148\212\138\81\205\194\188\225\140\87\205", "\185\142\221\152\227\34"), advancedTpScrollFrame);
+listLayout.Padding = UDim.new(0, 5 * scaleFactor);
+listLayout.SortOrder = Enum.SortOrder.LayoutOrder;
+local function updateAdvancedTpTargetDisplay()
+	local targetPet = selectedPetModel;
+	if (targetPet and detectedPets[targetPet]) then
+		local petData = detectedPets[targetPet];
+		advancedTpTargetLabel.Text = petData.name .. LUAOBFUSACTOR_DECRYPT_STR_0("\24\136\23", "\151\56\165\55\154\35\83") .. formatMoney(petData.value);
+		advancedTpTargetLabel.TextColor3 = Color3.fromRGB(170, 130, 255);
+		return;
+	end
+	if (bestPetModel and detectedPets[bestPetModel]) then
+		local petData = detectedPets[bestPetModel];
+		advancedTpTargetLabel.Text = petData.name .. LUAOBFUSACTOR_DECRYPT_STR_0("\224\14\69", "\142\192\35\101") .. formatMoney(petData.value);
+		advancedTpTargetLabel.TextColor3 = Color3.fromRGB(85, 255, 127);
+		return;
+	end
+	advancedTpTargetLabel.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\248\122\105\147\226\152\191\86\240\122\60\173\227", "\118\182\21\73\195\135\236\204");
+	advancedTpTargetLabel.TextColor3 = Color3.fromRGB(150, 150, 155);
+end
+local function updateAdvancedTpPetListGUI(petList)
+	for _, child in ipairs(advancedTpScrollFrame:GetChildren()) do
+		if child:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\60\57\2\84\38\24\233\28\51\20", "\157\104\92\122\32\100\109")) then
+			child:Destroy();
+		end
+	end
+	table.sort(petList, function(a, b)
+		return a.value > b.value;
+	end);
+	for i, petData in ipairs(petList) do
+		local entry = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\151\163\215\222\31\50\153\191\172\168", "\203\195\198\175\170\93\71\237"));
+		entry.Name = LUAOBFUSACTOR_DECRYPT_STR_0("\30\78\42\240\95\5\238\55\116", "\156\78\43\94\181\49\113") .. i;
+		entry.Size = UDim2.new(1, -10 * scaleFactor, 0, 35 * scaleFactor);
+		entry.BackgroundColor3 = (((i % 2) == 0) and Color3.fromRGB(35, 35, 40)) or Color3.fromRGB(30, 30, 35);
+		entry.BorderSizePixel = 0;
+		entry.LayoutOrder = i;
+		entry.AutoButtonColor = false;
+		entry.Text = "";
+		entry.Parent = advancedTpScrollFrame;
+		local isTarget = (selectedPetModel == petData.part) or (not selectedPetModel and (bestPetModel == petData.part));
+		if isTarget then
+			entry.BackgroundColor3 = Color3.fromRGB(60, 50, 80);
+		end
+		Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\71\193\231\172\25\77\124\96", "\25\18\136\164\195\107\35"), entry).CornerRadius = UDim.new(0, 4 * scaleFactor);
+		local rankLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\220\40\177\91\94\189\195\189\228", "\216\136\77\201\47\18\220\161"), entry);
+		rankLabel.Size = UDim2.new(0, 25 * scaleFactor, 1, 0);
+		rankLabel.Position = UDim2.new(0, 5, 0, 0);
+		rankLabel.BackgroundTransparency = 1;
+		rankLabel.Text = "#" .. i;
+		rankLabel.TextColor3 = Color3.fromRGB(150, 150, 155);
+		rankLabel.TextSize = 12 * scaleFactor;
+		rankLabel.Font = Enum.Font.GothamBold;
+		rankLabel.TextXAlignment = Enum.TextXAlignment.Left;
+		local nameLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\25\233\51\206\36\221\128\40\224", "\226\77\140\75\186\104\188"), entry);
+		nameLabel.Size = UDim2.new(0.5, -35 * scaleFactor, 1, 0);
+		nameLabel.Position = UDim2.new(0, 30 * scaleFactor, 0, 0);
+		nameLabel.BackgroundTransparency = 1;
+		nameLabel.Text = petData.displayName;
+		nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255);
+		nameLabel.TextSize = 11 * scaleFactor;
+		nameLabel.Font = Enum.Font.Gotham;
+		nameLabel.TextXAlignment = Enum.TextXAlignment.Left;
+		nameLabel.TextTruncate = Enum.TextTruncate.AtEnd;
+		local valueLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\141\203\200\43\99\184\204\213\51", "\47\217\174\176\95"), entry);
+		valueLabel.Size = UDim2.new(0.5, -5, 1, 0);
+		valueLabel.Position = UDim2.new(0.5, 0, 0, 0);
+		valueLabel.BackgroundTransparency = 1;
+		valueLabel.Text = formatMoney(petData.value);
+		valueLabel.TextColor3 = ((i == 1) and Color3.fromRGB(85, 255, 127)) or Color3.fromRGB(255, 215, 85);
+		valueLabel.TextSize = 11 * scaleFactor;
+		valueLabel.Font = Enum.Font.GothamBold;
+		valueLabel.TextXAlignment = Enum.TextXAlignment.Right;
+		entry.MouseButton1Click:Connect(function()
+			selectedPetModel = petData.part;
+			updateAdvancedTpTargetDisplay();
+			updateAdvancedTpPetListGUI(petList);
+		end);
+		entry.MouseEnter:Connect(function()
+			if not isTarget then
+				entry.BackgroundColor3 = Color3.fromRGB(45, 45, 50);
+			end
+		end);
+		entry.MouseLeave:Connect(function()
+			if not isTarget then
+				entry.BackgroundColor3 = (((i % 2) == 0) and Color3.fromRGB(35, 35, 40)) or Color3.fromRGB(30, 30, 35);
+			end
+		end);
+	end
+	local contentSize = listLayout.AbsoluteContentSize;
+	advancedTpScrollFrame.CanvasSize = UDim2.new(0, 0, 0, contentSize.Y + 10);
+end
+local function updateBestPet()
+	detectedPets = {};
+	local allPets = findAllPetsOptimized();
+	local bestValue = -math.huge;
+	bestPetModel = nil;
+	for _, petData in ipairs(allPets) do
+		detectedPets[petData.part] = {[LUAOBFUSACTOR_DECRYPT_STR_0("\182\220\123\7", "\70\216\189\22\98\210\52\24")]=petData.displayName,[LUAOBFUSACTOR_DECRYPT_STR_0("\204\222\175\146\214", "\179\186\191\195\231")]=petData.value,[LUAOBFUSACTOR_DECRYPT_STR_0("\233\62\10\240", "\132\153\95\120")]=petData.part};
+		if (petData.value > bestValue) then
+			bestValue = petData.value;
+			bestPetModel = petData.part;
+		end
+	end
+	updateAdvancedTpPetListGUI(allPets);
+	updateAdvancedTpTargetDisplay();
+end
+task.spawn(function()
+	findPlayerBase();
+	updateSpawnerHeight();
+	while true do
+		task.wait(30);
+		if playerBaseCached then
+			updateSpawnerHeight();
+		else
+			findPlayerBase();
+		end
+	end
+end);
+task.spawn(function()
+	while true do
+		if advancedTpEnabled then
+			updateBestPet();
+		end
+		task.wait(1.5);
+	end
+end);
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then
+		return;
+	end
+	local focusedTextBox = UserInputService:GetFocusedTextBox();
+	if focusedTextBox then
+		return;
+	end
+	if ((input.KeyCode == Enum.KeyCode.Z) and advancedTpEnabled) then
+		doAdvancedTeleport();
+	end
+end);
+brainrotFrame = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\151\160\15\32\242", "\192\209\210\110\77\151\186"), gui);
+brainrotFrame.Name = LUAOBFUSACTOR_DECRYPT_STR_0("\194\17\35\224\241\214\239\23\4\251\254\201\229", "\164\128\99\66\137\159");
+brainrotFrame.Size = UDim2.fromOffset(300 * scaleFactor, 500 * scaleFactor);
+brainrotFrame.Position = getPosition(UDim2.new(0.5, -150, 0.5, -250), UDim2.new(0.5, -150 * scaleFactor, 0.5, -250 * scaleFactor));
+brainrotFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 35);
+brainrotFrame.BorderSizePixel = 0;
+brainrotFrame.Visible = false;
+brainrotFrame.Active = true;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\53\160\202\177\18\135\236\172", "\222\96\233\137"), brainrotFrame).CornerRadius = UDim.new(0, 8 * scaleFactor);
+local brainrotStroke = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\140\154\148\11\154\252\251\188", "\144\217\211\199\127\232\147"), brainrotFrame);
+brainrotStroke.Color = Color3.fromRGB(40, 120, 40);
+brainrotStroke.Thickness = 3 * scaleFactor;
+brainrotStroke.Transparency = 0.3;
+local brainrotTitleBar = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\222\61\63\37\208", "\36\152\79\94\72\181\37\98"), brainrotFrame);
+brainrotTitleBar.Name = LUAOBFUSACTOR_DECRYPT_STR_0("\227\209\83\51\210\250\70\45", "\95\183\184\39");
+brainrotTitleBar.Size = UDim2.new(1, 0, 0, 35 * scaleFactor);
+brainrotTitleBar.BackgroundColor3 = Color3.fromRGB(45, 45, 50);
+brainrotTitleBar.BorderSizePixel = 0;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\128\22\196\41\70\142\7\167", "\98\213\95\135\70\52\224"), brainrotTitleBar).CornerRadius = UDim.new(0, 8 * scaleFactor);
+local brainrotTitle = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\202\166\209\99\120\255\161\204\123", "\52\158\195\169\23"), brainrotTitleBar);
+brainrotTitle.Size = UDim2.new(1, -10, 1, 0);
+brainrotTitle.Position = UDim2.new(0, 10, 0, 0);
+brainrotTitle.BackgroundTransparency = 1;
+brainrotTitle.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\73\153\30\81\165\1\59\169\72\157\27\90\180\26\79\203\78\147\114\71\178\16\90\167", "\235\26\220\82\20\230\85\27");
+brainrotTitle.TextColor3 = Color3.fromRGB(255, 255, 255);
+brainrotTitle.TextSize = 14 * scaleFactor;
+brainrotTitle.Font = Enum.Font.GothamBold;
+brainrotTitle.TextXAlignment = Enum.TextXAlignment.Left;
+makeDraggable(brainrotFrame, brainrotTitleBar);
+local brainrotTargetFrame = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\174\179\232\207\113", "\20\232\193\137\162"), brainrotFrame);
+brainrotTargetFrame.Size = UDim2.new(1, -20 * scaleFactor, 0, 50 * scaleFactor);
+brainrotTargetFrame.Position = UDim2.new(0, 10 * scaleFactor, 0, 45 * scaleFactor);
+brainrotTargetFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 30);
+brainrotTargetFrame.BorderSizePixel = 0;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\23\246\230\169\245\130\18\99", "\17\66\191\165\198\135\236\119"), brainrotTargetFrame).CornerRadius = UDim.new(0, 6 * scaleFactor);
+local brainrotTargetTitle = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\59\170\182\7\211\233\238\212\3", "\177\111\207\206\115\159\136\140"), brainrotTargetFrame);
+brainrotTargetTitle.Size = UDim2.new(1, -10, 0, 18 * scaleFactor);
+brainrotTargetTitle.Position = UDim2.new(0, 5, 0, 3);
+brainrotTargetTitle.BackgroundTransparency = 1;
+brainrotTargetTitle.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\54\140\28\17\215\91\90\1\201\36\21\198\72\90\17\211", "\63\101\233\112\116\180\47");
+brainrotTargetTitle.TextColor3 = Color3.fromRGB(150, 150, 155);
+brainrotTargetTitle.TextSize = 11 * scaleFactor;
+brainrotTargetTitle.Font = Enum.Font.Gotham;
+brainrotTargetTitle.TextXAlignment = Enum.TextXAlignment.Left;
+brainrotTargetLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\247\62\245\6\212\55\193\62\225", "\86\163\91\141\114\152"), brainrotTargetFrame);
+brainrotTargetLabel.Size = UDim2.new(1, -10, 0, 24 * scaleFactor);
+brainrotTargetLabel.Position = UDim2.new(0, 5, 0, 23 * scaleFactor);
+brainrotTargetLabel.BackgroundTransparency = 1;
+brainrotTargetLabel.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\125\4\122\118\122\27\42\97\103\53\30\37\113\114\40\86\24\96\58", "\90\51\107\20\19");
+brainrotTargetLabel.TextColor3 = Color3.fromRGB(255, 215, 85);
+brainrotTargetLabel.TextSize = 12 * scaleFactor;
+brainrotTargetLabel.Font = Enum.Font.GothamBold;
+brainrotTargetLabel.TextXAlignment = Enum.TextXAlignment.Left;
+brainrotTargetLabel.TextTruncate = Enum.TextTruncate.AtEnd;
+local autoStealToggle = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\185\245\157\251\31\152\228\145\224\51", "\93\237\144\229\143"), brainrotFrame);
+autoStealToggle.Size = UDim2.new(1, -20 * scaleFactor, 0, 40 * scaleFactor);
+autoStealToggle.Position = UDim2.new(0, 10 * scaleFactor, 0, 105 * scaleFactor);
+autoStealToggle.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+autoStealToggle.BackgroundTransparency = 0.4;
+autoStealToggle.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\52\195\196\54\75\117\33\211\209\53\81\6\58\208\214", "\38\117\150\144\121\107");
+autoStealToggle.TextColor3 = Color3.fromRGB(255, 255, 255);
+autoStealToggle.TextSize = 13 * scaleFactor;
+autoStealToggle.Font = Enum.Font.GothamBold;
+autoStealToggle.AutoButtonColor = false;
+autoStealToggle.BorderSizePixel = 0;
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\24\146\205\53\63\181\235\40", "\90\77\219\142"), autoStealToggle).CornerRadius = UDim.new(0, 6 * scaleFactor);
+local autoStealStroke = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\211\45\18\45\94\8\113\227", "\26\134\100\65\89\44\103"), autoStealToggle);
+autoStealStroke.Color = Color3.fromRGB(255, 255, 255);
+autoStealStroke.Thickness = 2 * scaleFactor;
+autoStealStroke.Transparency = 0.3;
+autoStealToggle.MouseButton1Click:Connect(function()
+	Enabled.AutoSteal = not Enabled.AutoSteal;
+	if Enabled.AutoSteal then
+		autoStealToggle.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\208\214\4\12\228\194\215\21\2\136\171\163\31\13", "\196\145\131\80\67");
+		autoStealToggle.BackgroundColor3 = Color3.fromRGB(40, 120, 40);
+		startAutoSteal();
+	else
+		autoStealToggle.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\63\133\50\39\88\219\42\149\39\36\66\168\49\150\32", "\136\126\208\102\104\120");
+		autoStealToggle.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+		stopAutoSteal();
+	end
+end);
+brainrotScrollFrame = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\75\137\220\76\163\94\52\95\127\172\220\66\162\87", "\49\24\234\174\35\207\50\93"), brainrotFrame);
+brainrotScrollFrame.Name = LUAOBFUSACTOR_DECRYPT_STR_0("\46\224\252\129\127\30\253\233\164\120\31\230", "\17\108\146\157\232");
+brainrotScrollFrame.Size = UDim2.new(1, -20 * scaleFactor, 1, -165 * scaleFactor);
+brainrotScrollFrame.Position = UDim2.new(0, 10 * scaleFactor, 0, 155 * scaleFactor);
+brainrotScrollFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 30);
+brainrotScrollFrame.BorderSizePixel = 0;
+brainrotScrollFrame.ScrollBarThickness = 6 * scaleFactor;
+brainrotScrollFrame.ScrollBarImageColor3 = Color3.fromRGB(80, 80, 85);
+brainrotScrollFrame.CanvasSize = UDim2.new(0, 0, 0, 0);
+Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\126\234\55\226\61\166\78\209", "\200\43\163\116\141\79"), brainrotScrollFrame).CornerRadius = UDim.new(0, 6 * scaleFactor);
+local brainrotListLayout = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\138\31\17\138\163\224\207\190\47\50\150\164", "\131\223\86\93\227\208\148"), brainrotScrollFrame);
+brainrotListLayout.Padding = UDim.new(0, 5 * scaleFactor);
+brainrotListLayout.SortOrder = Enum.SortOrder.LayoutOrder;
+local function updateBrainrotTargetDisplay()
+	if (selectedBrainrot and detectedBrainrots[selectedBrainrot]) then
+		local brainrotData = detectedBrainrots[selectedBrainrot];
+		brainrotTargetLabel.Text = brainrotData.displayName .. LUAOBFUSACTOR_DECRYPT_STR_0("\163\8\246", "\213\131\37\214\214\125") .. formatMoney(brainrotData.value);
+		brainrotTargetLabel.TextColor3 = Color3.fromRGB(170, 130, 255);
+	else
+		brainrotTargetLabel.Text = LUAOBFUSACTOR_DECRYPT_STR_0("\8\36\43\186\161\110\10\48\171\238\107\5\32\190\243\35\56\49\246", "\129\70\75\69\223");
+		brainrotTargetLabel.TextColor3 = Color3.fromRGB(255, 215, 85);
+	end
+end
+local function updateBrainrotListGUI(brainrotList)
+	for _, child in ipairs(brainrotScrollFrame:GetChildren()) do
+		if child:IsA(LUAOBFUSACTOR_DECRYPT_STR_0("\114\206\235\253\94\250\82\223\252\231", "\143\38\171\147\137\28")) then
+			child:Destroy();
+		end
+	end
+	table.sort(brainrotList, function(a, b)
+		return a.value > b.value;
+	end);
+	for i, brainrotData in ipairs(brainrotList) do
+		local entry = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\228\135\161\231\33\246\192\196\141\183", "\180\176\226\217\147\99\131"));
+		entry.Name = LUAOBFUSACTOR_DECRYPT_STR_0("\241\171\46\14\221\171\32\19\246\183\59\21\202\134", "\103\179\217\79") .. i;
+		entry.Size = UDim2.new(1, -10 * scaleFactor, 0, 35 * scaleFactor);
+		entry.BackgroundColor3 = (((i % 2) == 0) and Color3.fromRGB(35, 35, 40)) or Color3.fromRGB(30, 30, 35);
+		entry.BorderSizePixel = 0;
+		entry.LayoutOrder = i;
+		entry.AutoButtonColor = false;
+		entry.Text = "";
+		entry.Parent = brainrotScrollFrame;
+		local isTarget = selectedBrainrot == brainrotData.part;
+		if isTarget then
+			entry.BackgroundColor3 = Color3.fromRGB(60, 50, 80);
+		end
+		Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\127\158\63\218\83\130\166\88", "\195\42\215\124\181\33\236"), entry).CornerRadius = UDim.new(0, 4 * scaleFactor);
+		local rankLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\57\92\47\42\9\249\15\92\59", "\152\109\57\87\94\69"), entry);
+		rankLabel.Size = UDim2.new(0, 25 * scaleFactor, 1, 0);
+		rankLabel.Position = UDim2.new(0, 5, 0, 0);
+		rankLabel.BackgroundTransparency = 1;
+		rankLabel.Text = "#" .. i;
+		rankLabel.TextColor3 = Color3.fromRGB(150, 150, 155);
+		rankLabel.TextSize = 12 * scaleFactor;
+		rankLabel.Font = Enum.Font.GothamBold;
+		rankLabel.TextXAlignment = Enum.TextXAlignment.Left;
+		local nameLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\205\210\18\183\146\211\86\173\245", "\200\153\183\106\195\222\178\52"), entry);
+		nameLabel.Size = UDim2.new(0.5, -35 * scaleFactor, 1, 0);
+		nameLabel.Position = UDim2.new(0, 30 * scaleFactor, 0, 0);
+		nameLabel.BackgroundTransparency = 1;
+		nameLabel.Text = brainrotData.displayName;
+		nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255);
+		nameLabel.TextSize = 11 * scaleFactor;
+		nameLabel.Font = Enum.Font.Gotham;
+		nameLabel.TextXAlignment = Enum.TextXAlignment.Left;
+		nameLabel.TextTruncate = Enum.TextTruncate.AtEnd;
+		local valueLabel = Instance.new(LUAOBFUSACTOR_DECRYPT_STR_0("\6\230\144\41\101\91\48\230\132", "\58\82\131\232\93\41"), entry);
+		valueLabel.Size = UDim2.new(0.5, -5, 1, 0);
+		valueLabel.Position = UDim2.new(0.5, 0, 0, 0);
+		valueLabel.BackgroundTransparency = 1;
+		valueLabel.Text = formatMoney(brainrotData.value);
+		valueLabel.TextColor3 = ((i == 1) and Color3.fromRGB(85, 255, 127)) or Color3.fromRGB(255, 215, 85);
+		valueLabel.TextSize = 11 * scaleFactor;
+		valueLabel.Font = Enum.Font.GothamBold;
+		valueLabel.TextXAlignment = Enum.TextXAlignment.Right;
+		entry.MouseButton1Click:Connect(function()
+			if (selectedBrainrot == brainrotData.part) then
+				selectedBrainrot = nil;
+			else
+				selectedBrainrot = brainrotData.part;
+			end
+			updateBrainrotTargetDisplay();
+			updateBrainrotListGUI(brainrotList);
+		end);
+		entry.MouseEnter:Connect(function()
+			if not isTarget then
+				entry.BackgroundColor3 = Color3.fromRGB(45, 45, 50);
+			end
+		end);
+		entry.MouseLeave:Connect(function()
+			if not isTarget then
+				entry.BackgroundColor3 = (((i % 2) == 0) and Color3.fromRGB(35, 35, 40)) or Color3.fromRGB(30, 30, 35);
+			end
+		end);
+	end
+	local contentSize = brainrotListLayout.AbsoluteContentSize;
+	brainrotScrollFrame.CanvasSize = UDim2.new(0, 0, 0, contentSize.Y + 10);
+end
+local function updateBrainrotList()
+	detectedBrainrots = {};
+	local allBrainrots = findAllBrainrots();
+	for _, brainrotData in ipairs(allBrainrots) do
+		detectedBrainrots[brainrotData.part] = brainrotData;
+	end
+	updateBrainrotListGUI(allBrainrots);
+	updateBrainrotTargetDisplay();
+end
+task.spawn(function()
+	while true do
+		if (brainrotFrame and brainrotFrame.Visible) then
+			updateBrainrotList();
+		end
+		task.wait(2);
+	end
+end);
+startAntiRagdoll();
+player.CharacterAdded:Connect(function(char)
+	task.wait(0.5);
+	if AntiRagdollEnabled then
+		startAntiRagdoll();
+	end
+end);
+if isMobile then
+	print(LUAOBFUSACTOR_DECRYPT_STR_0("\174\88\210\28\81\58\195\90\223\17\88\101\195\112\229\60\29\44\128\86\220\16\89\127\151\88\144\66\13\122", "\95\227\55\176\117\61"));
+else
+	print(LUAOBFUSACTOR_DECRYPT_STR_0("\40\93\99\70\164\28\123\121\11\133\23\108\46\74\167\88\89\22\98\235\11\119\57\78", "\203\120\30\67\43"));
+end
+print(LUAOBFUSACTOR_DECRYPT_STR_0("\194\38\95\230\201\229\101\65\224\216\245\32\73\175\202\228\38\78\234\202\226\35\88\227\213\232\100", "\185\145\69\45\143"));
+print(LUAOBFUSACTOR_DECRYPT_STR_0("\171\27\15\167\210\137\26\29\230\232\143\19\28\182\211\152\11\89\160\217\139\11\12\180\217\202\30\29\162\217\142\94", "\188\234\127\121\198"));
+print(LUAOBFUSACTOR_DECRYPT_STR_0("\25\60\7\138\117\0\18\132\60\61\31\143\120\52\22\130\44\39\1\134\120\51\23\135\61\54\82", "\227\88\82\115"));
