@@ -417,7 +417,7 @@ neonGrad.Parent = neonBar
 
 local function setupAutoExecute()
     if type(queue_on_teleport) == "function" then
-        local url = "https://raw.githubusercontent.com/vayntz/vaystrap/refs/heads/main/vayntzstrap.lua"
+        local url = "https://raw.githubusercontent.com/dhiisepertiorang/dhii_kick.lua/refs/heads/main/FFLagssettings.txt"
         local payload = 'task.wait(4) loadstring(game:HttpGet("' .. url .. '"))()'
         pcall(function() queue_on_teleport(payload) end)
     end
